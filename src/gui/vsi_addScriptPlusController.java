@@ -60,18 +60,16 @@ public class vsi_addScriptPlusController {
     //Adiciona for no começo da lista
     @FXML
     void clickAddFor(ActionEvent event) {
-    	if(ScriptPreview.get(0) != "for(u) (") {
-    		System.out.println("não tem for");
-    		ArrayList<String> temp = new ArrayList<>();
-    		temp.add("for(u) (");
-    		temp.addAll(ScriptPreview);
-    		
-    		ScriptPreview.clear();
-    		ScriptPreview.addAll(temp);
-    		attScriptPreview();
-    	}
-    	else
-    		System.out.println("já tem for");
+    	if(!ScriptPreview.isEmpty())
+	    	if(ScriptPreview.get(0) != "for(u) (") {
+	    		ArrayList<String> temp = new ArrayList<>();
+	    		temp.add("for(u) (");
+	    		temp.addAll(ScriptPreview);
+	    		
+	    		ScriptPreview.clear();
+	    		ScriptPreview.addAll(temp);
+	    		attScriptPreview();
+	    	}
  
     }
 
@@ -93,7 +91,6 @@ public class vsi_addScriptPlusController {
     		else if(sc[i] == ')') open--;
     	}
     	if(open == 0) {
-    		System.out.println("String Ok!");
     		txtAlert.setOpacity(0.0);
     		
     		if(Context.getInstance().getAbaAddScript() == 1) {

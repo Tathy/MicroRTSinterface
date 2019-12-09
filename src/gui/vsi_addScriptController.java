@@ -185,12 +185,10 @@ public class vsi_addScriptController {
     
     public void init(VisualScriptInterfaceController m) {
     	principalController = m;
-    	System.out.println("Chamada pela principal");
     }
     
     public void initp(vsi_addScriptPlusController m) {
     	addPlusController = m;
-    	System.out.println("Chamada pela ADD+");
     }
 
 

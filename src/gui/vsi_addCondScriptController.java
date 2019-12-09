@@ -96,7 +96,6 @@ public class vsi_addCondScriptController {
     
     public void initp(vsi_addScriptPlusController m) {
     	addPlusController = m;
-    	System.out.println("Chamada pela ADD+");
     }
 
     @FXML
