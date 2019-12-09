@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="270.0" style="-fx-background-color: #202134;" stylesheets="@CSS/main-screen.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.vsi_addScriptController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="270.0" style="-fx-background-color: #202134;">
+         <children>
+            <JFXTabPane side="RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <tabs>
+                  <Tab text="Build">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane>
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" percentHeight="100.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbBase" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Base" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupBuildTypes" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbBarrack" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Barrack" textFill="#ffffffbf" toggleGroup="$groupBuildTypes" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" percentHeight="100.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="edtBuildQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets right="20.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="closeAddBuild" mnemonicParsing="false" onAction="#clickBtnBuildAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Train">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbTrainWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupTrainTypes" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbTrainLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupTrainTypes" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbTrainHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupTrainTypes" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbTrainRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupTrainTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" percentHeight="100.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="edtTrainQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets right="20.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </GridPane>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Direction">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbTrainRight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Right" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupTrainDir" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbTrainLeft" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Left" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbTrainUp" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Up" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbTrainDown" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Down" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbTrainEnemyDir" mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" style="-fx-background-radius: 10px;" text="EnemyDir" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="50.0" right="-50.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="closeAddTrain" mnemonicParsing="false" onAction="#clickBtnTrainAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Harvest">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <GridPane>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" percentHeight="100.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="edtHarvestQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets right="20.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="closeAddHarvest" mnemonicParsing="false" onAction="#clickBtnHarvestAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Attack">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbAttackWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupAttackTypes" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane prefWidth="200.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbAttackStrongest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Strongest" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupAttackEnemy" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackWeakest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Weakest" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackClosest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Closest" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackFarthest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Farthest" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackLessHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="lessHealthy" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackMostHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="mostHealthy" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbAttackRandom" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Random" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                             <padding>
+                                                <Insets left="-10.0" right="-10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="-20.0" />
+                                       </VBox.margin>
+                                    </Group>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="closeAddAttack" mnemonicParsing="false" onAction="#clickBtnAttackAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Move to Unit">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbMoveToUnitWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupMoveToUnitTypes" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Target">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane prefHeight="29.0" prefWidth="195.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbMoveToUnitAlly" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-radius: 10px;" text="Ally" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupMoveToUnitTargets" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitEnemy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Enemy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTargets" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Behaviour">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane prefWidth="200.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbMoveToUnitStrongest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Strongest" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupMoveToUnitBehaviour" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitWeakest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Weakest" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitClosest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Closest" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitFarthest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Farthest" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitLessHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="lessHealthy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitMostHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="mostHealthy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </padding>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToUnitRandom" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Random" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.rowIndex="3">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="5.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                             <padding>
+                                                <Insets left="-10.0" right="-10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnAddMoveToUnit" mnemonicParsing="false" onAction="#clickBtnAddMoveToUnit" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Move to Coordinates">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbMoveToCoordWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupMoveToCoordTypes" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToCoordLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToCoordHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToCoordRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveToCoordAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <GridPane>
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="edtCoordX" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets right="15.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="edtCoordY" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="3">
+                                             <GridPane.margin>
+                                                <Insets right="15.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="x :">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="14.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets right="10.0" />
+                                             </GridPane.margin>
+                                          </Text>
+                                          <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="y :" GridPane.columnIndex="2">
+                                             <font>
+                                                <Font name="Ebrima Bold" size="14.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets right="10.0" />
+                                             </GridPane.margin>
+                                          </Text>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnAddMoveToCoord" mnemonicParsing="false" onAction="#clickBtnAddMoveToCoord" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Move Away">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                       <font>
+                                          <Font name="Ebrima Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Group>
+                                       <children>
+                                          <GridPane>
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ToggleButton fx:id="tbMoveAwayWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="groupMoveAwayTypes" />
+                                                   </toggleGroup>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveAwayLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.columnIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveAwayHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveAwayRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="tbMoveAwayAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <GridPane.margin>
+                                                      <Insets left="10.0" right="10.0" />
+                                                   </GridPane.margin>
+                                                </ToggleButton>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </Group>
+                                 </children>
+                              </VBox>
+                              <Button mnemonicParsing="false" onAction="#clickBtnAddMoveAway" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
