@@ -178,8 +178,6 @@ public class Context {
 			itr2.set(a2);
 			itr1.set(a1);
 		}
-		
-		
 	}
 	
 	public void upScriptAi2(String a) {

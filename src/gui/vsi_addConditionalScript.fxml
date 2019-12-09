@@ -45,7 +45,7 @@
                                                       <ToggleGroup fx:id="groupConditionalAllies" />
                                                    </toggleGroup>
                                                 </JFXRadioButton>
-                                                <JFXRadioButton fx:id="rbHaveQtdUnitsHarvesting" disable="true" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsHarvesting" textFill="WHITE" toggleGroup="$groupConditionalAllies">
+                                                <JFXRadioButton fx:id="rbHaveQtdUnitsHarversting" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsHarversting" textFill="WHITE" toggleGroup="$groupConditionalAllies">
                                                    <font>
                                                       <Font name="Ebrima Bold" size="13.0" />
                                                    </font>
@@ -202,7 +202,7 @@
                                                       <ToggleGroup fx:id="groupConditionalEnemies" />
                                                    </toggleGroup>
                                                 </JFXRadioButton>
-                                                <JFXRadioButton fx:id="rbHaveQtdEnemiesAttacking" disable="true" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdEnemiesAttacking" textFill="WHITE" toggleGroup="$groupConditionalEnemies">
+                                                <JFXRadioButton fx:id="rbHaveQtdUnitsAttacking" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsAttacking" textFill="WHITE" toggleGroup="$groupConditionalEnemies">
                                                    <font>
                                                       <Font name="Ebrima Bold" size="13.0" />
                                                    </font>

@@ -138,7 +138,6 @@ public class ScriptInterface {
 	        do {
 		        //Restart Game
 				pgs = PhysicalGameState.load(Context.getInstance().getMap(), utt);
-				System.out.println(Context.getInstance().getMap());
 				gs = new GameState(pgs, utt);
 				gameover = gs.cycle();
 				pgsp = new PhysicalGameStatePanel(gs);

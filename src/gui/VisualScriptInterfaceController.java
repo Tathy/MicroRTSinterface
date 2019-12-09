@@ -166,11 +166,10 @@ public class VisualScriptInterfaceController implements Initializable {
     
     // Inicialização da interface
 	public void initialize(URL location, ResourceBundle resources) {
-		loadMaps();
+		loadMaps();		
 		
-		lvScriptsAI1.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 		lvScriptsAI1.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-		//lvScriptsAI1.focusModelProperty().
+		lvScriptsAI2.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 	}
 	
 	public void loadMaps() {
@@ -221,8 +220,6 @@ public class VisualScriptInterfaceController implements Initializable {
 		cbAI1.setItems(obsAIs);
 		cbAI2.setItems(obsAIs);
 	}
-	
-	// ----- NOVA INTERFACE
 	
 	//Reposicionamento de Scripts
 	
@@ -296,13 +293,11 @@ public class VisualScriptInterfaceController implements Initializable {
 	public void attListViewAI1() {
 		lvScriptsAI1.getItems().clear();
 		lvScriptsAI1.getItems().addAll(Context.getInstance().getScritpsAi1());
-		//lvScriptsAI1.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 	}
 	
 	public void attListViewAI2() {
 		lvScriptsAI2.getItems().clear();
 		lvScriptsAI2.getItems().addAll(Context.getInstance().getScritpsAi2());
-		//lvScriptsAI2.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 	}
 
 	
@@ -442,17 +437,17 @@ public class VisualScriptInterfaceController implements Initializable {
 		}
 		
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addConditionalScript.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addScriptPlus.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
-		vsi_addCondScriptController addCondScriptController = fxmlLoader.getController();
-		addCondScriptController.init(this);
+		vsi_addScriptPlusController addScriptPlusController = fxmlLoader.getController();
+		addScriptPlusController.init(this);
 		
 		Stage stage = new Stage();
 		stage.setTitle("Add Scripts");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
-		stage.setWidth(275);
+		stage.setWidth(545);
 		//stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);

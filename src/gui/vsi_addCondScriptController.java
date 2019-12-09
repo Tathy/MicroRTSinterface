@@ -13,14 +13,15 @@ import model.Context;
 public class vsi_addCondScriptController {
 	
 	//private boolean fecharJanela = false;
-	private VisualScriptInterfaceController mainController;
+	private VisualScriptInterfaceController principalController;
+	private vsi_addScriptPlusController addPlusController;
 
     //Ally Conditional
     
     @FXML
     private JFXRadioButton rbHaveQtdUnitsbyType;
     @FXML
-    private JFXRadioButton rbHaveQtdUnitsHarvesting;
+    private JFXRadioButton rbHaveQtdUnitsHarversting;
     @FXML
     private JFXRadioButton rbHaveUnitsStrongest;
     @FXML
@@ -57,7 +58,7 @@ public class vsi_addCondScriptController {
     @FXML
     private JFXRadioButton rbHaveQtdEnemiesbyType;
     @FXML
-    private JFXRadioButton rbHaveQtdEnemiesAttacking;
+    private JFXRadioButton HaveQtdUnitsAttacking;
     @FXML
     private JFXRadioButton rbHaveEnemiesStrongest;
     @FXML
@@ -90,7 +91,12 @@ public class vsi_addCondScriptController {
     
     
     public void init(VisualScriptInterfaceController m) {
-    	mainController = m;
+    	principalController = m;
+    }
+    
+    public void initp(vsi_addScriptPlusController m) {
+    	addPlusController = m;
+    	System.out.println("Chamada pela ADD+");
     }
 
     @FXML
@@ -109,7 +115,7 @@ public class vsi_addCondScriptController {
 	       		txtQntDistAlly.setText("Quantity");
 	       		edtCondAllyQnt.setDisable(false);
 	       		
-        	}else if(rbHaveQtdUnitsHarvesting.isSelected()) {
+        	}else if(rbHaveQtdUnitsHarversting.isSelected()) {
 	        	tbCondAllyWorker.setDisable(true);
 	       		tbCondAllyLight.setDisable(true);
 	      		tbCondAllyHeavy.setDisable(true);
@@ -158,7 +164,7 @@ public class vsi_addCondScriptController {
 	        	txtQntDistEnemy.setText("Quantity");
 	       		edtCondEnemyQnt.setDisable(false);
 	       		
-        	}else if(rbHaveQtdEnemiesAttacking.isSelected()) {
+        	}else if(HaveQtdUnitsAttacking.isSelected()) {
         		tbCondEnemyWorker.setDisable(false);
         		tbCondEnemyLight.setDisable(false);
         		tbCondEnemyHeavy.setDisable(false);
@@ -217,13 +223,13 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ",u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
     		//HaveQtdUnitsHarvesting
-    		else if( rbHaveQtdUnitsHarvesting.isSelected() ) {
-    			s += "HaveQtdUnitsHarvesting(";
+    		else if( rbHaveQtdUnitsHarversting.isSelected() ) {
+    			s += "HaveQtdUnitsHarversting(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
     				Integer q = Integer.parseInt(edtCondAllyQnt.getText());
@@ -232,7 +238,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -255,7 +261,7 @@ public class vsi_addCondScriptController {
         				s += "All,u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -278,7 +284,7 @@ public class vsi_addCondScriptController {
         				s += "All,u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -305,12 +311,17 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ",u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
-    		Context.getInstance().addScriptAI1(s);
-			mainController.attListViewAI1();
+    		//Atualização das listas
+			if(principalController != null) {
+				Context.getInstance().addScriptAI1(s);
+				principalController.attListViewAI1();
+			}else if(addPlusController != null) {
+				addPlusController.addListViewFuncList(s);
+			}
     		
     	}else if(Context.getInstance().getAbaAddScript() == 2) {
     		//HaveQtdUnitsbyType
@@ -336,12 +347,12 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ",u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
     		//HaveQtdUnitsHarvesting
-    		else if( rbHaveQtdUnitsHarvesting.isSelected() ) {
+    		else if( rbHaveQtdUnitsHarversting.isSelected() ) {
     			s += "HaveQtdUnitsHarvesting(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -351,7 +362,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -374,7 +385,7 @@ public class vsi_addCondScriptController {
         				s += "All,u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -397,7 +408,7 @@ public class vsi_addCondScriptController {
         				s += "All,u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -424,12 +435,17 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ",u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
-    		Context.getInstance().addScriptAI2(s);
-			mainController.attListViewAI2();
+    		//Atualização das listas
+			if(principalController != null) {
+				Context.getInstance().addScriptAI2(s);
+				principalController.attListViewAI2();
+			}else if(addPlusController != null) {
+				addPlusController.addListViewFuncList(s);
+			}
     	}
     }
     
@@ -463,14 +479,14 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ",u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
     		//HaveQtdEnemiesAttacking
-    		else if( rbHaveQtdEnemiesAttacking.isSelected() ) {
+    		else if( HaveQtdUnitsAttacking.isSelected() ) {
     			System.out.println("teste HaveQtdEnemiesAttacking");
-    			s += "HaveQtdEnemiesAttacking(";
+    			s += "HaveQtdUnitsAttacking(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
     				Integer q = Integer.parseInt(edtCondEnemyQnt.getText());
@@ -491,7 +507,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ",u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -515,7 +531,7 @@ public class vsi_addCondScriptController {
         				s += "All,u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
@@ -539,15 +555,131 @@ public class vsi_addCondScriptController {
         				s += "All,u)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += " \n(attack(Worker,strongest,u)";
+    	    		s += ") (";
     			}
     		}
     		
-    		Context.getInstance().addScriptAI1(s);
-			mainController.attListViewAI1();
+    		//Atualização das listas
+			if(principalController != null) {
+				Context.getInstance().addScriptAI1(s);
+				principalController.attListViewAI1();
+			}else if(addPlusController != null) {
+				addPlusController.addListViewFuncList(s);
+			}
     		
     	}else if(Context.getInstance().getAbaAddScript() == 2) {
     		
+    		//HaveQtdEnemiesbyType
+    		if( rbHaveQtdEnemiesbyType.isSelected() ) {
+    			System.out.println("teste HaveQtdEnemiesbyType");
+    			s += "HaveQtdEnemiesbyType(";
+    			
+    			if(groupConditionalEnemies.getSelectedToggle() != null) {
+    				Integer q = Integer.parseInt(edtCondEnemyQnt.getText());
+    				
+    				//Type
+    	    		if(tbCondEnemyWorker.isSelected())
+        				s += "Worker,";
+        			else if(tbCondEnemyLight.isSelected())
+        				s += "Light,";
+        			else if(tbCondEnemyHeavy.isSelected())
+        				s += "Heavy,";
+        			else if(tbCondEnemyRanged.isSelected())
+        				s += "Ranged,";
+        			else if(tbCondEnemyAll.isSelected())
+        				s += "All,";
+    	    		
+    	    		//Quantity or Distance
+    	    		s += Integer.toString(q) + ",u)";
+    	    		
+    	    		//String provisória, apagar depois
+    	    		s += ") (";
+    			}
+    		}
+    		
+    		//HaveQtdEnemiesAttacking
+    		else if( HaveQtdUnitsAttacking.isSelected() ) {
+    			System.out.println("teste HaveQtdUnitsAttacking");
+    			s += "HaveQtdUnitsAttacking(";
+    			
+    			if(groupConditionalEnemies.getSelectedToggle() != null) {
+    				Integer q = Integer.parseInt(edtCondEnemyQnt.getText());
+    				
+    				//Type
+    	    		if(tbCondEnemyWorker.isSelected())
+        				s += "Worker,";
+        			else if(tbCondEnemyLight.isSelected())
+        				s += "Light,";
+        			else if(tbCondEnemyHeavy.isSelected())
+        				s += "Heavy,";
+        			else if(tbCondEnemyRanged.isSelected())
+        				s += "Ranged,";
+        			else if(tbCondEnemyAll.isSelected())
+        				s += "All,";
+    	    		
+    	    		//Quantity or Distance
+    	    		s += Integer.toString(q) + ",u)";
+    	    		
+    	    		//String provisória, apagar depois
+    	    		s += ") (";
+    			}
+    		}
+    		
+    		//HaveEnemiesStrongest
+    		else if( rbHaveEnemiesStrongest.isSelected() ) {
+    			System.out.println("teste HaveEnemiesStrongest");
+    			s += "HaveEnemiesStrongest(";
+    			
+    			if(groupConditionalEnemies.getSelectedToggle() != null) {
+    				
+    				//Type
+    	    		if(tbCondEnemyWorker.isSelected())
+        				s += "Worker,u)";
+        			else if(tbCondEnemyLight.isSelected())
+        				s += "Light,u)";
+        			else if(tbCondEnemyHeavy.isSelected())
+        				s += "Heavy,u)";
+        			else if(tbCondEnemyRanged.isSelected())
+        				s += "Ranged,u)";
+        			else if(tbCondEnemyAll.isSelected())
+        				s += "All,u)";
+    	    		
+    	    		//String provisória, apagar depois
+    	    		s += ") (";
+    			}
+    		}
+    		
+    		//HaveEnemiesinUnitsRange
+    		else if( rbHaveEnemiesinUnitsRange.isSelected() ) {
+    			System.out.println("teste HaveEnemiesinUnitsRange");
+    			s += "HaveEnemiesinUnitsRange(";
+    			
+    			if(groupConditionalEnemies.getSelectedToggle() != null) {
+    				
+    				//Type
+    	    		if(tbCondEnemyWorker.isSelected())
+        				s += "Worker,u)";
+        			else if(tbCondEnemyLight.isSelected())
+        				s += "Light,u)";
+        			else if(tbCondEnemyHeavy.isSelected())
+        				s += "Heavy,u)";
+        			else if(tbCondEnemyRanged.isSelected())
+        				s += "Ranged,u)";
+        			else if(tbCondEnemyAll.isSelected())
+        				s += "All,u)";
+    	    		
+    	    		//String provisória, apagar depois
+    	    		s += ") (";
+    			}
+    		}
+    		
+    		//Atualização das listas
+			if(principalController != null) {
+				Context.getInstance().addScriptAI2(s);
+				principalController.attListViewAI2();
+			}else if(addPlusController != null) {
+				addPlusController.addListViewFuncList(s);
+			}
     		
     		
     	}

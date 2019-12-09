@@ -16,7 +16,8 @@ import model.Context;
 public class vsi_addScriptController {
 	
 	private boolean fecharJanela = false;
-	private VisualScriptInterfaceController mainController;
+	private VisualScriptInterfaceController principalController;
+	private vsi_addScriptPlusController addPlusController;
 	
 	// Build
 	
@@ -25,9 +26,19 @@ public class vsi_addScriptController {
     @FXML
     private ToggleButton tbBarrack;
     @FXML
+    private ToggleButton tbBuildRight;
+    @FXML
+    private ToggleButton tbBuildLeft;
+    @FXML
+    private ToggleButton tbBuildUp;
+    @FXML
+    private ToggleButton tbBuildDown;
+    @FXML
     private TextField edtBuildQnt;
     @FXML
     private ToggleGroup groupBuildTypes;
+    @FXML
+    private ToggleGroup groupBuildDir;
     @FXML
     private Button closeAddBuild;
     
@@ -173,7 +184,13 @@ public class vsi_addScriptController {
     
     
     public void init(VisualScriptInterfaceController m) {
-    	mainController = m;
+    	principalController = m;
+    	System.out.println("Chamada pela principal");
+    }
+    
+    public void initp(vsi_addScriptPlusController m) {
+    	addPlusController = m;
+    	System.out.println("Chamada pela ADD+");
     }
 
 
@@ -210,8 +227,14 @@ public class vsi_addScriptController {
     			else if(tbAttackRandom.isSelected())
     				s += "random,u)"; 
     		
-    			Context.getInstance().addScriptAI1(s);
-    			mainController.attListViewAI1();
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
     		}else {
     			System.out.println("Faltam parâmetros");
     		}
@@ -243,8 +266,14 @@ public class vsi_addScriptController {
     			else if(tbAttackRandom.isSelected())
     				s += "random,u)"; 
     		
-    			Context.getInstance().addScriptAI2(s);
-    			mainController.attListViewAI2();
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
     		}else {
     			System.out.println("Faltam parâmetros");
     		}
@@ -264,14 +293,30 @@ public class vsi_addScriptController {
     		Integer q = Integer.parseInt(edtBuildQnt.getText());
 			String s = "";
 			
-    		if(groupBuildTypes.getSelectedToggle() != null && edtBuildQnt.getText() != null && Integer.parseInt(edtBuildQnt.getText()) != 0) {
+    		if(groupBuildTypes.getSelectedToggle() != null && groupBuildDir.getSelectedToggle() != null && edtBuildQnt.getText() != null && Integer.parseInt(edtBuildQnt.getText()) != 0) {
     			if(tbBase.isSelected())
-    				s = "build(Base," + Integer.toString(q) + ")";
+    				s = "build(Base,";// + Integer.toString(q) + ")";
     			if(tbBarrack.isSelected())
-    				s = "build(Barrack," + Integer.toString(q) + ")";
+    				s = "build(Barrack,";// + Integer.toString(q) + ")";
     			
-    			Context.getInstance().addScriptAI1(s);
-    			mainController.attListViewAI1();
+    			s += Integer.toString(q) + ",";
+    			
+    			if(tbBuildRight.isSelected())
+    				s += "Right,u)";
+    			else if(tbBuildLeft.isSelected())
+    				s += "Left,u)";
+    			else if(tbBuildUp.isSelected())
+    				s += "Up,u)";
+    			if(tbBuildDown.isSelected())
+    				s += "Down,u)";
+    			
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
     			
     		} else {
     			System.out.println("Faltam parâmetros");
@@ -287,8 +332,13 @@ public class vsi_addScriptController {
     			if(tbBarrack.isSelected())
     				s = "build(Barrack," + Integer.toString(q) + ")";
 
-    			Context.getInstance().addScriptAI2(s);
-    			mainController.attListViewAI2();
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
     			
     		} else {
     			System.out.println("Faltam parâmetros");
@@ -309,16 +359,29 @@ public class vsi_addScriptController {
 	    	if(edtHarvestQnt.getText() != null && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
 	    		Integer q = Integer.parseInt(edtHarvestQnt.getText());
 	    		String s = "harvest(" + Integer.toString(q) + ")";
-	    		Context.getInstance().addScriptAI1(s);
-	    		mainController.attListViewAI1();
+	    		
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
 	    	}
     	} else if(Context.getInstance().getAbaAddScript() == 2) {
 	    	if(edtHarvestQnt.getText() != null && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
 	    		Integer q = Integer.parseInt(edtHarvestQnt.getText());
 	    		String s = "harvest(" + Integer.toString(q) + ")";
-	    		Context.getInstance().addScriptAI2(s);
-	    		mainController.attListViewAI2();
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
 	    	}
+	    	
+	    	
     	}
     	
     	if(fecharJanela) {
@@ -348,8 +411,14 @@ public class vsi_addScriptController {
     			else if(tbMoveAwayAll.isSelected())
     				s += "All,u)";
 	    		
-	    		Context.getInstance().addScriptAI1(s);
-	    		mainController.attListViewAI1();
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
 	    	}
     	} else if(Context.getInstance().getAbaAddScript() == 2) {
 	    	if(groupMoveAwayTypes.getSelectedToggle() != null) {
@@ -367,8 +436,13 @@ public class vsi_addScriptController {
     			else if(tbMoveAwayAll.isSelected())
     				s += "All,u)";
 	    		
-	    		Context.getInstance().addScriptAI2(s);
-	    		mainController.attListViewAI2();
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
 	    	}
     	}
     	
@@ -401,8 +475,14 @@ public class vsi_addScriptController {
 	    		
 	    		s += x.toString() + "," + y.toString() + ",u)";
 	    		
-	    		Context.getInstance().addScriptAI1(s);
-	    		mainController.attListViewAI1();
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
 	    	}
     	} else if(Context.getInstance().getAbaAddScript() == 2) {
 	    	if(groupMoveToCoordTypes.getSelectedToggle() != null) {
@@ -424,8 +504,14 @@ public class vsi_addScriptController {
 	    		
 	    		s += x.toString() + "," + y.toString() + ",u)";
 	    		
-	    		Context.getInstance().addScriptAI2(s);
-	    		mainController.attListViewAI2();
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
 	    	}
     	}
     	
@@ -478,8 +564,14 @@ public class vsi_addScriptController {
     				s += "random,u)"; 
 	    		
 
-	    		Context.getInstance().addScriptAI1(s);
-	    		mainController.attListViewAI1();
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
 	    	}
     	} else if(Context.getInstance().getAbaAddScript() == 2) {
 	    	if(groupMoveToUnitTypes.getSelectedToggle() != null && groupMoveToUnitTargets.getSelectedToggle() != null && groupMoveToUnitBehaviour.getSelectedToggle() != null) {
@@ -520,8 +612,14 @@ public class vsi_addScriptController {
     				s += "random,u)"; 
 	    		
 
-	    		Context.getInstance().addScriptAI2(s);
-	    		mainController.attListViewAI2();
+	    		//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
 	    	}
     	}
     	
@@ -559,8 +657,14 @@ public class vsi_addScriptController {
     			else if(tbTrainEnemyDir.isSelected())
     				s += "EnemyDir)";
     			
-    			Context.getInstance().addScriptAI1(s);
-    			mainController.attListViewAI1();
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			
     		}else {
     			System.out.println("Faltam parâmetros");
     		}
@@ -590,8 +694,13 @@ public class vsi_addScriptController {
     			else if(tbTrainEnemyDir.isSelected())
     				s += "EnemyDir)";
     			
-    			Context.getInstance().addScriptAI2(s);
-    			mainController.attListViewAI2();
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
     		}else {
     			System.out.println("Faltam parâmetros");
     		}

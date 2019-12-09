@@ -12,7 +12,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="540.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.vsi_addScriptPlusController">
    <children>
       <AnchorPane prefHeight="691.0" prefWidth="270.0" style="-fx-background-color: #202134;">
@@ -98,6 +97,54 @@
                         </Button>
                      </children>
                   </GridPane>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#clickAddFor" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="+for" textFill="#ffffffbf">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-5.0" top="-5.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#clickAddBracket" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="+ )" textFill="#ffffffbf" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-5.0" top="-5.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#clickRemoveBracket" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="- )" textFill="#ffffffbf" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="-5.0" top="-5.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="25.0" right="25.0" top="10.0" />
+                     </VBox.margin>
+                  </GridPane>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Script preview">
                      <font>
                         <Font name="Ebrima Bold" size="14.0" />
@@ -106,19 +153,31 @@
                         <Insets left="15.0" top="10.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXListView fx:id="lvScriptPreview" prefHeight="500.0" prefWidth="250.0">
+                  <JFXListView fx:id="lvScriptPreview" prefHeight="458.0" prefWidth="240.0">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="5.0" />
                      </VBox.margin>
                   </JFXListView>
-                  <Button mnemonicParsing="false" onAction="#clickAddScript" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
-                     <font>
-                        <Font name="System Bold Italic" size="15.0" />
-                     </font>
+                  <HBox prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#clickAddScript" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </Button>
+                        <Text fx:id="txtAlert" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faltam parênteses!" textAlignment="CENTER" wrappingWidth="165.13671875">
+                           <HBox.margin>
+                              <Insets left="15.0" top="6.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
                      <VBox.margin>
-                        <Insets bottom="20.0" left="25.0" />
+                        <Insets left="15.0" right="15.0" />
                      </VBox.margin>
-                  </Button>
+                  </HBox>
                </children>
             </VBox>
          </children>
@@ -160,14 +219,6 @@
                               <Insets bottom="-10.0" top="-10.0" />
                            </padding>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#clickDoubleScript" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="2x" textFill="#ffffffbf">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets left="5.0" />
-                           </GridPane.margin>
-                        </Button>
                         <Button mnemonicParsing="false" onAction="#clickNewSimpleScript" prefHeight="30.0" prefWidth="109.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="New simple" textFill="#ffffffbf" GridPane.columnIndex="2">
                            <font>
                               <Font name="System Bold" size="12.0" />
@@ -183,7 +234,7 @@
                         <Insets left="15.0" top="10.0" />
                      </VBox.margin>
                   </Text>
-                  <JFXListView fx:id="lvFunctionsList" prefHeight="500.0" prefWidth="250.0">
+                  <JFXListView fx:id="lvFuncList" prefHeight="500.0" prefWidth="250.0">
                      <VBox.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="5.0" />
                      </VBox.margin>

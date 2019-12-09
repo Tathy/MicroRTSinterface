@@ -90,6 +90,7 @@ public class Script_Template extends AbstractionLayerAI {
     		//commandsGP.addAll(compiler.CompilerCode("build(Barrack,1)", utt));
     		//commandsGP.addAll(compiler.CompilerCode("attack(Worker,closest,EnemyDir)", utt));
     		//commandsGP.addAll(compiler.CompilerCode("harvest(1)", utt));
+    		//commandsGP.addAll(compiler.CompilerCode("if(HaveQtdUnitsHarversting(15))(attack(Worker,closest,u))", utt));
     		for(int i = 0; i < (Context.getInstance().getScritpsAi1()).size(); i++ ) {
     			commandsGP.addAll(compiler.CompilerCode( Context.getInstance().getScritpsAi1().get(i).toString(), utt));
     			//System.out.println( "lista: " + Context.getInstance().getScritpsAi1().toString() );
