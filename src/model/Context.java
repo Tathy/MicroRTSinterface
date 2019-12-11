@@ -183,9 +183,9 @@ public class Context {
 	public void upScriptAi2(String a) {
 		ListIterator<String> itr1 = scriptsAi2.listIterator();
 		ListIterator<String> itr2 = scriptsAi2.listIterator();
-		String a1 = "", a2 = "";
+		String a1, a2 = "";
 		
-		if(scriptsAi1.get(0) != a) {
+		if(itr1.next() != a) {
 			
 			while(itr1.hasNext()) {
 				if(itr1.next() == a) {

@@ -1,3 +1,4 @@
+build(Barrack,1,Down,u)
 harvest(1)
 train(Worker,100,EnemyDir)
 attack(All,closest,EnemyDir)
