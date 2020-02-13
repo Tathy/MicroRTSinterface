@@ -97,7 +97,7 @@
                         </Button>
                      </children>
                   </GridPane>
-                  <GridPane>
+                  <GridPane prefWidth="230.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -118,31 +118,9 @@
                               <Insets left="5.0" right="5.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#clickAddBracket" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="+ )" textFill="#ffffffbf" GridPane.columnIndex="1">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets bottom="-5.0" top="-5.0" />
-                           </padding>
-                           <GridPane.margin>
-                              <Insets left="5.0" right="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#clickRemoveBracket" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="- )" textFill="#ffffffbf" GridPane.columnIndex="2">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <padding>
-                              <Insets bottom="-5.0" top="-5.0" />
-                           </padding>
-                           <GridPane.margin>
-                              <Insets left="5.0" right="5.0" />
-                           </GridPane.margin>
-                        </Button>
                      </children>
                      <VBox.margin>
-                        <Insets left="25.0" right="25.0" top="10.0" />
+                        <Insets left="10.0" right="25.0" top="10.0" />
                      </VBox.margin>
                   </GridPane>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Script preview">
@@ -165,7 +143,7 @@
                               <Font name="System Bold Italic" size="15.0" />
                            </font>
                         </Button>
-                        <Text fx:id="txtAlert" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faltam parênteses!" textAlignment="CENTER" wrappingWidth="165.13671875">
+                        <Text fx:id="txtAlert" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indentação incorreta!" textAlignment="CENTER" wrappingWidth="165.13671875">
                            <HBox.margin>
                               <Insets left="15.0" top="6.0" />
                            </HBox.margin>

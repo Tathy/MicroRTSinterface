@@ -211,19 +211,19 @@ public class vsi_addScriptController {
     				s += "attack(All,";
 
     			if(tbAttackStrongest.isSelected())
-    				s += "strongest,u)"; 
+    				s += "strongest)"; 
     			else if(tbAttackWeakest.isSelected())
-    				s += "weakest,u)"; 
+    				s += "weakest)"; 
     			else if(tbAttackClosest.isSelected())
-    				s += "closest,u)"; 
+    				s += "closest)"; 
     			else if(tbAttackFarthest.isSelected())
-    				s += "farthest,u)"; 
+    				s += "farthest)"; 
     			else if(tbAttackLessHealthy.isSelected())
-    				s += "lessHealthy,u)"; 
+    				s += "lessHealthy)"; 
     			else if(tbAttackMostHealthy.isSelected())
-    				s += "mostHealthy,u)"; 
+    				s += "mostHealthy)"; 
     			else if(tbAttackRandom.isSelected())
-    				s += "random,u)"; 
+    				s += "random)"; 
     		
     			//Atualização das listas
     			if(principalController != null) {
@@ -250,19 +250,19 @@ public class vsi_addScriptController {
     				s += "attack(All,";
     			
     			if(tbAttackStrongest.isSelected())
-    				s += "strongest,u)"; 
+    				s += "strongest)"; 
     			else if(tbAttackWeakest.isSelected())
-    				s += "weakest,u)"; 
+    				s += "weakest)"; 
     			else if(tbAttackClosest.isSelected())
-    				s += "closest,u)"; 
+    				s += "closest)"; 
     			else if(tbAttackFarthest.isSelected())
-    				s += "farthest,u)"; 
+    				s += "farthest)"; 
     			else if(tbAttackLessHealthy.isSelected())
-    				s += "lessHealthy,u)"; 
+    				s += "lessHealthy)"; 
     			else if(tbAttackMostHealthy.isSelected())
-    				s += "mostHealthy,u)"; 
+    				s += "mostHealthy)"; 
     			else if(tbAttackRandom.isSelected())
-    				s += "random,u)"; 
+    				s += "random)"; 
     		
     			//Atualização das listas
     			if(principalController != null) {
@@ -300,13 +300,13 @@ public class vsi_addScriptController {
     			s += Integer.toString(q) + ",";
     			
     			if(tbBuildRight.isSelected())
-    				s += "Right,u)";
+    				s += "Right)";
     			else if(tbBuildLeft.isSelected())
-    				s += "Left,u)";
+    				s += "Left)";
     			else if(tbBuildUp.isSelected())
-    				s += "Up,u)";
+    				s += "Up)";
     			if(tbBuildDown.isSelected())
-    				s += "Down,u)";
+    				s += "Down)";
     			
     			//Atualização das listas
     			if(principalController != null) {
@@ -392,22 +392,21 @@ public class vsi_addScriptController {
     //Move Away
     @FXML
     void clickBtnAddMoveAway(ActionEvent event) {
-    	System.out.println("teste Move Away");
     	if(Context.getInstance().getAbaAddScript() == 1) {
 	    	if(groupMoveAwayTypes.getSelectedToggle() != null) {
 	    		String s = "moveaway(";
 	    		
 	    		//Type
 	    		if(tbMoveAwayWorker.isSelected())
-    				s += "Worker,u)";
+    				s += "Worker)";
     			else if(tbMoveAwayLight.isSelected())
-    				s += "Light,u)";
+    				s += "Light)";
     			else if(tbMoveAwayHeavy.isSelected())
-    				s += "Heavy,u)";
+    				s += "Heavy)";
     			else if(tbMoveAwayRanged.isSelected())
-    				s += "Ranged,u)";
+    				s += "Ranged)";
     			else if(tbMoveAwayAll.isSelected())
-    				s += "All,u)";
+    				s += "All)";
 	    		
 	    		//Atualização das listas
     			if(principalController != null) {
@@ -424,15 +423,15 @@ public class vsi_addScriptController {
 	    		
 	    		//Type
 	    		if(tbMoveAwayWorker.isSelected())
-    				s += "Worker,u)";
+    				s += "Worker)";
     			else if(tbMoveAwayLight.isSelected())
-    				s += "Light,u)";
+    				s += "Light)";
     			else if(tbMoveAwayHeavy.isSelected())
-    				s += "Heavy,u)";
+    				s += "Heavy)";
     			else if(tbMoveAwayRanged.isSelected())
-    				s += "Ranged,u)";
+    				s += "Ranged)";
     			else if(tbMoveAwayAll.isSelected())
-    				s += "All,u)";
+    				s += "All)";
 	    		
 	    		//Atualização das listas
     			if(principalController != null) {
@@ -471,7 +470,7 @@ public class vsi_addScriptController {
     			else if(tbMoveToCoordAll.isSelected())
     				s += "All,";
 	    		
-	    		s += x.toString() + "," + y.toString() + ",u)";
+	    		s += x.toString() + "," + y.toString() + ")";
 	    		
 	    		//Atualização das listas
     			if(principalController != null) {
@@ -500,7 +499,7 @@ public class vsi_addScriptController {
     			else if(tbMoveToCoordAll.isSelected())
     				s += "All,";
 	    		
-	    		s += x.toString() + "," + y.toString() + ",u)";
+	    		s += x.toString() + "," + y.toString() + ")";
 	    		
 	    		//Atualização das listas
     			if(principalController != null) {
@@ -547,19 +546,19 @@ public class vsi_addScriptController {
 	    		
 	    		//Behaviour
 	    		if(tbMoveToUnitStrongest.isSelected())
-    				s += "strongest,u)"; 
+    				s += "strongest)"; 
     			else if(tbMoveToUnitWeakest.isSelected())
-    				s += "weakest,u)"; 
+    				s += "weakest)"; 
     			else if(tbMoveToUnitClosest.isSelected())
-    				s += "closest,u)"; 
+    				s += "closest)"; 
     			else if(tbMoveToUnitFarthest.isSelected())
-    				s += "farthest,u)"; 
+    				s += "farthest)"; 
     			else if(tbMoveToUnitLessHealthy.isSelected())
-    				s += "lessHealthy,u)"; 
+    				s += "lessHealthy)"; 
     			else if(tbMoveToUnitMostHealthy.isSelected())
-    				s += "mostHealthy,u)"; 
+    				s += "mostHealthy)"; 
     			else if(tbMoveToUnitRandom.isSelected())
-    				s += "random,u)"; 
+    				s += "random)"; 
 	    		
 
 	    		//Atualização das listas
@@ -595,19 +594,19 @@ public class vsi_addScriptController {
 	    		
 	    		//Behaviour
 	    		if(tbMoveToUnitStrongest.isSelected())
-    				s += "strongest,u)"; 
+    				s += "strongest)"; 
     			else if(tbMoveToUnitWeakest.isSelected())
-    				s += "weakest,u)"; 
+    				s += "weakest)"; 
     			else if(tbMoveToUnitClosest.isSelected())
-    				s += "closest,u)"; 
+    				s += "closest)"; 
     			else if(tbMoveToUnitFarthest.isSelected())
-    				s += "farthest,u)"; 
+    				s += "farthest)"; 
     			else if(tbMoveToUnitLessHealthy.isSelected())
-    				s += "lessHealthy,u)"; 
+    				s += "lessHealthy)"; 
     			else if(tbMoveToUnitMostHealthy.isSelected())
-    				s += "mostHealthy,u)"; 
+    				s += "mostHealthy)"; 
     			else if(tbMoveToUnitRandom.isSelected())
-    				s += "random,u)"; 
+    				s += "random)"; 
 	    		
 
 	    		//Atualização das listas

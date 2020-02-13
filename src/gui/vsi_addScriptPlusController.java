@@ -34,34 +34,42 @@ public class vsi_addScriptPlusController {
     	principalController = m;
     }
     
-    //Adiciona parêntese )
-    @FXML
+    //Adiciona parêntese ) -- Não está em uso
+    //@FXML
     void clickAddBracket(ActionEvent event) {
-    	if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
-    		String s = lvScriptPreview.getSelectionModel().getSelectedItem() + " )";
-    		ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), s);
-    		attScriptPreview();
-    	}
+    	//if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
+    	//	String s = lvScriptPreview.getSelectionModel().getSelectedItem() + " )";
+    	//	ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), s);
+    	//	attScriptPreview();
+    	//}
     }
     
-    //Remove parêntese )
-    @FXML
+    //Remove parêntese ) -- Não está em uso
+    //@FXML
     void clickRemoveBracket(ActionEvent event) {
-    	if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
-    		if(lvScriptPreview.getSelectionModel().getSelectedItem().endsWith(" )")) {
-	    		String s = lvScriptPreview.getSelectionModel().getSelectedItem();
-	    		s = s.substring(0, s.length()-2);
-	    		ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), s);
-	    		attScriptPreview();
-    		}
-    	}
+    	//if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
+    	//	if(lvScriptPreview.getSelectionModel().getSelectedItem().endsWith(" )")) {
+	    //		String s = lvScriptPreview.getSelectionModel().getSelectedItem();
+	    //		s = s.substring(0, s.length()-2);
+	    //		ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), s);
+	    //		attScriptPreview();
+    	//	}
+    	//}
     }
 
     //Adiciona for no começo da lista
     @FXML
     void clickAddFor(ActionEvent event) {
+    	boolean hasFor = false;
+    	
     	if(!ScriptPreview.isEmpty())
-	    	if(ScriptPreview.get(0) != "for(u) (") {
+    		for(int i = 0; i < ScriptPreview.size(); i++) {
+    			if(ScriptPreview.get(i).contains("for"))
+    				hasFor = true;
+    		}
+    		
+	    	//if(ScriptPreview.get(0) != "for(u) (") {
+    		if(!hasFor) {
 	    		ArrayList<String> temp = new ArrayList<>();
 	    		temp.add("for(u) (");
 	    		temp.addAll(ScriptPreview);
@@ -77,19 +85,85 @@ public class vsi_addScriptPlusController {
     void clickAddScript(ActionEvent event) {
     	String s = "";
     	int open = 0;
+    	int tab = 0;
+    	int new_tab = 0;
     	
-    	for(int i = 0; i < ScriptPreview.size(); i++) {
+    	boolean inFor = false;
+    	int nvFor = 0;
+    	
+    	//Contagem de tabs
+    	// e adição de parênteses
+    	for(int i = 0; i < ScriptPreview.size(); i++) {   		
+    		int mult = 0;
+    		char l[] = ScriptPreview.get(i).toCharArray();
+    		
+    		//Impressão de script em análise
+    		System.out.println( Integer.toString(i) + " " + ScriptPreview.get(i));
+    		
+    		while(true) {
+    			if(l[mult*8] == ' ')
+    				mult++;
+    			else
+    				break;
+    		}
+    		
+    		new_tab = mult;
+    		
+    		//Teste sde nível de identação para o for (acréscimo do u no final dos comandos)
+    		if( inFor && nvFor > new_tab) inFor = false;
+    		if(ScriptPreview.get(i).contains("for")) { inFor = true; nvFor = new_tab + 1; }
+    		
+    		
+    		if(new_tab < tab) {
+    			//adiciona " )" na string s antes de adicionar o script atual
+    			for(int k = 0; k < tab - new_tab; k++)
+    				s += ")";
+    		}
+    		
+    		//TESTE
+    		//if(inFor) System.out.println("Linha dentro do for");
+    		//else System.out.println("Linha fora do for");
+    		
+    		//adiciona linha atual no script
     		s += ScriptPreview.get(i).trim();
-    		if(i != ScriptPreview.size()-1)
+    		
+    		//adiciona u caso esteja dentro de um for e o comando o use
+    		if(inFor && s.toCharArray()[s.length()-1] == ')') {
+    			if( !ScriptPreview.get(i).contains("train") ){ //não coloca caso o comando não aceite o ,u)
+	    			s = s.substring(0,s.length()-1);
+	    			s += ",u)"; 
+    			}
+    		}
+    		//System.out.println("Último caracteres:");
+    		//System.out.println(s.toCharArray()[s.length()-1]);
+    		
+    		if( i != ScriptPreview.size() - 1)
     			s += " ";
+    		else {
+    			char ll[] = ScriptPreview.get(i).toCharArray();
+    			if(ll[0] == ' ')
+    				for(int k = 0; k < new_tab; k++)
+    					s += ")";
+    		}
+    		
+    		
+    		tab = new_tab;
+    		mult = 0;
     	}
-
+    	
+    	//Impressão da string completa s
+    	System.out.println("Script completo:");
     	System.out.println(s);
+    	System.out.println();
+
+    	//Contagem de parênteses
     	char sc[] = s.toCharArray();
     	for(int i = 0; i < s.length(); i++) {
     		if(sc[i] == '(') open++;
     		else if(sc[i] == ')') open--;
     	}
+    	//Mensagem de falta de parênteses caso o número esteja errado
+    	// adiciona na lista principal se estiver correto
     	if(open == 0) {
     		txtAlert.setOpacity(0.0);
     		
@@ -113,10 +187,7 @@ public class vsi_addScriptPlusController {
     		String a = lvScriptPreview.getSelectionModel().getSelectedItem();
     		String a1, a2 = "";
     		
-    		System.out.println("Entrou no Down");
-    		
     		if(itr1.next() != a) {
-    			System.out.println("Entrou no primeiro if");
     			
     			while(itr1.hasNext()) {
     				if(itr1.next() == a) {

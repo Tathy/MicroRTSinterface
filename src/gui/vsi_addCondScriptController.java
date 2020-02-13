@@ -58,7 +58,7 @@ public class vsi_addCondScriptController {
     @FXML
     private JFXRadioButton rbHaveQtdEnemiesbyType;
     @FXML
-    private JFXRadioButton HaveQtdUnitsAttacking;
+    private JFXRadioButton rbHaveQtdUnitsAttacking;
     @FXML
     private JFXRadioButton rbHaveEnemiesStrongest;
     @FXML
@@ -163,7 +163,7 @@ public class vsi_addCondScriptController {
 	        	txtQntDistEnemy.setText("Quantity");
 	       		edtCondEnemyQnt.setDisable(false);
 	       		
-        	}else if(HaveQtdUnitsAttacking.isSelected()) {
+        	}else if(rbHaveQtdUnitsAttacking.isSelected()) {
         		tbCondEnemyWorker.setDisable(false);
         		tbCondEnemyLight.setDisable(false);
         		tbCondEnemyHeavy.setDisable(false);
@@ -219,7 +219,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -249,15 +249,15 @@ public class vsi_addCondScriptController {
     				
     				//Type
     	    		if(tbCondAllyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondAllyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondAllyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondAllyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -272,15 +272,15 @@ public class vsi_addCondScriptController {
 
     				//Type
     	    		if(tbCondAllyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondAllyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondAllyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondAllyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -307,7 +307,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -343,7 +343,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -373,15 +373,15 @@ public class vsi_addCondScriptController {
     				
     				//Type
     	    		if(tbCondAllyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondAllyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondAllyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondAllyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -396,15 +396,15 @@ public class vsi_addCondScriptController {
 
     				//Type
     	    		if(tbCondAllyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondAllyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondAllyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondAllyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -431,7 +431,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -456,7 +456,6 @@ public class vsi_addCondScriptController {
     		
     		//HaveQtdEnemiesbyType
     		if( rbHaveQtdEnemiesbyType.isSelected() ) {
-    			System.out.println("teste HaveQtdEnemiesbyType");
     			s += "HaveQtdEnemiesbyType(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -475,7 +474,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -483,8 +482,7 @@ public class vsi_addCondScriptController {
     		}
     		
     		//HaveQtdEnemiesAttacking
-    		else if( HaveQtdUnitsAttacking.isSelected() ) {
-    			System.out.println("teste HaveQtdEnemiesAttacking");
+    		else if( rbHaveQtdUnitsAttacking.isSelected() ) {
     			s += "HaveQtdUnitsAttacking(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -503,7 +501,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -512,22 +510,21 @@ public class vsi_addCondScriptController {
     		
     		//HaveEnemiesStrongest
     		else if( rbHaveEnemiesStrongest.isSelected() ) {
-    			System.out.println("teste HaveEnemiesStrongest");
     			s += "HaveEnemiesStrongest(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
     				
     				//Type
     	    		if(tbCondEnemyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondEnemyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondEnemyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondEnemyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -536,22 +533,21 @@ public class vsi_addCondScriptController {
     		
     		//HaveEnemiesinUnitsRange
     		else if( rbHaveEnemiesinUnitsRange.isSelected() ) {
-    			System.out.println("teste HaveEnemiesinUnitsRange");
     			s += "HaveEnemiesinUnitsRange(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
     				
     				//Type
     	    		if(tbCondEnemyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondEnemyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondEnemyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondEnemyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -570,7 +566,6 @@ public class vsi_addCondScriptController {
     		
     		//HaveQtdEnemiesbyType
     		if( rbHaveQtdEnemiesbyType.isSelected() ) {
-    			System.out.println("teste HaveQtdEnemiesbyType");
     			s += "HaveQtdEnemiesbyType(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -589,7 +584,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -597,8 +592,7 @@ public class vsi_addCondScriptController {
     		}
     		
     		//HaveQtdEnemiesAttacking
-    		else if( HaveQtdUnitsAttacking.isSelected() ) {
-    			System.out.println("teste HaveQtdUnitsAttacking");
+    		else if( rbHaveQtdUnitsAttacking.isSelected() ) {
     			s += "HaveQtdUnitsAttacking(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -617,7 +611,7 @@ public class vsi_addCondScriptController {
         				s += "All,";
     	    		
     	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ",u)";
+    	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -626,22 +620,21 @@ public class vsi_addCondScriptController {
     		
     		//HaveEnemiesStrongest
     		else if( rbHaveEnemiesStrongest.isSelected() ) {
-    			System.out.println("teste HaveEnemiesStrongest");
     			s += "HaveEnemiesStrongest(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
     				
     				//Type
     	    		if(tbCondEnemyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondEnemyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondEnemyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondEnemyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";
@@ -650,22 +643,21 @@ public class vsi_addCondScriptController {
     		
     		//HaveEnemiesinUnitsRange
     		else if( rbHaveEnemiesinUnitsRange.isSelected() ) {
-    			System.out.println("teste HaveEnemiesinUnitsRange");
     			s += "HaveEnemiesinUnitsRange(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
     				
     				//Type
     	    		if(tbCondEnemyWorker.isSelected())
-        				s += "Worker,u)";
+        				s += "Worker)";
         			else if(tbCondEnemyLight.isSelected())
-        				s += "Light,u)";
+        				s += "Light)";
         			else if(tbCondEnemyHeavy.isSelected())
-        				s += "Heavy,u)";
+        				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
-        				s += "Ranged,u)";
+        				s += "Ranged)";
         			else if(tbCondEnemyAll.isSelected())
-        				s += "All,u)";
+        				s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ") (";

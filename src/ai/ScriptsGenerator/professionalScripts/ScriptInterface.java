@@ -216,43 +216,6 @@ public class ScriptInterface {
     
     //atualiza a IA de acordo com seu ID e nome pela interface
     public static AI attAI(UnitTypeTable utt, int id) {
-    	/*
-    	if(id == 1) {
-	    	String a1 = Context.getInstance().getAI1();
-	    	if(a1 == "Passive")
-	    		return new PassiveAI(utt);
-	    	else if(a1 == "Worker Rush")
-	    		return new WorkerRush(utt);
-	    	else if(a1 == "Light Rush")
-	    		return new LightRush(utt);
-	    	else if(a1 == "Ranged Rush")
-	    		return new RangedRush(utt);
-	    	else if(a1 == "Heavy Rush")
-	    		return new HeavyRush(utt);
-	    	else if(a1 == "Chromosome")
-	    		return new Script_Template(utt);
-	    	return new PassiveAI();
-    	}
-    	
-    	if(id == 2) {
-    		String a2 = Context.getInstance().getAI2();
-	    	if(a2 == "Passive")
-	    		return new PassiveAI(utt);
-	    	else if(a2 == "Worker Rush")
-	    		return new WorkerRush(utt);
-	    	else if(a2 == "Light Rush")
-	    		return new LightRush(utt);
-	    	else if(a2 == "Ranged Rush")
-	    		return new RangedRush(utt);
-	    	else if(a2 == "Heavy Rush")
-	    		return new HeavyRush(utt);
-	    	else if(a2 == "Chromosome")
-	    		return new Script_Template(utt);
-	    	return new PassiveAI();
-    	}
-    	
-    	return new PassiveAI();
-    	*/
     	return new Script_Template(utt);
     }
 
