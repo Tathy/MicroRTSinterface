@@ -385,8 +385,9 @@ public class VisualScriptInterfaceController implements Initializable {
 		        try {
 		            File file = new File(fname);
 		            writer = new BufferedWriter(new FileWriter(file));
-		            for(String f: Context.getInstance().getScritpsAi1())
+		            for(String f: Context.getInstance().getScritpsAi1()) {
 		            	writer.write(f + "\n");
+		            }
  		        } catch (Exception e) {
 		            e.printStackTrace();
 		        } finally {

@@ -71,7 +71,7 @@ public class vsi_addScriptPlusController {
 	    	//if(ScriptPreview.get(0) != "for(u) (") {
     		if(!hasFor) {
 	    		ArrayList<String> temp = new ArrayList<>();
-	    		temp.add("for(u) (");
+	    		temp.add("for(u)");
 	    		temp.addAll(ScriptPreview);
 	    		
 	    		ScriptPreview.clear();
@@ -98,7 +98,7 @@ public class vsi_addScriptPlusController {
     		char l[] = ScriptPreview.get(i).toCharArray();
     		
     		//Impressão de script em análise
-    		System.out.println( Integer.toString(i) + " " + ScriptPreview.get(i));
+    		//System.out.println( Integer.toString(i) + " " + ScriptPreview.get(i));
     		
     		while(true) {
     			if(l[mult*8] == ' ')
@@ -113,11 +113,19 @@ public class vsi_addScriptPlusController {
     		if( inFor && nvFor > new_tab) inFor = false;
     		if(ScriptPreview.get(i).contains("for")) { inFor = true; nvFor = new_tab + 1; }
     		
+    		if(i > 0) {
+    			if(ScriptPreview.get(i-1).contains("for"))
+    				s += "(";
+    			else if(ScriptPreview.get(i-1).contains("if"))
+    				s += "(";
+    		}
     		
     		if(new_tab < tab) {
-    			//adiciona " )" na string s antes de adicionar o script atual
+    			//adiciona ")" na string s antes de adicionar o script atual
+    			s = s.substring(0,s.length()-1);
     			for(int k = 0; k < tab - new_tab; k++)
     				s += ")";
+    			s += " ";
     		}
     		
     		//TESTE
@@ -129,9 +137,14 @@ public class vsi_addScriptPlusController {
     		
     		//adiciona u caso esteja dentro de um for e o comando o use
     		if(inFor && s.toCharArray()[s.length()-1] == ')') {
-    			if( !ScriptPreview.get(i).contains("train") ){ //não coloca caso o comando não aceite o ,u)
+    			if( !ScriptPreview.get(i).contains("train") && !ScriptPreview.get(i).contains("for") && !ScriptPreview.get(i).contains("if")){ //não coloca caso o comando não aceite o ,u)
 	    			s = s.substring(0,s.length()-1);
 	    			s += ",u)"; 
+    			}
+    			
+    			if(ScriptPreview.get(i).contains("if")) {
+    				s = s.substring(0,s.length()-2);
+    				s += ",u))";
     			}
     		}
     		//System.out.println("Último caracteres:");
@@ -162,6 +175,11 @@ public class vsi_addScriptPlusController {
     		if(sc[i] == '(') open++;
     		else if(sc[i] == ')') open--;
     	}
+    	
+    	//System.out.println("Script que vai ser adicionado: ");
+    	//System.out.println(s);
+    	//System.out.println();
+    	
     	//Mensagem de falta de parênteses caso o número esteja errado
     	// adiciona na lista principal se estiver correto
     	if(open == 0) {

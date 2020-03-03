@@ -222,7 +222,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -237,7 +237,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -260,7 +260,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -283,7 +283,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -310,7 +310,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -346,7 +346,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -361,7 +361,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -384,7 +384,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -407,7 +407,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -434,7 +434,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -477,7 +477,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -504,7 +504,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -527,7 +527,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -550,7 +550,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -587,7 +587,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -614,7 +614,7 @@ public class vsi_addCondScriptController {
     	    		s += Integer.toString(q) + ")";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -637,7 +637,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
@@ -660,7 +660,7 @@ public class vsi_addCondScriptController {
         				s += "All)";
     	    		
     	    		//String provisória, apagar depois
-    	    		s += ") (";
+    	    		s += ")";
     			}
     		}
     		
