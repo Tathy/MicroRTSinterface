@@ -64,7 +64,9 @@ import ai.cluster.CIA_TDLearning;
 import ai.competition.IzanagiBot.Izanagi;
 import ai.competition.capivara.Capivara;
 import ai.competition.capivara.CmabAssymetricMCTS;
+//import ai.competition.dropletGNS.Droplet;
 import ai.competition.tiamat.Tiamat;
+//import ai.competition.tiamat.mixedBotmRTS.MixedBot;
 import ai.configurablescript.BasicExpandedConfigurableScript;
 import ai.configurablescript.ScriptsCreator;
 import ai.evaluation.EvaluationFunctionForwarding;
@@ -132,7 +134,7 @@ public class GameVisualSimulationTest {
         int PERIOD = 20;
         boolean gameover = false;
 
-        //AI ai1 = new RangedRush(utt);
+        AI ai1 = new RangedRush(utt);
         //AI ai1 = new LightRush(utt);
         //AI ai1 = new HeavyRush(utt);
         //AI ai1 = new PassiveAI();
@@ -187,7 +189,9 @@ public class GameVisualSimulationTest {
         //AI ai1 = new Izanagi(utt);
         //AI ai1 = new PGSmRTS_Paralel_JulianTest(utt);
         //AI ai1 = new PGSmRTS_Paralel_SandBox(utt);
-        AI ai1 = new SSSDavid(utt, 1);
+        //AI ai1 = new SSSDavid(utt, 5);
+        //AI ai1 = new Droplet(utt);
+        //AI ai1 = new MixedBot(utt);
 
         AI ai2 = new CmabAssymetricMCTS(100, -1, 50, 2, 0.3f, 0.0f, 0.4f, 0, new RandomBiasedAI(utt),
                         new SimpleSqrtEvaluationFunction3(), true, utt, "ManagerClosestEnemy", 1,

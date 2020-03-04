@@ -27,7 +27,7 @@ public class Context {
 	private boolean applyScripts = false;
 	
 	// Map
-	private String map = "maps/24x24/basesWorkers24x24A.xml";
+	private String map = "maps/RangedHeavyMixed.xml";
 	ArrayList<String> scriptsAi1 = new ArrayList<>();
 	ArrayList<String> scriptsAi2 = new ArrayList<>();
 	

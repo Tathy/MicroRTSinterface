@@ -19,6 +19,7 @@ import ai.configurablescript.ScriptsCreator;
 import gui.PhysicalGameStatePanel;
 import gui.PhysicalGameStateScriptInterfaceJFrame;
 import model.Context;
+import ai.ScriptsGenerator.professionalScripts.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -173,7 +174,6 @@ public class ScriptInterface {
 			        nextTimeToUpdate = System.currentTimeMillis() + PERIOD;
 		        	Context.getInstance().setApply(false);
 		        } */
-		        System.out.println("teste restart");
 		        
 	        //}while(Context.getInstance().isPaused());
 	        }while(Context.getInstance().isRestarted());

@@ -184,6 +184,7 @@ public class VisualScriptInterfaceController implements Initializable {
         MapPath map10 = new MapPath("24x24 - Double Game","maps/DoubleGame24x24.xml");
         MapPath map11 = new MapPath("8x8 - Bases Workers Obstacle","maps/8x8/basesWorkers8x8Obstacle.xml");
         MapPath map12 = new MapPath("8x8 - Bases Workers A","maps/8x8/basesWorkers8x8A.xml");
+        MapPath map13 = new MapPath("18x8 - 1 Base", "maps/RangedHeavyMixed.xml");
         
         maps.add(map1);
         maps.add(map2);
@@ -196,6 +197,7 @@ public class VisualScriptInterfaceController implements Initializable {
         maps.add(map10);
         maps.add(map11);
         maps.add(map12);
+        maps.add(map13);
 		
 		obsMaps = FXCollections.observableArrayList(maps);
 		cbMaps.setItems(obsMaps);

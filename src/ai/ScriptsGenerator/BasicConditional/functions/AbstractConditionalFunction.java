@@ -9,7 +9,11 @@ import ai.ScriptsGenerator.Command.Enumerators.EnumTypeUnits;
 import ai.ScriptsGenerator.IParameters.IParameters;
 import ai.ScriptsGenerator.ParametersConcrete.UnitTypeParam;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+
 import rts.GameState;
 import rts.PlayerAction;
 import rts.units.Unit;
@@ -89,4 +93,6 @@ public abstract class AbstractConditionalFunction implements IConditionalFunctio
         
         return null;
     }
+    
+
 }
