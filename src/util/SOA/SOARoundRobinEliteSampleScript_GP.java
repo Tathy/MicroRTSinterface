@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author rubens Classe utilizada para gerir o serviço SOA para testes
@@ -82,6 +84,7 @@ public class SOARoundRobinEliteSampleScript_GP {
         //ler o arquivo e pegar a linha com dados
         String config = getLinha(arquivo);
         String[] itens = config.split("#");
+        JFrame w = new JFrame();
         
         if(fileIsScriptedAI(arquivo)){
             RoundRobinScriptedAIMatch scriptMatch = new RoundRobinScriptedAIMatch(pathTableScripts, pathLogsUsedCommands);
@@ -101,7 +104,7 @@ public class SOARoundRobinEliteSampleScript_GP {
                 return control.run(itens[0].trim(),
                         itens[1].trim(),
                         Integer.decode(itens[2]),
-                        Integer.decode(itens[3]), pathLog, map);
+                        Integer.decode(itens[3]), pathLog, map, w);
             } catch (Exception ex) {
                 Logger.getLogger(SOARoundRobinEliteSampleScript_GP.class.getName()).log(Level.SEVERE, null, ex);
             }
