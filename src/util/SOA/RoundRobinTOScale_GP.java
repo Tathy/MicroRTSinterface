@@ -71,7 +71,7 @@ public class RoundRobinTOScale_GP {
         buildScriptsTable("2");
     }
 
-    public boolean run(String tupleAi1, String tupleAi2, Integer IDMatch, Integer Generation, String pathLog, int iMap, JFrame w) throws Exception {
+    public boolean run(String tupleAi1, String tupleAi2, Integer IDMatch, Integer Generation, String pathLog, int iMap) throws Exception {
         ArrayList<String> log = new ArrayList<>();
         //controle de tempo
         Instant timeInicial = Instant.now();
@@ -87,10 +87,10 @@ public class RoundRobinTOScale_GP {
                 //"maps/32x32/basesWorkers32x32A.xml"
                 "maps/8x8/basesWorkers8x8A.xml"	////
         		//"maps/NoWhereToRun9x8.xml"
-        //"maps/BroodWar/(4)BloodBath.scmB.xml"
+        		//"maps/BroodWar/(4)BloodBath.scmB.xml"
         		//"maps/16x16/basesWorkers16x16A.xml"
         		//"maps/BroodWar/(4)EmpireoftheSun.scmB.xml"
-        		//"maps/battleMaps/Others/RangedHeavyMixed.xml"
+        		//"maps/RangedHeavyMixed.xml"
         ));
 
         UnitTypeTable utt = new UnitTypeTable();
@@ -98,7 +98,7 @@ public class RoundRobinTOScale_GP {
         GameState gs = new GameState(pgs, utt);
         
         // TESTE VISUAL
-        w = PhysicalGameStatePanel.newVisualizer(gs, 720, 720, false, PhysicalGameStatePanel.COLORSCHEME_BLACK);
+        //w = PhysicalGameStatePanel.newVisualizer(gs, 720, 720, false, PhysicalGameStatePanel.COLORSCHEME_BLACK);
         
         int MAXCYCLES = 20000;
         int PERIOD = 20;
@@ -125,9 +125,9 @@ public class RoundRobinTOScale_GP {
         if (pgs.getHeight() == 128) {
             MAXCYCLES = 17000;
         }
-        
-        // TIRAR----------------------------------------------------------------------------------------------------------- !!!!
-        MAXCYCLES = 600;
+
+        // MAXCYCLES pequeno para testes locais
+        //MAXCYCLES = 600;
 
         //decompõe a tupla
         ArrayList<Integer> iScriptsAi1 = new ArrayList<>();
@@ -249,7 +249,7 @@ public class RoundRobinTOScale_GP {
                 gs.issueSafe(pa2);
                 
                 //TESTE VISUAL
-                w.repaint();
+                //w.repaint();
 
                 // simulate:
                 gameover = gs.cycle();
@@ -295,10 +295,10 @@ public class RoundRobinTOScale_GP {
         gravarLog(log, tupleAi1, tupleAi2, stMatch, Generation, pathLog);
         
         //System.exit(0);
-        recordGrammars(createFullString(scriptsRun1, iScriptsAi1));
-        recordGrammars(createFullString(scriptsRun2, iScriptsAi2));
+        recordGrammars(createFullString(scriptsRun1, iScriptsAi1), "1");
+        recordGrammars(createFullString(scriptsRun2, iScriptsAi2), "2");
         
-        w.dispose();
+        //w.dispose();
         return true;
     }
 
@@ -374,7 +374,7 @@ public class RoundRobinTOScale_GP {
 
     public HashMap<BigDecimal, String> buildScriptsTable(String id) {
     	HashMap<BigDecimal, String> scriptsTable = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "/ScriptsTable" + id + ".txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "ScriptsTable" + id + ".txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String code = line.substring(line.indexOf(" "), line.length());
@@ -453,19 +453,18 @@ public class RoundRobinTOScale_GP {
 		return listOfCompleteStrings;
     }
     
-    private void recordGrammars(List<String> listOfCompleteStrings) {
+    private void recordGrammars(List<String> listOfCompleteStrings, String id) {
     	File pathCommandsUsed = new File(pathLogsUsedCommands);
         if (!pathCommandsUsed.exists()) {
         	pathCommandsUsed.mkdir();
         }
         
-    	try(FileWriter fw = new FileWriter(pathLogsUsedCommands+"LogsGrammars.txt", true);
+    	try(FileWriter fw = new FileWriter(pathLogsUsedCommands+"LogsGrammars" + id + ".txt", true);
     		    BufferedWriter bw = new BufferedWriter(fw);
     			PrintWriter out = new PrintWriter(bw))
     		{	
 
-    		for(String str :listOfCompleteStrings)
-    		{
+    		for(String str :listOfCompleteStrings){
     			out.println(str);
     		}
 

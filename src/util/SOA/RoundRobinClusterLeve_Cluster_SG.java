@@ -359,7 +359,7 @@ public class RoundRobinClusterLeve_Cluster_SG {
 
         scriptsTable = new HashMap<BigDecimal, ArrayList<Integer>>();
         ArrayList<Integer> idsRulesList;
-        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "/ScriptsTable.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "ScriptsTable.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 idsRulesList = new ArrayList<>();

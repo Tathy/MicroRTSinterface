@@ -26,16 +26,16 @@ public class SOARoundRobinTOScale_GP {
 
     public static void main(String args[]) throws Exception {
     	// Caminho da pasta /configSOA/SOA1
-        //String pathSOA = args[0];
-    	String pathSOA = "C:/Users/tassi/Documents/Teste Local microRTS-GA/configSOA/SOA1";
+        String pathSOA = args[0];
+    	//String pathSOA = "C:/Users/tassi/Documents/Teste Local microRTS-GA/configSOA/SOA1";
         
         // Caminho da pasta /logs
-        //String pathLog = args[1];
-        String pathLog = "C:/Users/tassi/Documents/Teste Local microRTS-GA/logs/";
+        String pathLog = args[1];
+        //String pathLog = "C:/Users/tassi/Documents/Teste Local microRTS-GA/logs/";
         
         // Caminho da pasta /commandsUsed/COMM1
-        //pathLogsUsedCommands = args[2];
-        pathLogsUsedCommands = "C:/Users/tassi/Documents/Teste Local microRTS-GA/commandsUsed/COMM1/";
+        pathLogsUsedCommands = args[2];
+        //pathLogsUsedCommands = "C:/Users/tassi/Documents/Teste Local microRTS-GA/commandsUsed/COMM1/";
         
         int qtdMapas = 1;
         
@@ -90,14 +90,15 @@ public class SOARoundRobinTOScale_GP {
         //ler o arquivo e pegar a linha com dados
         String config = getLinha(arquivo);
         String[] itens = config.split("#");
-        JFrame w = new JFrame();
+        // VISUAL
+        //JFrame w = new JFrame();
 
         RoundRobinTOScale_GP control = new RoundRobinTOScale_GP(pathTableScripts,pathLogsUsedCommands); ////
         try {
             return control.run(itens[0].trim(),
                     itens[1].trim(),
                     Integer.decode(itens[2]),
-                    Integer.decode(itens[3]), pathLog, map, w);
+                    Integer.decode(itens[3]), pathLog, map); //, w);
         } catch (Exception ex) {
             Logger.getLogger(SOARoundRobinTOScale_GP.class.getName()).log(Level.SEVERE, null, ex);
         }

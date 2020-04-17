@@ -271,7 +271,7 @@
                               <Insets />
                            </VBox.margin>
                         </Text>
-                        <ComboBox id="scroll-cb" fx:id="cbMaps" opacity="0.35" prefHeight="31.0" prefWidth="230.0" promptText="18x8 - 1 Base" style="-fx-background-color: WHITE; -fx-background-radius: 50px;" stylesheets="@CSS/main-screen.css">
+                        <ComboBox id="scroll-cb" fx:id="cbMaps" opacity="0.35" prefHeight="31.0" prefWidth="230.0" promptText="18x8 - Ranged Heavy Mixed" style="-fx-background-color: WHITE; -fx-background-radius: 50px;" stylesheets="@CSS/main-screen.css">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>

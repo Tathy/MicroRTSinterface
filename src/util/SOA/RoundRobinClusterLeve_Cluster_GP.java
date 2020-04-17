@@ -545,7 +545,7 @@ public class RoundRobinClusterLeve_Cluster_GP {
 
     public HashMap<BigDecimal, String> buildScriptsTable(HashMap<BigDecimal, String> tabl, String complement) {
     	tabl = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "/ScriptsTable_"+complement+".txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "ScriptsTable_"+complement+".txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String code = line.substring(line.indexOf(" "), line.length());
