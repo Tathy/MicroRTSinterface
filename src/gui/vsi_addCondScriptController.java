@@ -88,6 +88,12 @@ public class vsi_addCondScriptController {
     @FXML
     private Text txtQntDistEnemy;
     
+    // Alerts
+    @FXML
+    private Text txtAlertEnemies;
+    @FXML
+    private Text txtAlertAllies;
+    
     
     
     public void init(VisualScriptInterfaceController m) {
@@ -101,7 +107,7 @@ public class vsi_addCondScriptController {
     @FXML
     void verifyParameters(ActionEvent event) {
     	
-    	//define quais estruturas devem ficar ativadas ou não
+    	//define quais estruturas devem ficar ativadas ou nï¿½o
     	//aba Allies
     	if(groupConditionalAllies.getSelectedToggle() != null) {
 
@@ -148,6 +154,14 @@ public class vsi_addCondScriptController {
 	       		txtQntDistAlly.setText("Distance");
 	       		edtCondAllyQnt.setDisable(false);
 	        		
+	       	}else if(rbHaveQtdUnitsAttacking.isSelected()) {
+        		tbCondEnemyWorker.setDisable(false);
+        		tbCondEnemyLight.setDisable(false);
+        		tbCondEnemyHeavy.setDisable(false);
+        		tbCondEnemyRanged.setDisable(false);
+        		tbCondEnemyAll.setDisable(false);
+        		txtQntDistEnemy.setText("Quantity");
+	       		edtCondEnemyQnt.setDisable(false);
 	       	}
     	}
     	
@@ -161,15 +175,6 @@ public class vsi_addCondScriptController {
 	        	tbCondEnemyRanged.setDisable(false);
 	        	tbCondEnemyAll.setDisable(false);
 	        	txtQntDistEnemy.setText("Quantity");
-	       		edtCondEnemyQnt.setDisable(false);
-	       		
-        	}else if(rbHaveQtdUnitsAttacking.isSelected()) {
-        		tbCondEnemyWorker.setDisable(false);
-        		tbCondEnemyLight.setDisable(false);
-        		tbCondEnemyHeavy.setDisable(false);
-        		tbCondEnemyRanged.setDisable(false);
-        		tbCondEnemyAll.setDisable(false);
-        		txtQntDistEnemy.setText("Quantity");
 	       		edtCondEnemyQnt.setDisable(false);
 	       		
         	}else if(rbHaveEnemiesStrongest.isSelected()) {
@@ -195,12 +200,15 @@ public class vsi_addCondScriptController {
     
     @FXML
     void clickBtnAddCondAllies(ActionEvent event) {
+    	principalController.checkSelectedTab();
     	String s = "if(";
+    	boolean validCommand = false;
     	
     	if(Context.getInstance().getAbaAddScript() == 1) {
     		
     		//HaveQtdUnitsbyType
-    		if( rbHaveQtdUnitsbyType.isSelected() ) {
+    		if( rbHaveQtdUnitsbyType.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
     			s += "HaveQtdUnitsbyType(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -221,13 +229,20 @@ public class vsi_addCondScriptController {
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdUnitsbyType.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
+    			
     		}
     		
-    		//HaveQtdUnitsHarvesting
-    		else if( rbHaveQtdUnitsHarversting.isSelected() ) {
+    		//HaveQtdUnitsHarversting
+    		if( rbHaveQtdUnitsHarversting.isSelected() && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
     			s += "HaveQtdUnitsHarversting(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -236,13 +251,19 @@ public class vsi_addCondScriptController {
     	    		//Quantity
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisÃ³ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdUnitsHarversting.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
     		//HaveUnitsStrongest
-    		else if( rbHaveUnitsStrongest.isSelected() ) {
+    		if( rbHaveUnitsStrongest.isSelected() && groupCondAllyTypes.getSelectedToggle() != null) {
+    			validCommand = true;
     			s += "HaveUnitsStrongest(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -259,13 +280,19 @@ public class vsi_addCondScriptController {
         			else if(tbCondAllyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisÃ³ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveUnitsStrongest.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
     		//HaveUnitsinEnemyRange
-    		else if( rbHaveUnitsinEnemyRange.isSelected() ) {
+    		if( rbHaveUnitsinEnemyRange.isSelected() && groupCondAllyTypes.getSelectedToggle() != null ) {
+    			validCommand = true;
     			s += "HaveUnitsinEnemyRange(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -282,13 +309,19 @@ public class vsi_addCondScriptController {
         			else if(tbCondAllyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisÃ³ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveUnitsinEnemyRange.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
     		//HaveUnitsToDistantToEnemy
-    		else if( rbHaveUnitsToDistantToEnemy.isSelected() ) {
+    		if( rbHaveUnitsToDistantToEnemy.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
     			s += "HaveUnitsToDistantToEnemy(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -309,22 +342,63 @@ public class vsi_addCondScriptController {
     	    		//Distance
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveUnitsToDistantToEnemy.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
-    		//Atualização das listas
-			if(principalController != null) {
-				Context.getInstance().addScriptAI1(s);
-				principalController.attListViewAI1();
-			}else if(addPlusController != null) {
-				addPlusController.addListViewFuncList(s);
-			}
+    		//HaveQtdUnitsAttacking
+    		if( rbHaveQtdUnitsAttacking.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
+    			s += "HaveQtdUnitsAttacking(";
+    			
+    			if(groupConditionalAllies.getSelectedToggle() != null) {
+    				Integer q = Integer.parseInt(edtCondAllyQnt.getText());
+    				
+    				//Type
+    	    		if(tbCondEnemyWorker.isSelected())
+        				s += "Worker,";
+        			else if(tbCondEnemyLight.isSelected())
+        				s += "Light,";
+        			else if(tbCondEnemyHeavy.isSelected())
+        				s += "Heavy,";
+        			else if(tbCondEnemyRanged.isSelected())
+        				s += "Ranged,";
+        			else if(tbCondEnemyAll.isSelected())
+        				s += "All,";
+    	    		
+    	    		//Quantity or Distance
+    	    		s += Integer.toString(q) + ")";
+    	    		
+    	    		//String provisÃ³ria, apagar depois
+    	    		s += ")";
+    			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdUnitsAttacking.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
+    		}
+    		
+    		//AtualizaÃ§Ã£o das listas
+    		if(validCommand == true) {
+				if(addPlusController != null) {
+					addPlusController.addListViewFuncList(s);
+				} else if(principalController != null){
+					Context.getInstance().addScriptAI1(s);
+					principalController.attListViewAI1();
+				}
+    		}
     		
     	}else if(Context.getInstance().getAbaAddScript() == 2) {
     		//HaveQtdUnitsbyType
-    		if( rbHaveQtdUnitsbyType.isSelected() ) {
+    		if( rbHaveQtdUnitsbyType.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
     			s += "HaveQtdUnitsbyType(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -345,14 +419,20 @@ public class vsi_addCondScriptController {
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisÃ³ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdUnitsbyType.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
-    		//HaveQtdUnitsHarvesting
-    		else if( rbHaveQtdUnitsHarversting.isSelected() ) {
-    			s += "HaveQtdUnitsHarvesting(";
+    		//HaveQtdUnitsHarversting
+    		if( rbHaveQtdUnitsHarversting.isSelected() && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
+    			s += "HaveQtdUnitsHarversting(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
     				Integer q = Integer.parseInt(edtCondAllyQnt.getText());
@@ -360,13 +440,19 @@ public class vsi_addCondScriptController {
     	    		//Quantity
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdUnitsHarversting.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
     		//HaveUnitsStrongest
-    		else if( rbHaveUnitsStrongest.isSelected() ) {
+    		if( rbHaveUnitsStrongest.isSelected() && groupCondAllyTypes.getSelectedToggle() != null ) {
+    			validCommand = true;
     			s += "HaveUnitsStrongest(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -383,13 +469,19 @@ public class vsi_addCondScriptController {
         			else if(tbCondAllyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveUnitsStrongest.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
     		//HaveUnitsinEnemyRange
-    		else if( rbHaveUnitsinEnemyRange.isSelected() ) {
+    		if( rbHaveUnitsinEnemyRange.isSelected() && groupCondAllyTypes.getSelectedToggle() != null ) {
+    			validCommand = true;
     			s += "HaveUnitsinEnemyRange(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -406,13 +498,19 @@ public class vsi_addCondScriptController {
         			else if(tbCondAllyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveUnitsinEnemyRange.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
     		//HaveUnitsToDistantToEnemy
-    		else if( rbHaveUnitsToDistantToEnemy.isSelected() ) {
+    		if( rbHaveUnitsToDistantToEnemy.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
     			s += "HaveUnitsToDistantToEnemy(";
     			
     			if(groupConditionalAllies.getSelectedToggle() != null) {
@@ -433,29 +531,72 @@ public class vsi_addCondScriptController {
     	    		//Distance
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveUnitsToDistantToEnemy.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
     		}
     		
-    		//Atualização das listas
-			if(principalController != null) {
-				Context.getInstance().addScriptAI2(s);
-				principalController.attListViewAI2();
-			}else if(addPlusController != null) {
-				addPlusController.addListViewFuncList(s);
-			}
+    		//HaveQtdUnitsAttacking
+    		if( rbHaveQtdUnitsAttacking.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
+    			s += "HaveQtdUnitsAttacking(";
+    			
+    			if(groupConditionalAllies.getSelectedToggle() != null) {
+    				Integer q = Integer.parseInt(edtCondAllyQnt.getText());
+    				
+    				//Type
+    	    		if(tbCondEnemyWorker.isSelected())
+        				s += "Worker,";
+        			else if(tbCondEnemyLight.isSelected())
+        				s += "Light,";
+        			else if(tbCondEnemyHeavy.isSelected())
+        				s += "Heavy,";
+        			else if(tbCondEnemyRanged.isSelected())
+        				s += "Ranged,";
+        			else if(tbCondEnemyAll.isSelected())
+        				s += "All,";
+    	    		
+    	    		//Quantity or Distance
+    	    		s += Integer.toString(q) + ")";
+    	    		
+    	    		//String provisÃ³ria, apagar depois
+    	    		s += ")";
+    			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdUnitsAttacking.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
+    		}
+    		
+    		//AtualizaÃ§Ã£o das listas
+    		if(validCommand == true) {
+				if(addPlusController != null) {
+					addPlusController.addListViewFuncList(s);
+				} else if(principalController != null){
+					Context.getInstance().addScriptAI2(s);
+					principalController.attListViewAI2();
+				}
+    		}
     	}
     }
     
     @FXML
     void clickBtnAddCondEnemies(ActionEvent event) {
+    	principalController.checkSelectedTab();
     	String s = "if(";
+    	boolean validCommand = false;
     	
     	if(Context.getInstance().getAbaAddScript() == 1) {
     		
     		//HaveQtdEnemiesbyType
-    		if( rbHaveQtdEnemiesbyType.isSelected() ) {
+    		if( rbHaveQtdEnemiesbyType.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null && edtCondEnemyQnt.getText() != null && !edtCondEnemyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
     			s += "HaveQtdEnemiesbyType(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -476,40 +617,19 @@ public class vsi_addCondScriptController {
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisÃ³ria, apagar depois
     	    		s += ")";
     			}
-    		}
-    		
-    		//HaveQtdEnemiesAttacking
-    		else if( rbHaveQtdUnitsAttacking.isSelected() ) {
-    			s += "HaveQtdUnitsAttacking(";
     			
-    			if(groupConditionalEnemies.getSelectedToggle() != null) {
-    				Integer q = Integer.parseInt(edtCondEnemyQnt.getText());
-    				
-    				//Type
-    	    		if(tbCondEnemyWorker.isSelected())
-        				s += "Worker,";
-        			else if(tbCondEnemyLight.isSelected())
-        				s += "Light,";
-        			else if(tbCondEnemyHeavy.isSelected())
-        				s += "Heavy,";
-        			else if(tbCondEnemyRanged.isSelected())
-        				s += "Ranged,";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All,";
-    	    		
-    	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ")";
-    	    		
-    	    		//String provisória, apagar depois
-    	    		s += ")";
-    			}
+    			txtAlertEnemies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdEnemiesbyType.isSelected() )
+    				txtAlertEnemies.setOpacity(1.0);
     		}
     		
     		//HaveEnemiesStrongest
-    		else if( rbHaveEnemiesStrongest.isSelected() ) {
+    		if( rbHaveEnemiesStrongest.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null ) {
+    			validCommand = true;
     			s += "HaveEnemiesStrongest(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -526,13 +646,19 @@ public class vsi_addCondScriptController {
         			else if(tbCondEnemyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertEnemies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveEnemiesStrongest.isSelected() )
+    				txtAlertEnemies.setOpacity(1.0);
     		}
     		
     		//HaveEnemiesinUnitsRange
-    		else if( rbHaveEnemiesinUnitsRange.isSelected() ) {
+    		if( rbHaveEnemiesinUnitsRange.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null ) {
+    			validCommand = true;
     			s += "HaveEnemiesinUnitsRange(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -549,23 +675,31 @@ public class vsi_addCondScriptController {
         			else if(tbCondEnemyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertEnemies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveEnemiesinUnitsRange.isSelected() )
+    				txtAlertEnemies.setOpacity(1.0);
     		}
     		
-    		//Atualização das listas
-			if(principalController != null) {
-				Context.getInstance().addScriptAI1(s);
-				principalController.attListViewAI1();
-			}else if(addPlusController != null) {
-				addPlusController.addListViewFuncList(s);
-			}
+    		//AtualizaÃ§Ã£o das listas
+    		if(validCommand == true) {
+				if(addPlusController != null) {
+					addPlusController.addListViewFuncList(s);
+				} else if(principalController != null){
+					Context.getInstance().addScriptAI1(s);
+					principalController.attListViewAI1();
+				}
+    		}
     		
     	}else if(Context.getInstance().getAbaAddScript() == 2) {
     		
     		//HaveQtdEnemiesbyType
-    		if( rbHaveQtdEnemiesbyType.isSelected() ) {
+    		if( rbHaveQtdEnemiesbyType.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null && edtCondEnemyQnt.getText() != null && !edtCondEnemyQnt.getText().trim().isEmpty() ) {
+    			validCommand = true;
     			s += "HaveQtdEnemiesbyType(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -586,40 +720,19 @@ public class vsi_addCondScriptController {
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
-    		}
-    		
-    		//HaveQtdEnemiesAttacking
-    		else if( rbHaveQtdUnitsAttacking.isSelected() ) {
-    			s += "HaveQtdUnitsAttacking(";
     			
-    			if(groupConditionalEnemies.getSelectedToggle() != null) {
-    				Integer q = Integer.parseInt(edtCondEnemyQnt.getText());
-    				
-    				//Type
-    	    		if(tbCondEnemyWorker.isSelected())
-        				s += "Worker,";
-        			else if(tbCondEnemyLight.isSelected())
-        				s += "Light,";
-        			else if(tbCondEnemyHeavy.isSelected())
-        				s += "Heavy,";
-        			else if(tbCondEnemyRanged.isSelected())
-        				s += "Ranged,";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All,";
-    	    		
-    	    		//Quantity or Distance
-    	    		s += Integer.toString(q) + ")";
-    	    		
-    	    		//String provisória, apagar depois
-    	    		s += ")";
-    			}
+    			txtAlertEnemies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveQtdEnemiesbyType.isSelected() )
+    				txtAlertEnemies.setOpacity(1.0);
     		}
     		
     		//HaveEnemiesStrongest
-    		else if( rbHaveEnemiesStrongest.isSelected() ) {
+    		if( rbHaveEnemiesStrongest.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null ) {
+    			validCommand = true;
     			s += "HaveEnemiesStrongest(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -636,13 +749,19 @@ public class vsi_addCondScriptController {
         			else if(tbCondEnemyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertEnemies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveEnemiesStrongest.isSelected() )
+    				txtAlertEnemies.setOpacity(1.0);
     		}
     		
     		//HaveEnemiesinUnitsRange
-    		else if( rbHaveEnemiesinUnitsRange.isSelected() ) {
+    		if( rbHaveEnemiesinUnitsRange.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null ) {
+    			validCommand = true;
     			s += "HaveEnemiesinUnitsRange(";
     			
     			if(groupConditionalEnemies.getSelectedToggle() != null) {
@@ -659,19 +778,25 @@ public class vsi_addCondScriptController {
         			else if(tbCondEnemyAll.isSelected())
         				s += "All)";
     	    		
-    	    		//String provisória, apagar depois
+    	    		//String provisï¿½ria, apagar depois
     	    		s += ")";
     			}
+    			
+    			txtAlertEnemies.setOpacity(0.0);
+    		} else {
+    			if( rbHaveEnemiesinUnitsRange.isSelected() )
+    				txtAlertEnemies.setOpacity(1.0);
     		}
     		
-    		//Atualização das listas
-			if(principalController != null) {
-				Context.getInstance().addScriptAI2(s);
-				principalController.attListViewAI2();
-			}else if(addPlusController != null) {
-				addPlusController.addListViewFuncList(s);
-			}
-    		
+    		//AtualizaÃ§Ã£o das listas
+    		if(validCommand == true) {
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
+    		}
     		
     	}
     	

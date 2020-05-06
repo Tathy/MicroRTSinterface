@@ -164,7 +164,7 @@ public class VisualScriptInterfaceController implements Initializable {
     
  
     
-    // Inicialização da interface
+    // Inicializaï¿½ï¿½o da interface
 	public void initialize(URL location, ResourceBundle resources) {
 		loadMaps();		
 		
@@ -305,17 +305,8 @@ public class VisualScriptInterfaceController implements Initializable {
 	
 	@FXML
 	void clickBtnAdd(ActionEvent event) throws IOException {
-		
-		if(tabScripts1.isSelected()) {
-			Context.getInstance().setAbaAddScript(1);
-		} else if(tabScripts2.isSelected()) {
-			Context.getInstance().setAbaAddScript(2);
-		} else {
-			System.out.println("clickBtnAdd com valor inválido");
-			Context.getInstance().setAbaAddScript(1);
-		}
-		
-		
+		checkSelectedTab();
+
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addScript.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
@@ -340,19 +331,13 @@ public class VisualScriptInterfaceController implements Initializable {
 	
 	@FXML
 	void clickBtnLoad(ActionEvent event) throws IOException {
-		
-		if(tabScripts1.isSelected()) {
-			Context.getInstance().setAbaAddScript(1);
-		} else if(tabScripts2.isSelected()) {
-			Context.getInstance().setAbaAddScript(2);
-		} else {
-			System.out.println("clickBtnAdd com valor inválido");
-			Context.getInstance().setAbaAddScript(1);
-		}
-		
+		checkSelectedTab();
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_loadScript.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
+		
+		//vsi_loadScriptController loadScriptController = fxmlLoader.getController();
+		//loadScriptController.init(this);
 		
 		Stage stage = new Stage();
 		stage.setTitle("Load Script");
@@ -416,7 +401,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		            }
 		        }
 			} else {
-				System.out.println("clickBtnAdd com valor inválido");
+				System.out.println("clickBtnAdd com valor invï¿½lido");
 				Context.getInstance().setAbaAddScript(1);
 			}	
 		}
@@ -429,16 +414,7 @@ public class VisualScriptInterfaceController implements Initializable {
 	//Janela ADD+
 	@FXML
 	void clickBtnAddConditionals(ActionEvent event) throws IOException {
-		
-		if(tabScripts1.isSelected()) {
-			Context.getInstance().setAbaAddScript(1);
-		} else if(tabScripts2.isSelected()) {
-			Context.getInstance().setAbaAddScript(2);
-		} else {
-			System.out.println("clickBtnAdd com valor inválido");
-			Context.getInstance().setAbaAddScript(1);
-		}
-		
+		checkSelectedTab();
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addScriptPlus.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
@@ -462,5 +438,15 @@ public class VisualScriptInterfaceController implements Initializable {
 			
 	}
 
+    void checkSelectedTab() {
+    	if(tabScripts1.isSelected()) {
+			Context.getInstance().setAbaAddScript(1);
+		} else if(tabScripts2.isSelected()) {
+			Context.getInstance().setAbaAddScript(2);
+		} else {
+			System.out.println("clickBtnAdd com valor invÃ¡lido");
+			Context.getInstance().setAbaAddScript(1);
+		}
+    }
 
 }

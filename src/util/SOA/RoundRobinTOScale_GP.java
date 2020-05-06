@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package util.SOA;
 
 import ai.RandomBiasedAI;
@@ -127,7 +123,7 @@ public class RoundRobinTOScale_GP {
         }
 
         // MAXCYCLES pequeno para testes locais
-        //MAXCYCLES = 600;
+        //MAXCYCLES = 5;
 
         //decompõe a tupla
         ArrayList<Integer> iScriptsAi1 = new ArrayList<>();
@@ -347,14 +343,12 @@ public class RoundRobinTOScale_GP {
     public String buildCompleteGrammar(UnitTypeTable utt, ArrayList<Integer> iScripts, String id) {
         List<AI> scriptsAI = new ArrayList<>();
         String portfolioGrammar="";
-
         for (Integer idSc : iScripts) {
             if(id == "1")
             	portfolioGrammar = portfolioGrammar + scriptsTable1_temp.get(BigDecimal.valueOf(idSc)) + ";";
             else if(id == "2")
             	portfolioGrammar = portfolioGrammar + scriptsTable2_temp.get(BigDecimal.valueOf(idSc)) + ";";
         }
-
         return portfolioGrammar;
     }
      */

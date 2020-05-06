@@ -215,12 +215,12 @@ public class FunctionsforGrammar {
         parameters.add(new Parameter("Quantity", 1.0, 20.0, null));
         conditionalsForGrammarUnit.add(new FunctionsforGrammar("HaveQtdEnemiesbyType", parameters));
 
-        //Conditional HaveQtdEnemiesAttacking
+        //Conditional HaveQtdUnitsAttacking
         parameters = new ArrayList<>();
         parameters.add(new Parameter("unitType", null, null, typeUnitDiscrete));
         parameters.add(new Parameter("Quantity", 1.0, 20.0, null));
         conditionalsForGrammar.add(new FunctionsforGrammar("HaveQtdUnitsAttacking", parameters));
-        //Conditional HaveQtdEnemiesAttacking
+        //Conditional HaveQtdUnitsAttacking
         parameters = new ArrayList<>();
         parameters.add(new Parameter("unitType", null, null, typeUnitDiscrete));
         parameters.add(new Parameter("Quantity", 1.0, 20.0, null));
@@ -237,11 +237,11 @@ public class FunctionsforGrammar {
         parameters.add(new Parameter("Quantity", 1.0, 20.0, null));
         conditionalsForGrammarUnit.add(new FunctionsforGrammar("HaveQtdUnitsbyType", parameters));
 
-        //Conditional HaveQtdUnitsHarvesting
+        //Conditional HaveQtdUnitsHarversting
         parameters = new ArrayList<>();
         parameters.add(new Parameter("Quantity", 1.0, 20.0, null));
         conditionalsForGrammar.add(new FunctionsforGrammar("HaveQtdUnitsHarversting", parameters));
-        //Conditional HaveQtdUnitsHarvesting
+        //Conditional HaveQtdUnitsHarversting
         parameters = new ArrayList<>();
         parameters.add(new Parameter("Quantity", 1.0, 20.0, null));
         conditionalsForGrammarUnit.add(new FunctionsforGrammar("HaveQtdUnitsHarversting", parameters));

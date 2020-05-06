@@ -27,6 +27,23 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
+                              <HBox prefHeight="34.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="629.0">
+                                 <children>
+                                    <Button fx:id="closeAddBuild" mnemonicParsing="false" onAction="#clickBtnBuildAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="txtAlertBuild" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
                               <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
@@ -159,11 +176,6 @@
                                     </Group>
                                  </children>
                               </VBox>
-                              <Button fx:id="closeAddBuild" mnemonicParsing="false" onAction="#clickBtnBuildAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
                            </children>
                            <padding>
                               <Insets top="10.0" />
@@ -330,11 +342,23 @@
                                     </Group>
                                  </children>
                               </VBox>
-                              <Button fx:id="closeAddTrain" mnemonicParsing="false" onAction="#clickBtnTrainAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
+                              <HBox layoutY="639.0" prefHeight="42.0" prefWidth="199.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="629.0">
+                                 <children>
+                                    <Button fx:id="closeAddTrain" mnemonicParsing="false" onAction="#clickBtnTrainAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="txtAlertTrain" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
                            </children>
                            <padding>
                               <Insets top="10.0" />
@@ -371,11 +395,23 @@
                                     </GridPane>
                                  </children>
                               </VBox>
-                              <Button fx:id="closeAddHarvest" mnemonicParsing="false" onAction="#clickBtnHarvestAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
+                              <HBox layoutY="638.0" prefHeight="53.0" prefWidth="199.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="619.0">
+                                 <children>
+                                    <Button fx:id="closeAddHarvest" mnemonicParsing="false" onAction="#clickBtnHarvestAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="txtAlertHarvest" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
                            </children>
                            <padding>
                               <Insets top="20.0" />
@@ -553,11 +589,23 @@
                                     </Group>
                                  </children>
                               </VBox>
-                              <Button fx:id="closeAddAttack" mnemonicParsing="false" onAction="#clickBtnAttackAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="619.0">
+                                 <children>
+                                    <Button fx:id="closeAddAttack" mnemonicParsing="false" onAction="#clickBtnAttackAdd" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="txtAlertAttack" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
                            </children>
                            <padding>
                               <Insets top="20.0" />
@@ -774,143 +822,23 @@
                                     </Group>
                                  </children>
                               </VBox>
-                              <Button fx:id="btnAddMoveToUnit" mnemonicParsing="false" onAction="#clickBtnAddMoveToUnit" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                           <padding>
-                              <Insets top="20.0" />
-                           </padding>
-                        </AnchorPane>
-                     </content>
-                  </Tab>
-                  <Tab text="Move to Coordinates">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="619.0">
                                  <children>
-                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                    <Button fx:id="btnAddMoveToUnit" mnemonicParsing="false" onAction="#clickBtnAddMoveToUnit" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="System Bold Italic" size="15.0" />
                                        </font>
-                                    </Text>
-                                    <Group>
-                                       <children>
-                                          <GridPane>
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <ToggleButton fx:id="tbMoveToCoordWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="10.0" />
-                                                   </GridPane.margin>
-                                                   <toggleGroup>
-                                                      <ToggleGroup fx:id="groupMoveToCoordTypes" />
-                                                   </toggleGroup>
-                                                </ToggleButton>
-                                                <ToggleButton fx:id="tbMoveToCoordLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.columnIndex="1">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="10.0" />
-                                                   </GridPane.margin>
-                                                </ToggleButton>
-                                                <ToggleButton fx:id="tbMoveToCoordHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="10.0" />
-                                                   </GridPane.margin>
-                                                </ToggleButton>
-                                                <ToggleButton fx:id="tbMoveToCoordRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="10.0" />
-                                                   </GridPane.margin>
-                                                </ToggleButton>
-                                                <ToggleButton fx:id="tbMoveToCoordAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.rowIndex="2">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                   <GridPane.margin>
-                                                      <Insets left="10.0" right="10.0" />
-                                                   </GridPane.margin>
-                                                </ToggleButton>
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </Group>
-                                    <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates">
+                                    </Button>
+                                    <Text fx:id="txtAlertMoveToUnit" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font size="14.0" />
                                        </font>
-                                       <VBox.margin>
-                                          <Insets bottom="5.0" top="10.0" />
-                                       </VBox.margin>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
                                     </Text>
-                                    <GridPane>
-                                      <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <TextField fx:id="edtCoordX" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
-                                             <GridPane.margin>
-                                                <Insets right="15.0" />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <TextField fx:id="edtCoordY" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="3">
-                                             <GridPane.margin>
-                                                <Insets right="15.0" />
-                                             </GridPane.margin>
-                                          </TextField>
-                                          <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="x :">
-                                             <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
-                                             </font>
-                                             <GridPane.margin>
-                                                <Insets right="10.0" />
-                                             </GridPane.margin>
-                                          </Text>
-                                          <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="y :" GridPane.columnIndex="2">
-                                             <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
-                                             </font>
-                                             <GridPane.margin>
-                                                <Insets right="10.0" />
-                                             </GridPane.margin>
-                                          </Text>
-                                       </children>
-                                    </GridPane>
                                  </children>
-                              </VBox>
-                              <Button fx:id="btnAddMoveToCoord" mnemonicParsing="false" onAction="#clickBtnAddMoveToCoord" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
+                              </HBox>
                            </children>
                            <padding>
                               <Insets top="20.0" />
@@ -991,11 +919,23 @@
                                     </Group>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" onAction="#clickBtnAddMoveAway" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="619.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickBtnAddMoveAway" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="txtAlertMoveAway" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
                            </children>
                            <padding>
                               <Insets top="20.0" />

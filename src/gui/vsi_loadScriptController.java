@@ -19,11 +19,16 @@ import model.Context;
 
 public class vsi_loadScriptController implements Initializable{
 
+	//private VisualScriptInterfaceController principalController;
     @FXML
     private TextField txtSearch;
     @FXML
     private ListView<String> lvScripts = new ListView<>();
 
+    //public void init(VisualScriptInterfaceController m) {
+    //	principalController = m;
+    //}
+    
     @FXML
     void loadSelectedScript(ActionEvent event) throws IOException {
     	if(lvScripts.getSelectionModel().getSelectedItem() != null) {
@@ -77,7 +82,7 @@ public class vsi_loadScriptController implements Initializable{
     
     void loadScripts() {
     	File dirPath = new File("savedScripts");
-		//System.out.println("Arquivos disponíveis:");
+		//System.out.println("Arquivos disponï¿½veis:");
 		lvScripts.getItems().clear();
 		
 		for(String f: dirPath.list()) {

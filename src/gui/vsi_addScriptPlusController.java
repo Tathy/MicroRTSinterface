@@ -34,7 +34,7 @@ public class vsi_addScriptPlusController {
     	principalController = m;
     }
     
-    //Adiciona parêntese ) -- Não está em uso
+    //Adiciona parï¿½ntese ) -- Nï¿½o estï¿½ em uso
     //@FXML
     void clickAddBracket(ActionEvent event) {
     	//if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
@@ -44,7 +44,7 @@ public class vsi_addScriptPlusController {
     	//}
     }
     
-    //Remove parêntese ) -- Não está em uso
+    //Remove parï¿½ntese ) -- Nï¿½o estï¿½ em uso
     //@FXML
     void clickRemoveBracket(ActionEvent event) {
     	//if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
@@ -57,7 +57,7 @@ public class vsi_addScriptPlusController {
     	//}
     }
 
-    //Adiciona for no começo da lista
+    //Adiciona for no comeï¿½o da lista
     @FXML
     void clickAddFor(ActionEvent event) {
     	boolean hasFor = false;
@@ -83,6 +83,8 @@ public class vsi_addScriptPlusController {
 
     @FXML
     void clickAddScript(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
     	String s = "";
     	int open = 0;
     	int tab = 0;
@@ -92,12 +94,12 @@ public class vsi_addScriptPlusController {
     	int nvFor = 0;
     	
     	//Contagem de tabs
-    	// e adição de parênteses
+    	// e adiï¿½ï¿½o de parï¿½nteses
     	for(int i = 0; i < ScriptPreview.size(); i++) {   		
     		int mult = 0;
     		char l[] = ScriptPreview.get(i).toCharArray();
     		
-    		//Impressão de script em análise
+    		//Impressï¿½o de script em anï¿½lise
     		//System.out.println( Integer.toString(i) + " " + ScriptPreview.get(i));
     		
     		while(true) {
@@ -109,7 +111,7 @@ public class vsi_addScriptPlusController {
     		
     		new_tab = mult;
     		
-    		//Teste sde nível de identação para o for (acréscimo do u no final dos comandos)
+    		//Teste sde nï¿½vel de identaï¿½ï¿½o para o for (acrï¿½scimo do u no final dos comandos)
     		if( inFor && nvFor > new_tab) inFor = false;
     		if(ScriptPreview.get(i).contains("for")) { inFor = true; nvFor = new_tab + 1; }
     		
@@ -137,7 +139,7 @@ public class vsi_addScriptPlusController {
     		
     		//adiciona u caso esteja dentro de um for e o comando o use
     		if(inFor && s.toCharArray()[s.length()-1] == ')') {
-    			if( !ScriptPreview.get(i).contains("train") && !ScriptPreview.get(i).contains("for") && !ScriptPreview.get(i).contains("if")){ //não coloca caso o comando não aceite o ,u)
+    			if(!ScriptPreview.get(i).contains("for") && !ScriptPreview.get(i).contains("if")){ //nÃ£o coloca caso o comando nÃ£o aceite o ,u)
 	    			s = s.substring(0,s.length()-1);
 	    			s += ",u)"; 
     			}
@@ -147,7 +149,7 @@ public class vsi_addScriptPlusController {
     				s += ",u))";
     			}
     		}
-    		//System.out.println("Último caracteres:");
+    		//System.out.println("ï¿½ltimo caracteres:");
     		//System.out.println(s.toCharArray()[s.length()-1]);
     		
     		if( i != ScriptPreview.size() - 1)
@@ -164,25 +166,21 @@ public class vsi_addScriptPlusController {
     		mult = 0;
     	}
     	
-    	//Impressão da string completa s
-    	System.out.println("Script completo:");
-    	System.out.println(s);
-    	System.out.println();
+    	//Impressï¿½o da string completa s
+    	//System.out.println("Script completo:");
+    	//System.out.println(s);
+    	//System.out.println();
 
-    	//Contagem de parênteses
+    	//Contagem de parï¿½nteses
     	char sc[] = s.toCharArray();
     	for(int i = 0; i < s.length(); i++) {
     		if(sc[i] == '(') open++;
     		else if(sc[i] == ')') open--;
     	}
     	
-    	//System.out.println("Script que vai ser adicionado: ");
-    	//System.out.println(s);
-    	//System.out.println();
-    	
-    	//Mensagem de falta de parênteses caso o número esteja errado
+    	//Mensagem de falta de parï¿½nteses caso o nï¿½mero esteja errado
     	// adiciona na lista principal se estiver correto
-    	if(open == 0) {
+    	if(open == 0 && s.length() > 8) {
     		txtAlert.setOpacity(0.0);
     		
     		if(Context.getInstance().getAbaAddScript() == 1) {
@@ -192,6 +190,7 @@ public class vsi_addScriptPlusController {
     			Context.getInstance().addScriptAI2(s);
     			principalController.attListViewAI2();
     		}
+    		
     	}else {
     		txtAlert.setOpacity(1.0);
     	}
@@ -259,7 +258,7 @@ public class vsi_addScriptPlusController {
     }
 
     
-    //Abre janela de adição de Funções Simples
+    //Abre janela de adiï¿½ï¿½o de Funï¿½ï¿½es Simples
     //Janela ADD Simple Script
   	@FXML
   	void clickNewSimpleScript(ActionEvent event) throws IOException {
@@ -269,6 +268,7 @@ public class vsi_addScriptPlusController {
   		
   		vsi_addScriptController addScriptController = fxmlLoader.getController();
   		addScriptController.initp(this);
+  		addScriptController.init(principalController);
   		
   		Stage stage = new Stage();
   		stage.setTitle("Add Scripts");
@@ -284,7 +284,7 @@ public class vsi_addScriptPlusController {
   	
     //Janela ADD Conditional Script
   	
-  	//Abre janela de adição de Funções Condicionais
+  	//Abre janela de adiï¿½ï¿½o de Funï¿½ï¿½es Condicionais
   	@FXML
   	void clickNewCondScript(ActionEvent event) throws IOException {
   		
@@ -293,6 +293,7 @@ public class vsi_addScriptPlusController {
   		
   		vsi_addCondScriptController addCondScriptController = fxmlLoader.getController();
   		addCondScriptController.initp(this);
+  		addCondScriptController.init(principalController);
   		
   		Stage stage = new Stage();
   		stage.setTitle("Add Scripts");
@@ -306,9 +307,8 @@ public class vsi_addScriptPlusController {
   		stage.showAndWait();	
   	}
   	
-  	//Adições às listas
-  	
-  	//Adições às Listas
+  	//AdiÃ§Ãµes Ã s listas
+
   	public void addListViewFuncList(String s) {
   		if(!FuncList.contains(s) || !ScriptPreview.contains(s)) {
   			FuncList.add(s);
@@ -324,9 +324,8 @@ public class vsi_addScriptPlusController {
   		}
   	}
   	
-  	//Remoções das listas
+  	//RemoÃ§Ãµes das Listas
   	
-  	//Remoções das Listas
   	public void delListViewScriptPreview(String s) {
   		if(ScriptPreview.contains(s))
   			ScriptPreview.remove(s);
@@ -340,9 +339,9 @@ public class vsi_addScriptPlusController {
   		attFuncList();
   	}
   	
-  	//Atualizações das listas
+  	//Atualizaï¿½ï¿½es das listas
   	
-  	//Atualizações dos ListView
+  	//Atualizaï¿½ï¿½es dos ListView
   	private void attFuncList() {
   		lvFuncList.getItems().clear();
   		lvFuncList.getItems().addAll(FuncList);
@@ -394,7 +393,7 @@ public class vsi_addScriptPlusController {
     	}
     }
 
-  	//Adiciona espaço na identação
+  	//Adiciona espaï¿½o na identaï¿½ï¿½o
   	@FXML
     void clickIndRight(ActionEvent event) {
   		if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
@@ -405,7 +404,7 @@ public class vsi_addScriptPlusController {
     }
   	
 
-  	//Remove espaço na identação
+  	//Remove espaï¿½o na identaï¿½ï¿½o
     @FXML
     void clickIndLeft(ActionEvent event) {
     	if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {

@@ -1,4 +1,4 @@
-// Classe Singleton com informações capturadas da tela
+// Classe Singleton com informaï¿½ï¿½es capturadas da tela
 
 package model;
 
@@ -16,7 +16,7 @@ public class Context {
 	
 	private Context() {}
 	
-	//Abas à esquerda
+	//Abas Ã  esquerda
 	private int abaAddScript = 1;
 	
 	// Barra Inferior
@@ -27,7 +27,7 @@ public class Context {
 	private boolean applyScripts = false;
 	
 	// Map
-	private String map = "maps/RangedHeavyMixed.xml";
+	private String map = "maps/8x8/basesWorkers8x8A.xml";
 	ArrayList<String> scriptsAi1 = new ArrayList<>();
 	ArrayList<String> scriptsAi2 = new ArrayList<>();
 	

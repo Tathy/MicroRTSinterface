@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Context;
 
@@ -148,25 +149,6 @@ public class vsi_addScriptController {
     @FXML
     private ToggleGroup groupMoveToUnitBehaviour;
     
-    //Move to Coordinates
-    
-    @FXML
-    private ToggleButton tbMoveToCoordWorker;
-    @FXML
-    private ToggleButton tbMoveToCoordLight;
-    @FXML
-    private ToggleButton tbMoveToCoordHeavy;
-    @FXML
-    private ToggleButton tbMoveToCoordRanged;
-    @FXML
-    private ToggleButton tbMoveToCoordAll;
-    @FXML
-    private TextField edtCoordX;
-    @FXML
-    private TextField edtCoordY;
-    @FXML
-    private ToggleGroup groupMoveToCoordTypes;
-    
     // Move Away
     
     @FXML
@@ -182,6 +164,21 @@ public class vsi_addScriptController {
     @FXML
     private ToggleGroup groupMoveAwayTypes;
     
+    // Alerts
+    
+    @FXML
+    private Text txtAlertBuild;
+    @FXML
+    private Text txtAlertTrain;
+    @FXML
+    private Text txtAlertHarvest;
+    @FXML
+    private Text txtAlertAttack;
+    @FXML
+    private Text txtAlertMoveToUnit;
+    @FXML
+    private Text txtAlertMoveAway;
+    
     
     public void init(VisualScriptInterfaceController m) {
     	principalController = m;
@@ -195,7 +192,8 @@ public class vsi_addScriptController {
     // Attack
     @FXML
     void clickBtnAttackAdd(ActionEvent event) throws IOException {
-
+    	principalController.checkSelectedTab();
+    	
     	String s = "";
     	if(Context.getInstance().getAbaAddScript() == 1) {
     		if(groupAttackTypes.getSelectedToggle() != null && groupAttackEnemy.getSelectedToggle() != null) {
@@ -225,18 +223,30 @@ public class vsi_addScriptController {
     			else if(tbAttackRandom.isSelected())
     				s += "random)"; 
     		
-    			//Atualiza��o das listas
+    			/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
     			
-    		}else {
-    			System.out.println("Faltam par�metros");
+    			txtAlertAttack.setOpacity(0.0);
+    		} else {
+    			System.out.println("Faltam parâmetros!!");
+    			txtAlertAttack.setOpacity(1.0);
     		}
-    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    		
+    	} else if(Context.getInstance().getAbaAddScript() == 2) {
     		if(groupAttackTypes.getSelectedToggle() != null && groupAttackEnemy.getSelectedToggle() != null) {
     			if(tbAttackWorker.isSelected())
     				s += "attack(Worker,";
@@ -264,16 +274,27 @@ public class vsi_addScriptController {
     			else if(tbAttackRandom.isSelected())
     				s += "random)"; 
     		
-    			//Atualiza��o das listas
+    			/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
     			
-    		}else {
-    			System.out.println("Faltam par�metros");
+    			txtAlertAttack.setOpacity(0.0);
+    		} else {
+    			System.out.println("Faltam parâmetros!!");
+    			txtAlertAttack.setOpacity(1.0);
     		}
     	}
 
@@ -287,11 +308,15 @@ public class vsi_addScriptController {
     //Build
     @FXML
     void clickBtnBuildAdd(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
     	if(Context.getInstance().getAbaAddScript() == 1){
-    		Integer q = Integer.parseInt(edtBuildQnt.getText());
+    		
 			String s = "";
 			
-    		if(groupBuildTypes.getSelectedToggle() != null && groupBuildDir.getSelectedToggle() != null && edtBuildQnt.getText() != null && Integer.parseInt(edtBuildQnt.getText()) != 0) {
+    		if(groupBuildTypes.getSelectedToggle() != null && groupBuildDir.getSelectedToggle() != null && edtBuildQnt.getText() != null && !edtBuildQnt.getText().trim().isEmpty() && Integer.parseInt(edtBuildQnt.getText()) != 0) {
+    			Integer q = Integer.parseInt(edtBuildQnt.getText());
+    			
     			if(tbBase.isSelected())
     				s = "build(Base,";// + Integer.toString(q) + ")";
     			if(tbBarrack.isSelected())
@@ -308,38 +333,72 @@ public class vsi_addScriptController {
     			if(tbBuildDown.isSelected())
     				s += "Down)";
     			
-    			//Atualiza��o das listas
+    			/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
     			
+    			txtAlertBuild.setOpacity(0.0);
     		} else {
-    			System.out.println("Faltam par�metros");
+    			System.out.println("Faltam parâmetros!!");
+    			txtAlertBuild.setOpacity(1.0);
     		}
     		
-    	}else if(Context.getInstance().getAbaAddScript() == 2) {
-    		Integer q = Integer.parseInt(edtBuildQnt.getText());
+    	} else if(Context.getInstance().getAbaAddScript() == 2) {
 			String s = "";
 			
-    		if(groupBuildTypes.getSelectedToggle() != null && edtBuildQnt.getText() != null && Integer.parseInt(edtBuildQnt.getText()) != 0) {
+			if(groupBuildTypes.getSelectedToggle() != null && groupBuildDir.getSelectedToggle() != null && edtBuildQnt.getText() != null && !edtBuildQnt.getText().trim().isEmpty() && Integer.parseInt(edtBuildQnt.getText()) != 0) {
+				Integer q = Integer.parseInt(edtBuildQnt.getText());
+				
     			if(tbBase.isSelected())
-    				s = "build(Base," + Integer.toString(q) + ")";
+    				s = "build(Base,";// + Integer.toString(q) + ")";
     			if(tbBarrack.isSelected())
-    				s = "build(Barrack," + Integer.toString(q) + ")";
-
-    			//Atualiza��o das listas
+    				s = "build(Barrack,";// + Integer.toString(q) + ")";
+    			
+    			s += Integer.toString(q) + ",";
+    			
+    			if(tbBuildRight.isSelected())
+    				s += "Right)";
+    			else if(tbBuildLeft.isSelected())
+    				s += "Left)";
+    			else if(tbBuildUp.isSelected())
+    				s += "Up)";
+    			if(tbBuildDown.isSelected())
+    				s += "Down)";
+    			
+    			/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
     			
+    			txtAlertBuild.setOpacity(0.0);
     		} else {
-    			System.out.println("Faltam par�metros");
+    			txtAlertBuild.setOpacity(1.0);
+    			System.out.println("Faltam parâmetros!!");
     		}
     	}
     	
@@ -353,30 +412,60 @@ public class vsi_addScriptController {
     //Harvest
     @FXML
     void clickBtnHarvestAdd(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
     	if(Context.getInstance().getAbaAddScript() == 1) {
-	    	if(edtHarvestQnt.getText() != null && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
+	    	if(edtHarvestQnt.getText() != null && !edtHarvestQnt.getText().trim().isEmpty() && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
 	    		Integer q = Integer.parseInt(edtHarvestQnt.getText());
 	    		String s = "harvest(" + Integer.toString(q) + ")";
 	    		
-	    		//Atualiza��o das listas
+	    		/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
+   
+    			txtAlertHarvest.setOpacity(0.0);
+	    	} else {
+	    		System.out.println("Faltam parâmetros!!");
+	    		txtAlertHarvest.setOpacity(1.0);
 	    	}
     	} else if(Context.getInstance().getAbaAddScript() == 2) {
-	    	if(edtHarvestQnt.getText() != null && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
+	    	if(edtHarvestQnt.getText() != null && !edtHarvestQnt.getText().trim().isEmpty() && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
 	    		Integer q = Integer.parseInt(edtHarvestQnt.getText());
 	    		String s = "harvest(" + Integer.toString(q) + ")";
-	    		//Atualiza��o das listas
+	    		/*
+    			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI2(s);
-    				principalController.attListViewAI2();
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
+    			
+    			txtAlertHarvest.setOpacity(0.0);
+	    	} else {
+	    		System.out.println("Faltam parâmetros!!");
+	    		txtAlertHarvest.setOpacity(1.0);
 	    	}
 	    	
 	    	
@@ -392,6 +481,8 @@ public class vsi_addScriptController {
     //Move Away
     @FXML
     void clickBtnAddMoveAway(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
     	if(Context.getInstance().getAbaAddScript() == 1) {
 	    	if(groupMoveAwayTypes.getSelectedToggle() != null) {
 	    		String s = "moveaway(";
@@ -408,14 +499,27 @@ public class vsi_addScriptController {
     			else if(tbMoveAwayAll.isSelected())
     				s += "All)";
 	    		
-	    		//Atualiza��o das listas
+	    		/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
     			
+    			txtAlertMoveAway.setOpacity(0.0);
+	    	} else {
+	    		System.out.println("Faltam parâmetros!!");
+	    		txtAlertMoveAway.setOpacity(1.0);
 	    	}
     	} else if(Context.getInstance().getAbaAddScript() == 2) {
 	    	if(groupMoveAwayTypes.getSelectedToggle() != null) {
@@ -433,82 +537,27 @@ public class vsi_addScriptController {
     			else if(tbMoveAwayAll.isSelected())
     				s += "All)";
 	    		
-	    		//Atualiza��o das listas
-    			if(principalController != null) {
-    				Context.getInstance().addScriptAI2(s);
-    				principalController.attListViewAI2();
-    			}else if(addPlusController != null) {
-    				addPlusController.addListViewFuncList(s);
-    			}
-	    	}
-    	}
-    	
-    	if(fecharJanela) {
-	    	Stage stage = (Stage) closeAddHarvest.getScene().getWindow();
-	    	stage.hide();
-    	}
-    }
-    
-    //Move to Coordinates
-    @FXML
-    void clickBtnAddMoveToCoord(ActionEvent event) {
-    	if(Context.getInstance().getAbaAddScript() == 1) {
-	    	if(groupMoveToCoordTypes.getSelectedToggle() != null) {
-	    		Integer x = Integer.parseInt(edtCoordX.getText());
-	    		Integer y = Integer.parseInt(edtCoordY.getText());
-	    		String s = "moveToCoord(";
-	    		
-	    		//Type
-	    		if(tbMoveToCoordWorker.isSelected())
-    				s += "Worker,";
-    			else if(tbMoveToCoordLight.isSelected())
-    				s += "Light,";
-    			else if(tbMoveToCoordHeavy.isSelected())
-    				s += "Heavy,";
-    			else if(tbMoveToCoordRanged.isSelected())
-    				s += "Ranged,";
-    			else if(tbMoveToCoordAll.isSelected())
-    				s += "All,";
-	    		
-	    		s += x.toString() + "," + y.toString() + ")";
-	    		
-	    		//Atualiza��o das listas
+	    		/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
-    			
-	    	}
-    	} else if(Context.getInstance().getAbaAddScript() == 2) {
-	    	if(groupMoveToCoordTypes.getSelectedToggle() != null) {
-	    		Integer x = Integer.parseInt(edtCoordX.getText());
-	    		Integer y = Integer.parseInt(edtCoordY.getText());
-	    		String s = "moveToCoord(";
-	    		
-	    		//Type
-	    		if(tbMoveToCoordWorker.isSelected())
-    				s += "Worker,";
-    			else if(tbMoveToCoordLight.isSelected())
-    				s += "Light,";
-    			else if(tbMoveToCoordHeavy.isSelected())
-    				s += "Heavy,";
-    			else if(tbMoveToCoordRanged.isSelected())
-    				s += "Ranged,";
-    			else if(tbMoveToCoordAll.isSelected())
-    				s += "All,";
-	    		
-	    		s += x.toString() + "," + y.toString() + ")";
-	    		
-	    		//Atualiza��o das listas
-    			if(principalController != null) {
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
     				Context.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
-    			}else if(addPlusController != null) {
-    				addPlusController.addListViewFuncList(s);
     			}
     			
+    			txtAlertMoveAway.setOpacity(0.0);
+	    	} else {
+	    		System.out.println("Faltam parâmetros!!");
+	    		txtAlertMoveAway.setOpacity(1.0);
 	    	}
     	}
     	
@@ -518,9 +567,12 @@ public class vsi_addScriptController {
     	}
     }
     
+
     //Move to Unit
     @FXML
     void clickBtnAddMoveToUnit(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
     	if(Context.getInstance().getAbaAddScript() == 1) {
 	    	if(groupMoveToUnitTypes.getSelectedToggle() != null && groupMoveToUnitTargets.getSelectedToggle() != null && groupMoveToUnitBehaviour.getSelectedToggle() != null) {
 	    		//moveToUnit(Worker,Ally,closest,u)
@@ -561,14 +613,27 @@ public class vsi_addScriptController {
     				s += "random)"; 
 	    		
 
-	    		//Atualiza��o das listas
+	    		/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
     			
+    			txtAlertMoveToUnit.setOpacity(0.0);
+	    	} else {
+	    		System.out.println("Faltam parâmetros!!");
+	    		txtAlertMoveToUnit.setOpacity(1.0);
 	    	}
     	} else if(Context.getInstance().getAbaAddScript() == 2) {
 	    	if(groupMoveToUnitTypes.getSelectedToggle() != null && groupMoveToUnitTargets.getSelectedToggle() != null && groupMoveToUnitBehaviour.getSelectedToggle() != null) {
@@ -609,14 +674,27 @@ public class vsi_addScriptController {
     				s += "random)"; 
 	    		
 
-	    		//Atualiza��o das listas
+	    		/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
     			
+    			txtAlertMoveToUnit.setOpacity(0.0);
+	    	} else {
+	    		System.out.println("Faltam parâmetros!!");
+	    		txtAlertMoveToUnit.setOpacity(1.0);
 	    	}
     	}
     	
@@ -629,11 +707,14 @@ public class vsi_addScriptController {
     //Train
     @FXML
     void clickBtnTrainAdd(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
     	if(Context.getInstance().getAbaAddScript() == 1) {
-    		Integer q = Integer.parseInt(edtTrainQnt.getText());
 			String s = "";
 			
-    		if(groupTrainTypes.getSelectedToggle() != null && groupTrainDir.getSelectedToggle() != null && edtTrainQnt.getText() != null && Integer.parseInt(edtTrainQnt.getText()) != 0) {
+    		if(groupTrainTypes.getSelectedToggle() != null && groupTrainDir.getSelectedToggle() != null && edtTrainQnt.getText() != null && !edtTrainQnt.getText().trim().isEmpty() && Integer.parseInt(edtTrainQnt.getText()) != 0) {
+    			Integer q = Integer.parseInt(edtTrainQnt.getText());
+    			
     			if(tbTrainWorker.isSelected())
     				s = "train(Worker," + Integer.toString(q) + ",";
     			else if(tbTrainLight.isSelected())
@@ -653,24 +734,35 @@ public class vsi_addScriptController {
     				s += "Down)";
     			else if(tbTrainEnemyDir.isSelected())
     				s += "EnemyDir)";
-    			
-    			//Atualiza��o das listas
+    			/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
     			
+    			txtAlertTrain.setOpacity(0.0);
     		}else {
-    			System.out.println("Faltam par�metros");
+    			txtAlertTrain.setOpacity(1.0);
+    			System.out.println("Faltam parâmetros!!");
     		}
     		
     	}else if(Context.getInstance().getAbaAddScript() == 2) {
-    		Integer q = Integer.parseInt(edtTrainQnt.getText());
 			String s = "";
 			
-    		if(groupTrainTypes.getSelectedToggle() != null && groupTrainDir.getSelectedToggle() != null && edtTrainQnt.getText() != null && Integer.parseInt(edtTrainQnt.getText()) != 0) {
+    		if(groupTrainTypes.getSelectedToggle() != null && groupTrainDir.getSelectedToggle() != null && edtTrainQnt.getText() != null && !edtTrainQnt.getText().trim().isEmpty() && Integer.parseInt(edtTrainQnt.getText()) != 0) {
+    			Integer q = Integer.parseInt(edtTrainQnt.getText());
+    			
     			if(tbTrainWorker.isSelected())
     				s = "train(Worker," + Integer.toString(q) + ",";
     			else if(tbTrainLight.isSelected())
@@ -691,15 +783,27 @@ public class vsi_addScriptController {
     			else if(tbTrainEnemyDir.isSelected())
     				s += "EnemyDir)";
     			
-    			//Atualiza��o das listas
+    			/*
+    			//Atualização das listas
     			if(principalController != null) {
     				Context.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			}
-    		}else {
-    			System.out.println("Faltam par�metros");
+    			*/
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
+    			
+    			txtAlertTrain.setOpacity(0.0);
+    		} else {
+    			System.out.println("Faltam parâmetros!!");
+    			txtAlertTrain.setOpacity(1.0);
     		}
     	}
     	

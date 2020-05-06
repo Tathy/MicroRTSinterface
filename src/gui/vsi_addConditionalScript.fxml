@@ -73,6 +73,17 @@
                                                    <font>
                                                       <Font name="Ebrima Bold" size="13.0" />
                                                    </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="7.0" />
+                                                   </VBox.margin>
+                                                </JFXRadioButton>
+                                                <JFXRadioButton fx:id="rbHaveQtdUnitsAttacking" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsAttacking" textFill="WHITE" toggleGroup="$groupConditionalAllies">
+                                                   <font>
+                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="7.0" />
+                                                   </VBox.margin>
                                                 </JFXRadioButton>
                                              </children>
                                           </VBox>
@@ -169,11 +180,23 @@
                                     </GridPane>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" onAction="#clickBtnAddCondAllies" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="619.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickBtnAddCondAllies" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="txtAlertAllies" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
                            </children>
                            <padding>
                               <Insets top="20.0" />
@@ -201,14 +224,6 @@
                                                    <toggleGroup>
                                                       <ToggleGroup fx:id="groupConditionalEnemies" />
                                                    </toggleGroup>
-                                                </JFXRadioButton>
-                                                <JFXRadioButton fx:id="rbHaveQtdUnitsAttacking" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsAttacking" textFill="WHITE" toggleGroup="$groupConditionalEnemies">
-                                                   <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
-                                                   </font>
-                                                   <VBox.margin>
-                                                      <Insets bottom="7.0" />
-                                                   </VBox.margin>
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveEnemiesStrongest" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveEnemiesStrongest" textFill="WHITE" toggleGroup="$groupConditionalEnemies">
                                                    <font>
@@ -321,11 +336,23 @@
                                     </GridPane>
                                  </children>
                               </VBox>
-                              <Button mnemonicParsing="false" onAction="#clickBtnAddCondEnemies" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
-                                 <font>
-                                    <Font name="System Bold Italic" size="15.0" />
-                                 </font>
-                              </Button>
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="619.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#clickBtnAddCondEnemies" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="✚" textFill="#ffffffbf">
+                                       <font>
+                                          <Font name="System Bold Italic" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Text fx:id="txtAlertEnemies" fill="#ffffff59" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Missing arguments!" textAlignment="CENTER" wrappingWidth="150.13671875">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
                            </children>
                            <padding>
                               <Insets top="20.0" />
