@@ -173,17 +173,17 @@ public class VisualScriptInterfaceController implements Initializable {
 	}
 	
 	public void loadMaps() {
-		MapPath map1 = new MapPath("16x16 - Bases Workers","maps/basesWorkers16x16.xml");
-        MapPath map2 = new MapPath("16x16 - Bases With Walls","maps/BasesWithWalls16x16.xml");     
-        MapPath map4 = new MapPath("24x24 - Bases Workers A","maps/basesWorkers24x24A.xml");
-        MapPath map5 = new MapPath("16x16 - 2 Bases Barracks","maps/TwoBasesBarracks16x16.xml");
+		MapPath map1 = new MapPath("16x16 - Bases Workers","maps/16x16/basesWorkers16x16.xml");
+        MapPath map2 = new MapPath("16x16 - Bases With Walls","maps/16x16/BasesWithWalls16x16.xml");     
+        MapPath map4 = new MapPath("24x24 - Bases Workers A","maps/24x24/basesWorkers24x24A.xml");
+        MapPath map5 = new MapPath("16x16 - 2 Bases Barracks","maps/16x16/TwoBasesBarracks16x16.xml");
         MapPath map6 = new MapPath("32x32 - Distant Resources","maps/BWDistantResources32x32.xml");
         MapPath map7 = new MapPath("63x63 - BloodBath","maps/BroodWar/(4)BloodBath.scmB.xml");
-        MapPath map8 = new MapPath("8x8 - 4 Bases Workers","maps/FourBasesWorkers8x8.xml");
+        MapPath map8 = new MapPath("8x8 - 4 Bases Workers","maps/8x8/FourBasesWorkers8x8.xml");
         MapPath map9 = new MapPath("9x8 - Nowhere to Run","maps/NoWhereToRun9x8.xml");
         MapPath map10 = new MapPath("24x24 - Double Game","maps/DoubleGame24x24.xml");
-        MapPath map11 = new MapPath("8x8 - Bases Workers Obstacle","maps/basesWorkers8x8Obstacle.xml");
-        MapPath map12 = new MapPath("8x8 - Bases Workers A","maps/basesWorkers8x8A.xml");
+        MapPath map11 = new MapPath("8x8 - Bases Workers Obstacle","maps/8x8/basesWorkers8x8Obstacle.xml");
+        MapPath map12 = new MapPath("8x8 - Bases Workers A","maps/8x8/basesWorkers8x8A.xml");
         MapPath map13 = new MapPath("18x8 - 1 Base", "maps/RangedHeavyMixed.xml");
         
         maps.add(map1);

@@ -45,7 +45,7 @@ public class ScriptInterface {
         
         GameState gs = new GameState(pgs, utt);
         int MAXCYCLES = 8000;
-        int PERIOD = 20; // Tempo para cada ação
+        int PERIOD = 20; // Tempo para cada aï¿½ï¿½o
         boolean gameover = false;
 
         AI ai1 = new PassiveAI(utt);
@@ -55,11 +55,11 @@ public class ScriptInterface {
         //System.out.println("AI 1 = "+ai1.toString());
         //System.out.println("AI 2 = "+ai2.toString()+"\n");        
         
-        // Criação da tela
+        // Criaï¿½ï¿½o da tela
         //JFrame tela = PhysicalGameStatePanel.newVisualizer(gs, 720, 720, false, PhysicalGameStatePanel.COLORSCHEME_BLACK);
         //JFrame tela = PhysicalGameStatePanel.newVisualizer(gs, 720, 720, false, PhysicalGameStatePanel.COLORSCHEME_WHITE);
         
-        /// Tathy - Criação da tela
+        /// Tathy - Criaï¿½ï¿½o da tela
         int larguraTela = 983;
         int alturaTela = 725;
         PhysicalGameStatePanel pgsp = new PhysicalGameStatePanel(gs);
@@ -71,7 +71,7 @@ public class ScriptInterface {
         
         do {
 	        do {
-	            if (System.currentTimeMillis() >= nextTimeToUpdate) { // Começo do loop
+	            if (System.currentTimeMillis() >= nextTimeToUpdate) { // Comeï¿½o do loop
 	            	
 	            	// Pause
 	            	while(Context.getInstance().isPaused() && !Context.getInstance().isRestarted()) {
@@ -81,7 +81,7 @@ public class ScriptInterface {
 	        			ai2 = attAI(utt, 2);
 	        			//System.out.println(ai1.toString());
 	            	}
-	            	// Apply durante a simulação
+	            	// Apply durante a simulaï¿½ï¿½o
 	            	if(Context.getInstance().isApplied()) {
 	            		
 	            		ai1 = attAI(utt, 1);
@@ -90,7 +90,7 @@ public class ScriptInterface {
 	            		
 	            	}
 
-	            	//pega ações
+	            	//pega aï¿½ï¿½es
 	                startTime = System.currentTimeMillis();
 	                PlayerAction pa1 = ai1.getAction(0, gs);
 
@@ -98,7 +98,7 @@ public class ScriptInterface {
 	                PlayerAction pa2 = ai2.getAction(1, gs);
 	                
 	                //if( (System.currentTimeMillis() - startTime) >0){
-	                //System.out.println("Tempo de execução P1="+(startTime = System.currentTimeMillis() - startTime));
+	                //System.out.println("Tempo de execuï¿½ï¿½o P1="+(startTime = System.currentTimeMillis() - startTime));
 	                //}
 	                //System.out.println("Action A1 ="+ pa1.toString());
 	                //System.out.println("Action A2 ="+ pa2.toString());
@@ -155,7 +155,7 @@ public class ScriptInterface {
 		        //teste
 		        Context.getInstance().setRestart(false);
 		        
-		        // Atualização no Apply
+		        // Atualizaï¿½ï¿½o no Apply
 		        /*
 		        if(Context.getInstance().isApplied()) {
 		        	utt = new UnitTypeTable();
