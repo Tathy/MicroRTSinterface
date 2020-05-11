@@ -2,6 +2,7 @@ package gui;
 
 import java.io.IOException;
 
+import gui.custom.NumberTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +36,7 @@ public class vsi_addScriptController {
     @FXML
     private ToggleButton tbBuildDown;
     @FXML
-    private TextField edtBuildQnt;
+    private NumberTextField edtBuildQnt;
     @FXML
     private ToggleGroup groupBuildTypes;
     @FXML
@@ -54,7 +55,7 @@ public class vsi_addScriptController {
     @FXML
     private ToggleButton tbTrainRanged;
     @FXML
-    private TextField edtTrainQnt;
+    private NumberTextField edtTrainQnt;
     @FXML
     private ToggleButton tbTrainRight;
     @FXML
@@ -75,7 +76,7 @@ public class vsi_addScriptController {
     // Harvest
     
     @FXML
-    private TextField edtHarvestQnt;
+    private NumberTextField edtHarvestQnt;
     @FXML
     private Button closeAddHarvest;
     

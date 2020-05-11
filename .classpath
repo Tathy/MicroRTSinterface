@@ -4,12 +4,12 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/eclipselink.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/javax.persistence_2.1.0.v201304241213.jar"/>
-	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/jdom.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/jfoenix-9.0.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/minimal-json-0.9.4.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/mysql-connector-java-5.1.23-bin.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar"/>
 	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/weka.jar"/>
+	<classpathentry kind="lib" path="C:/Users/tassi/git/lib MicroRTS/jdom.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

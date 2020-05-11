@@ -82,13 +82,15 @@ public class vsi_loadScriptController implements Initializable{
     
     void loadScripts() {
     	File dirPath = new File("savedScripts");
-		//System.out.println("Arquivos dispon�veis:");
+		//System.out.println("Arquivos disponíveis:");
 		lvScripts.getItems().clear();
 		
 		for(String f: dirPath.list()) {
-			lvScripts.getItems().addAll(f);
-			lvScripts.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-			//System.out.println(f);
+			if(f.contains(".txt")) {
+				lvScripts.getItems().addAll(f);
+				lvScripts.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+				//System.out.println(f);
+			}
 		}
     }
 

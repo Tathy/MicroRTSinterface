@@ -2,6 +2,7 @@ package gui;
 
 import com.jfoenix.controls.JFXRadioButton;
 
+import gui.custom.NumberTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -49,7 +50,7 @@ public class vsi_addCondScriptController {
     //Ally Quantity
     
     @FXML
-    private TextField edtCondAllyQnt;
+    private NumberTextField edtCondAllyQnt;
     @FXML
     private Text txtQntDistAlly;
     
@@ -84,7 +85,7 @@ public class vsi_addCondScriptController {
     //Enemy Quantity
     
     @FXML
-    private TextField edtCondEnemyQnt;
+    private NumberTextField edtCondEnemyQnt;
     @FXML
     private Text txtQntDistEnemy;
     
@@ -155,13 +156,13 @@ public class vsi_addCondScriptController {
 	       		edtCondAllyQnt.setDisable(false);
 	        		
 	       	}else if(rbHaveQtdUnitsAttacking.isSelected()) {
-        		tbCondEnemyWorker.setDisable(false);
-        		tbCondEnemyLight.setDisable(false);
-        		tbCondEnemyHeavy.setDisable(false);
-        		tbCondEnemyRanged.setDisable(false);
-        		tbCondEnemyAll.setDisable(false);
-        		txtQntDistEnemy.setText("Quantity");
-	       		edtCondEnemyQnt.setDisable(false);
+        		tbCondAllyWorker.setDisable(false);
+        		tbCondAllyLight.setDisable(false);
+        		tbCondAllyHeavy.setDisable(false);
+        		tbCondAllyRanged.setDisable(false);
+        		tbCondAllyAll.setDisable(false);
+        		txtQntDistAlly.setText("Quantity");
+	       		edtCondAllyQnt.setDisable(false);
 	       	}
     	}
     	
@@ -361,15 +362,15 @@ public class vsi_addCondScriptController {
     				Integer q = Integer.parseInt(edtCondAllyQnt.getText());
     				
     				//Type
-    	    		if(tbCondEnemyWorker.isSelected())
+    	    		if(tbCondAllyWorker.isSelected())
         				s += "Worker,";
-        			else if(tbCondEnemyLight.isSelected())
+        			else if(tbCondAllyLight.isSelected())
         				s += "Light,";
-        			else if(tbCondEnemyHeavy.isSelected())
+        			else if(tbCondAllyHeavy.isSelected())
         				s += "Heavy,";
-        			else if(tbCondEnemyRanged.isSelected())
+        			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondEnemyAll.isSelected())
+        			else if(tbCondAllyAll.isSelected())
         				s += "All,";
     	    		
     	    		//Quantity or Distance
@@ -377,6 +378,7 @@ public class vsi_addCondScriptController {
     	    		
     	    		//String provisória, apagar depois
     	    		s += ")";
+
     			}
     			
     			txtAlertAllies.setOpacity(0.0);
@@ -550,15 +552,15 @@ public class vsi_addCondScriptController {
     				Integer q = Integer.parseInt(edtCondAllyQnt.getText());
     				
     				//Type
-    	    		if(tbCondEnemyWorker.isSelected())
+    	    		if(tbCondAllyWorker.isSelected())
         				s += "Worker,";
-        			else if(tbCondEnemyLight.isSelected())
+        			else if(tbCondAllyLight.isSelected())
         				s += "Light,";
-        			else if(tbCondEnemyHeavy.isSelected())
+        			else if(tbCondAllyHeavy.isSelected())
         				s += "Heavy,";
-        			else if(tbCondEnemyRanged.isSelected())
+        			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondEnemyAll.isSelected())
+        			else if(tbCondAllyAll.isSelected())
         				s += "All,";
     	    		
     	    		//Quantity or Distance
