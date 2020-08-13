@@ -330,7 +330,7 @@ public class RemoteReport {
     
     public static HashMap<BigDecimal, String> buildScriptsTable(HashMap<BigDecimal, String> tabl) {
     	tabl = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "ScriptsTable.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "/ScriptsTable.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String code = line.substring(line.indexOf(" "), line.length());

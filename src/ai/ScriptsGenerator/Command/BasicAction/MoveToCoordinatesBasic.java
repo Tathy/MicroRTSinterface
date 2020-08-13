@@ -40,14 +40,13 @@ public class MoveToCoordinatesBasic extends AbstractBasicAction implements IUnit
 
     @Override
     public PlayerAction getAction(GameState game, int player, PlayerAction currentPlayerAction, PathFinding pf, UnitTypeTable a_utt, HashSet<String> usedCommands, HashMap<Long, String> counterByFunction) {
-    	
-    	ResourceUsage resources = new ResourceUsage();
+
+        ResourceUsage resources = new ResourceUsage();
         PhysicalGameState pgs = game.getPhysicalGameState();
         //update variable resources
         resources = getResourcesUsed(currentPlayerAction, pgs);
         for (Unit unAlly : getPotentialUnits(game, currentPlayerAction, player)) {
 
-            //pick one enemy unit to set the action
             int pX = getCoordinatesFromParam().getX();
             int pY = getCoordinatesFromParam().getY();
 
@@ -55,24 +54,26 @@ public class MoveToCoordinatesBasic extends AbstractBasicAction implements IUnit
             if (game.getActionAssignment(unAlly) == null && unAlly != null) {
 
                 UnitAction uAct = null;
-                UnitAction move = pf.findPathToAdjacentPosition(unAlly, pX + pY * pgs.getWidth(), game, resources);
-                if (move != null && game.isUnitActionAllowed(unAlly, move));
-                uAct = move;
-
-                if (uAct != null && (uAct.getType() == 5 || uAct.getType() == 1)) {
-                	usedCommands.add(getOriginalPieceGrammar());
-                	if(counterByFunction.containsKey(unAlly.getID()))
-                	{
-                		if(!counterByFunction.get(unAlly.getID()).equals("moveToCoordinates"))
-                			counterByFunction.put(unAlly.getID(), "moveToCoordinates");
-                	}
-                	else
-                	{
-                		counterByFunction.put(unAlly.getID(), "moveToCoordinates");
-                	}
-                    currentPlayerAction.addUnitAction(unAlly, uAct);
-                    resources.merge(uAct.resourceUsage(unAlly, pgs));
+                UnitAction move = pf.findPath(unAlly, pX + pY * pgs.getWidth(), game, resources);
+                if (move == null) {
+                    move = pf.findPathToAdjacentPosition(unAlly, pX + pY * pgs.getWidth(), game, resources);
                 }
+                if (move != null && game.isUnitActionAllowed(unAlly, move)) {
+                    uAct = move;
+                    if (uAct != null && (uAct.getType() == 5 || uAct.getType() == 1)) {
+                        usedCommands.add(getOriginalPieceGrammar());
+                        if (counterByFunction.containsKey(unAlly.getID())) {
+                            if (!counterByFunction.get(unAlly.getID()).equals("moveToCoordinates")) {
+                                counterByFunction.put(unAlly.getID(), "moveToCoordinates");
+                            }
+                        } else {
+                            counterByFunction.put(unAlly.getID(), "moveToCoordinates");
+                        }
+                        currentPlayerAction.addUnitAction(unAlly, uAct);
+                        resources.merge(uAct.resourceUsage(unAlly, pgs));
+                    }
+                }
+
             }
         }
         return currentPlayerAction;
@@ -106,21 +107,20 @@ public class MoveToCoordinatesBasic extends AbstractBasicAction implements IUnit
 
     @Override
     public PlayerAction getAction(GameState game, int player, PlayerAction currentPlayerAction, PathFinding pf, UnitTypeTable a_utt, Unit unAlly, HashSet<String> usedCommands, HashMap<Long, String> counterByFunction) {
-    	//usedCommands.add(getOriginalPieceGrammar()+")");
-    	
-    	if(unAlly != null && currentPlayerAction.getAction(unAlly) != null){
-            return currentPlayerAction ;
+        //usedCommands.add(getOriginalPieceGrammar()+")");
+
+        if (unAlly != null && currentPlayerAction.getAction(unAlly) != null
+                && unAlly.getPlayer() != player) {
+            return currentPlayerAction;
         }
         ResourceUsage resources = new ResourceUsage();
         PhysicalGameState pgs = game.getPhysicalGameState();
         //update variable resources
         resources = getResourcesUsed(currentPlayerAction, pgs);
 
-        //pick one enemy unit to set the action
         int pX = getCoordinatesFromParam().getX();
         int pY = getCoordinatesFromParam().getY();
 
-        //pick the positions
         if (game.getActionAssignment(unAlly) == null && unAlly != null && hasInPotentialUnits(game, currentPlayerAction, unAlly, player)) {
 
             UnitAction uAct = null;
@@ -129,43 +129,41 @@ public class MoveToCoordinatesBasic extends AbstractBasicAction implements IUnit
             uAct = move;
 
             if (uAct != null && (uAct.getType() == 5 || uAct.getType() == 1)) {
-            	usedCommands.add(getOriginalPieceGrammar());
-            	if(counterByFunction.containsKey(unAlly.getID()))
-            	{
-            		if(!counterByFunction.get(unAlly.getID()).equals("moveToCoordinates"))
-            			counterByFunction.put(unAlly.getID(), "moveToCoordinates");
-            	}
-            	else
-            	{
-            		counterByFunction.put(unAlly.getID(), "moveToCoordinates");
-            	}
+                usedCommands.add(getOriginalPieceGrammar());
+                if (counterByFunction.containsKey(unAlly.getID())) {
+                    if (!counterByFunction.get(unAlly.getID()).equals("moveToCoordinates")) {
+                        counterByFunction.put(unAlly.getID(), "moveToCoordinates");
+                    }
+                } else {
+                    counterByFunction.put(unAlly.getID(), "moveToCoordinates");
+                }
                 currentPlayerAction.addUnitAction(unAlly, uAct);
                 resources.merge(uAct.resourceUsage(unAlly, pgs));
             }
         }
         return currentPlayerAction;
     }
-    
-	/**
-	 * @return the originalPieceGrammar
-	 */
-	public String getOriginalPieceGrammar() {
-		return originalPieceGrammar;
-	}
 
-	/**
-	 * @param originalPieceGrammar the originalPieceGrammar to set
-	 */
-	public void setOriginalPieceGrammar(String originalPieceGrammar) {
-		this.originalPieceGrammar = originalPieceGrammar;
-	}
-	
-	public String getOriginalPieceGrammarWord() {
-		return originalPieceGrammarWord;
-	}
+    /**
+     * @return the originalPieceGrammar
+     */
+    public String getOriginalPieceGrammar() {
+        return originalPieceGrammar;
+    }
 
-	public void setOriginalPieceGrammarWord(String originalPieceGrammarWord) {
-		this.originalPieceGrammarWord = originalPieceGrammarWord;
-	}
+    /**
+     * @param originalPieceGrammar the originalPieceGrammar to set
+     */
+    public void setOriginalPieceGrammar(String originalPieceGrammar) {
+        this.originalPieceGrammar = originalPieceGrammar;
+    }
+
+    public String getOriginalPieceGrammarWord() {
+        return originalPieceGrammarWord;
+    }
+
+    public void setOriginalPieceGrammarWord(String originalPieceGrammarWord) {
+        this.originalPieceGrammarWord = originalPieceGrammarWord;
+    }
 
 }

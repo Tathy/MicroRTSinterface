@@ -482,7 +482,7 @@ public class GVS_RunBattle {
     public HashMap<BigDecimal, String> buildScriptsTable() {
         scriptsTable = new HashMap<>();
         String line="";
-        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "ScriptsTable.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(pathTableScripts + "/ScriptsTable.txt"))) {
             while ((line = br.readLine()) != null) {
                 String code = line.substring(line.indexOf(" "), line.length());
                 String[] strArray = line.split(" ");

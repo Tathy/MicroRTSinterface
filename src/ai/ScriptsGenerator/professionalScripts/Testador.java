@@ -11,6 +11,7 @@ import ai.abstraction.HeavyRush;
 import ai.abstraction.LightRush;
 import ai.abstraction.RangedRush;
 import ai.abstraction.WorkerRush;
+import ai.competition.newBotsEval.botEmptyBase;
 import ai.core.AI;
 import ai.configurablescript.BasicExpandedConfigurableScript;
 import ai.configurablescript.ScriptsCreator;
@@ -36,7 +37,8 @@ public class Testador {
     public static void main(String args[]) throws Exception {
         UnitTypeTable utt = new UnitTypeTable();
         //PhysicalGameState pgs = PhysicalGameState.load("maps/NoWhereToRun9x8.xml", utt);
-        PhysicalGameState pgs = PhysicalGameState.load("maps/16x16/basesWorkers16x16.xml", utt);
+        //PhysicalGameState pgs = PhysicalGameState.load("maps/16x16/basesWorkers16x16.xml", utt);
+        PhysicalGameState pgs = PhysicalGameState.load("maps/8x8/basesWorkers8x8A.xml", utt);
         //PhysicalGameState pgs = PhysicalGameState.load("maps/BroodWar/(4)BloodBath.scmB.xml", utt);
        
         
@@ -45,9 +47,11 @@ public class Testador {
         int PERIOD = 20;
         boolean gameover = false;
 
-        AI ai1 = new RandomBiasedAI(utt);
-        AI ai2 = new Script_Template(utt);
-             
+        //AI ai1 = new RandomBiasedAI(utt);
+        //AI ai2 = new Script_Template(utt);
+        
+        AI ai2 = new botEmptyBase(utt, "for(u) (if(HaveUnitsToDistantToEnemy(Worker,3,u)) (attack(Worker,closest,u))) for(u) (train(Worker,12,Down) harvest(1,u)) for(u) (harvest(8,u) attack(Worker,mostHealthy,u))", "");
+        AI ai1 = new botEmptyBase(utt, "harvest(1) train(Worker,50,EnemyDir) if(HaveUnitsToDistantToEnemy(All,5)) (attack(All,closest))", "");
         
         System.out.println("---------AI's---------");
         System.out.println("AI 1 = "+ai1.toString());

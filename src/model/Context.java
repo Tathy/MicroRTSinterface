@@ -20,7 +20,7 @@ public class Context {
 	private int abaAddScript = 1;
 	
 	// Barra Inferior
-	private boolean pause = true;
+	private boolean pause = true; //true
 	private boolean restart = false;
 	private boolean play = false;
 	private boolean apply = false;

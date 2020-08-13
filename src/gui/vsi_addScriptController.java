@@ -36,7 +36,7 @@ public class vsi_addScriptController {
     @FXML
     private ToggleButton tbBuildDown;
     @FXML
-    private NumberTextField edtBuildQnt;
+    private TextField edtBuildQnt;
     @FXML
     private ToggleGroup groupBuildTypes;
     @FXML
@@ -55,7 +55,7 @@ public class vsi_addScriptController {
     @FXML
     private ToggleButton tbTrainRanged;
     @FXML
-    private NumberTextField edtTrainQnt;
+    private TextField edtTrainQnt;
     @FXML
     private ToggleButton tbTrainRight;
     @FXML
@@ -76,7 +76,7 @@ public class vsi_addScriptController {
     // Harvest
     
     @FXML
-    private NumberTextField edtHarvestQnt;
+    private TextField edtHarvestQnt;
     @FXML
     private Button closeAddHarvest;
     
@@ -165,6 +165,44 @@ public class vsi_addScriptController {
     @FXML
     private ToggleGroup groupMoveAwayTypes;
     
+    // Move To Coordinates
+    
+    @FXML
+    private ToggleButton tbMoveToCoordWorker;
+    @FXML
+    private ToggleButton tbMoveToCoordLight;
+    @FXML
+    private ToggleButton tbMoveToCoordHeavy;
+    @FXML
+    private ToggleButton tbMoveToCoordRanged;
+    @FXML
+    private TextField edtMoveToCoordX;
+    @FXML
+    private TextField edtMoveToCoordY;
+    @FXML
+    private ToggleGroup groupMoveToCoordTypes;
+    
+    // Move Once To Coordinates
+    
+    @FXML
+    private ToggleButton tbMoveOnceToCoordWorker;
+    @FXML
+    private ToggleButton tbMoveOnceToCoordLight;
+    @FXML
+    private ToggleButton tbMoveOnceToCoordHeavy;
+    @FXML
+    private ToggleButton tbMoveOnceToCoordRanged;
+    @FXML
+    private TextField edtMoveOnceToCoordQnt;
+    @FXML
+    private TextField edtMoveOnceToCoordX;
+    @FXML
+    private TextField edtMoveOnceToCoordY;
+    @FXML
+    private Button closeAddMoveOnceToCoord;
+    @FXML
+    private ToggleGroup groupMoveOnceToCoordTypes;
+    
     // Alerts
     
     @FXML
@@ -179,6 +217,12 @@ public class vsi_addScriptController {
     private Text txtAlertMoveToUnit;
     @FXML
     private Text txtAlertMoveAway;
+    @FXML
+    private Button closeAddMoveToCoord;
+    @FXML
+    private Text txtAlertMoveToCoord;
+    @FXML
+    private Text txtAlertMoveOnceToCoord;
     
     
     public void init(VisualScriptInterfaceController m) {
@@ -810,6 +854,187 @@ public class vsi_addScriptController {
     	
     	if(fecharJanela) {
 	    	Stage stage = (Stage) closeAddBuild.getScene().getWindow();
+	    	stage.hide();
+    	}
+    }
+    
+    
+    //Move to Coordinates
+    @FXML
+    void clickBtnAddMoveToCoord(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
+    	if(Context.getInstance().getAbaAddScript() == 1) {
+			String s = "";
+			
+    		if(groupMoveToCoordTypes.getSelectedToggle() != null  && edtMoveToCoordX.getText() != null && !edtMoveToCoordX.getText().trim().isEmpty() 
+    				&& edtMoveToCoordY.getText() != null && !edtMoveToCoordY.getText().trim().isEmpty()) {
+    			Integer x = Integer.parseInt(edtMoveToCoordX.getText());
+    			Integer y = Integer.parseInt(edtMoveToCoordY.getText());
+    			
+    			if(tbMoveToCoordWorker.isSelected())
+    				s = "moveToCoord(Worker," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveToCoordLight.isSelected())
+    				s = "moveToCoord(Light," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveToCoordHeavy.isSelected())
+    				s = "moveToCoord(Heavy," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveToCoordRanged.isSelected())
+    				s = "moveToCoord(Ranged," + Integer.toString(x) + "," + Integer.toString(y) + ")";	
+    			
+    			/*
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			*/
+    			
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
+    			
+    			System.out.println("Comando adicionado (1): " + s);
+    			
+    			txtAlertMoveToCoord.setOpacity(0.0);
+    		}else {
+    			txtAlertMoveToCoord.setOpacity(1.0);
+    			System.out.println("Faltam parâmetros!!");
+    		}
+    		
+    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    		String s = "";
+			
+    		if(groupMoveToCoordTypes.getSelectedToggle() != null  && edtMoveToCoordX.getText() != null && !edtMoveToCoordX.getText().trim().isEmpty() 
+    				&& edtMoveToCoordY.getText() != null && !edtMoveToCoordY.getText().trim().isEmpty()) {
+    			Integer x = Integer.parseInt(edtMoveToCoordX.getText());
+    			Integer y = Integer.parseInt(edtMoveToCoordY.getText());
+    			
+    			if(tbMoveToCoordWorker.isSelected())
+    				s = "moveToCoord(Worker," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveToCoordLight.isSelected())
+    				s = "moveToCoord(Light," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveToCoordHeavy.isSelected())
+    				s = "moveToCoord(Heavy," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveToCoordRanged.isSelected())
+    				s = "moveToCoord(Ranged," + Integer.toString(x) + "," + Integer.toString(y) + ")";	
+    			
+    			/*
+    			//Atualização das listas
+    			if(principalController != null) {
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}else if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			}
+    			*/
+    			
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
+    			
+    			System.out.println("Comando adicionado (2): " + s);
+    			
+    			txtAlertMoveToCoord.setOpacity(0.0);
+    		}else {
+    			txtAlertMoveToCoord.setOpacity(1.0);
+    			System.out.println("Faltam parâmetros!!");
+    		}
+    	}
+    	
+    	if(fecharJanela) {
+	    	Stage stage = (Stage) closeAddMoveToCoord.getScene().getWindow();
+	    	stage.hide();
+    	}
+    }
+    
+    //Move Once to Coordinates
+    @FXML
+    void clickBtnAddMoveOnceToCoord(ActionEvent event) {
+    	principalController.checkSelectedTab();
+    	
+    	if(Context.getInstance().getAbaAddScript() == 1) {
+    		String s = "";
+			
+    		if(groupMoveOnceToCoordTypes.getSelectedToggle() != null  && edtMoveOnceToCoordX.getText() != null && !edtMoveOnceToCoordX.getText().trim().isEmpty() 
+    				&& edtMoveOnceToCoordY.getText() != null && !edtMoveOnceToCoordY.getText().trim().isEmpty()
+    				&& Integer.parseInt(edtMoveOnceToCoordQnt.getText()) != 0) {
+    			Integer x = Integer.parseInt(edtMoveOnceToCoordX.getText());
+    			Integer y = Integer.parseInt(edtMoveOnceToCoordY.getText());
+    			Integer q = Integer.parseInt(edtMoveOnceToCoordQnt.getText());
+    			
+    			if(tbMoveOnceToCoordWorker.isSelected())
+    				s = "moveOnceToCoord(Worker," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveOnceToCoordLight.isSelected())
+    				s = "moveOnceToCoord(Light," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveOnceToCoordHeavy.isSelected())
+    				s = "moveOnceToCoord(Heavy," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveOnceToCoordRanged.isSelected())
+    				s = "moveOnceToCoord(Ranged," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";	
+    			
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI1(s);
+    				principalController.attListViewAI1();
+    			}
+    			
+    			System.out.println("Comando adicionado (1): " + s);
+    			
+    			txtAlertMoveOnceToCoord.setOpacity(0.0);
+    		}else {
+    			txtAlertMoveOnceToCoord.setOpacity(1.0);
+    			System.out.println("Faltam parâmetros!!");
+    		}
+    		
+    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    		String s = "";
+			
+    		if(groupMoveOnceToCoordTypes.getSelectedToggle() != null  && edtMoveOnceToCoordX.getText() != null && !edtMoveOnceToCoordX.getText().trim().isEmpty() 
+    				&& edtMoveOnceToCoordY.getText() != null && !edtMoveOnceToCoordY.getText().trim().isEmpty()
+    				&& Integer.parseInt(edtMoveOnceToCoordQnt.getText()) != 0) {
+    			Integer x = Integer.parseInt(edtMoveOnceToCoordX.getText());
+    			Integer y = Integer.parseInt(edtMoveOnceToCoordY.getText());
+    			Integer q = Integer.parseInt(edtMoveOnceToCoordQnt.getText());
+    			
+    			if(tbMoveOnceToCoordWorker.isSelected())
+    				s = "moveOnceToCoord(Worker," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveOnceToCoordLight.isSelected())
+    				s = "moveOnceToCoord(Light," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveOnceToCoordHeavy.isSelected())
+    				s = "moveOnceToCoord(Heavy," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";
+    			else if(tbMoveOnceToCoordRanged.isSelected())
+    				s = "moveOnceToCoord(Ranged," + Integer.toString(q) + "," + Integer.toString(x) + "," + Integer.toString(y) + ")";	
+    			
+    			//Atualização das listas
+    			if(addPlusController != null) {
+    				addPlusController.addListViewFuncList(s);
+    			} else if(principalController != null){
+    				Context.getInstance().addScriptAI2(s);
+    				principalController.attListViewAI2();
+    			}
+    			
+    			System.out.println("Comando adicionado (2): " + s);
+    			
+    			txtAlertMoveOnceToCoord.setOpacity(0.0);
+    		}else {
+    			txtAlertMoveOnceToCoord.setOpacity(1.0);
+    			System.out.println("Faltam parâmetros!!");
+    		}
+    	}
+    	
+    	if(fecharJanela) {
+	    	Stage stage = (Stage) closeAddMoveOnceToCoord.getScene().getWindow();
 	    	stage.hide();
     	}
     }

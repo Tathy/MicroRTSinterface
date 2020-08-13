@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author rubens Classe utilizada para gerir o serviço SOA para testes
@@ -25,31 +23,21 @@ public class SOARoundRobinTOScale_GP {
     private static String pathLogsUsedCommands="";
 
     public static void main(String args[]) throws Exception {
-    	// Caminho da pasta /configSOA/SOA1
         String pathSOA = args[0];
-    	//String pathSOA = "C:/Users/tassi/Documents/Teste Local microRTS-GA/configSOA/SOA1";
-        
-        // Caminho da pasta /logs
         String pathLog = args[1];
-        //String pathLog = "C:/Users/tassi/Documents/Teste Local microRTS-GA/logs/";
-        
-        // Caminho da pasta /commandsUsed/COMM1
         pathLogsUsedCommands = args[2];
-        //pathLogsUsedCommands = "C:/Users/tassi/Documents/Teste Local microRTS-GA/commandsUsed/COMM1/";
-        
+        //String pathSOA = "/home/rubens/cluster/DeckEvaluation/configSOA/SOA1/";
+        //String pathLog = "/home/rubens/cluster/DeckEvaluation/logs/";
         int qtdMapas = 1;
-        
-        // Cria a pasta SOA1 caso ela ainda não exista --- Apagar antes de rodar os testes
+        //String pathSOA = "/home/rubens/cluster/USP/Test_map8_10script_USP/configSOA/SOA1/";
+        //String pathLog = "/home/rubens/cluster/USP/Test_map8_10script_USP/logs/";
         File SOA = new File(pathSOA);
         if (!SOA.exists()) {
             SOA.mkdir();
         }
-        
         System.out.println(pathSOA);
         System.out.println(pathLog);
 
-
-        // Enquanto não existir o arquivo com o nome exit na pasta SOA.
         while (!finalizarSOA(pathSOA)) {
             //procuro a existencia dos arquivos a serem processados.
             ArrayList<String> mathSOA = buscarAquivos(pathSOA);
@@ -90,15 +78,13 @@ public class SOARoundRobinTOScale_GP {
         //ler o arquivo e pegar a linha com dados
         String config = getLinha(arquivo);
         String[] itens = config.split("#");
-        // VISUAL
-        //JFrame w = new JFrame();
 
-        RoundRobinTOScale_GP control = new RoundRobinTOScale_GP(pathTableScripts,pathLogsUsedCommands); ////
+        RoundRobinTOScale_GP control = new RoundRobinTOScale_GP(pathTableScripts,pathLogsUsedCommands);
         try {
             return control.run(itens[0].trim(),
                     itens[1].trim(),
                     Integer.decode(itens[2]),
-                    Integer.decode(itens[3]), pathLog, map); //, w);
+                    Integer.decode(itens[3]), pathLog, map);
         } catch (Exception ex) {
             Logger.getLogger(SOARoundRobinTOScale_GP.class.getName()).log(Level.SEVERE, null, ex);
         }

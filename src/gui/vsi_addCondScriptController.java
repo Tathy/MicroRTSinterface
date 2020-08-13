@@ -30,6 +30,8 @@ public class vsi_addCondScriptController {
     @FXML
     private JFXRadioButton rbHaveUnitsToDistantToEnemy;
     @FXML
+    private JFXRadioButton rbIsPlayerInPosition;
+    @FXML
     private ToggleGroup groupConditionalAllies;
 
     //Ally Type
@@ -46,11 +48,24 @@ public class vsi_addCondScriptController {
     private ToggleButton tbCondAllyAll;
     @FXML
     private ToggleGroup groupCondAllyTypes;
+    
+    //Ally Direction
+
+    @FXML
+    private ToggleButton tbCondAllyRight;
+    @FXML
+    private ToggleButton tbCondAllyLeft;
+    @FXML
+    private ToggleButton tbCondAllyUp;
+    @FXML
+    private ToggleButton tbCondAllyDown;
+    @FXML
+    private ToggleGroup groupCondAllyDirections;
 
     //Ally Quantity
     
     @FXML
-    private NumberTextField edtCondAllyQnt;
+    private TextField edtCondAllyQnt;
     @FXML
     private Text txtQntDistAlly;
     
@@ -85,7 +100,7 @@ public class vsi_addCondScriptController {
     //Enemy Quantity
     
     @FXML
-    private NumberTextField edtCondEnemyQnt;
+    private TextField edtCondEnemyQnt;
     @FXML
     private Text txtQntDistEnemy;
     
@@ -120,6 +135,10 @@ public class vsi_addCondScriptController {
 	       		tbCondAllyAll.setDisable(false);
 	       		txtQntDistAlly.setText("Quantity");
 	       		edtCondAllyQnt.setDisable(false);
+	       		tbCondAllyRight.setDisable(true);
+	       	    tbCondAllyLeft.setDisable(true);
+	       	    tbCondAllyUp.setDisable(true);
+	       	    tbCondAllyDown.setDisable(true);
 	       		
         	}else if(rbHaveQtdUnitsHarversting.isSelected()) {
 	        	tbCondAllyWorker.setDisable(true);
@@ -129,6 +148,10 @@ public class vsi_addCondScriptController {
 	       		tbCondAllyAll.setDisable(true);
 	       		txtQntDistAlly.setText("Quantity");
 	       		edtCondAllyQnt.setDisable(false);
+	       		tbCondAllyRight.setDisable(true);
+	       	    tbCondAllyLeft.setDisable(true);
+	       	    tbCondAllyUp.setDisable(true);
+	       	    tbCondAllyDown.setDisable(true);
 	       		
         	}else if(rbHaveUnitsStrongest.isSelected()) {
 	      		tbCondAllyWorker.setDisable(false);
@@ -137,6 +160,10 @@ public class vsi_addCondScriptController {
 	       		tbCondAllyRanged.setDisable(false);
 	       		tbCondAllyAll.setDisable(false);
 	       		edtCondAllyQnt.setDisable(true);
+	       		tbCondAllyRight.setDisable(true);
+	       	    tbCondAllyLeft.setDisable(true);
+	       	    tbCondAllyUp.setDisable(true);
+	       	    tbCondAllyDown.setDisable(true);
 	        		
 	       	}else if(rbHaveUnitsinEnemyRange.isSelected()) {
 	       		tbCondAllyWorker.setDisable(false);
@@ -145,6 +172,10 @@ public class vsi_addCondScriptController {
 	       		tbCondAllyRanged.setDisable(false);
 	       		tbCondAllyAll.setDisable(false);
 	       		edtCondAllyQnt.setDisable(true);
+	       		tbCondAllyRight.setDisable(true);
+	       	    tbCondAllyLeft.setDisable(true);
+	       	    tbCondAllyUp.setDisable(true);
+	       	    tbCondAllyDown.setDisable(true);
 	       		
 	       	}else if(rbHaveUnitsToDistantToEnemy.isSelected()) {
 	       		tbCondAllyWorker.setDisable(false);
@@ -154,6 +185,10 @@ public class vsi_addCondScriptController {
 	       		tbCondAllyAll.setDisable(false);
 	       		txtQntDistAlly.setText("Distance");
 	       		edtCondAllyQnt.setDisable(false);
+	       		tbCondAllyRight.setDisable(true);
+	       	    tbCondAllyLeft.setDisable(true);
+	       	    tbCondAllyUp.setDisable(true);
+	       	    tbCondAllyDown.setDisable(true);
 	        		
 	       	}else if(rbHaveQtdUnitsAttacking.isSelected()) {
         		tbCondAllyWorker.setDisable(false);
@@ -163,6 +198,22 @@ public class vsi_addCondScriptController {
         		tbCondAllyAll.setDisable(false);
         		txtQntDistAlly.setText("Quantity");
 	       		edtCondAllyQnt.setDisable(false);
+	       		tbCondAllyRight.setDisable(true);
+	       	    tbCondAllyLeft.setDisable(true);
+	       	    tbCondAllyUp.setDisable(true);
+	       	    tbCondAllyDown.setDisable(true);
+	       	    
+	       	}else if(rbIsPlayerInPosition.isSelected()) {
+        		tbCondAllyWorker.setDisable(true);
+        		tbCondAllyLight.setDisable(true);
+        		tbCondAllyHeavy.setDisable(true);
+        		tbCondAllyRanged.setDisable(true);
+        		tbCondAllyAll.setDisable(true);
+	       		edtCondAllyQnt.setDisable(true);
+	       		tbCondAllyRight.setDisable(false);
+	       	    tbCondAllyLeft.setDisable(false);
+	       	    tbCondAllyUp.setDisable(false);
+	       	    tbCondAllyDown.setDisable(false);
 	       	}
     	}
     	
@@ -387,6 +438,34 @@ public class vsi_addCondScriptController {
     				txtAlertAllies.setOpacity(1.0);
     		}
     		
+    		//IsPlayerInPosition
+    		if( rbIsPlayerInPosition.isSelected() && groupCondAllyDirections.getSelectedToggle() != null) {
+    			validCommand = true;
+    			s += "IsPlayerInPosition(";
+    			
+    			if(groupCondAllyDirections.getSelectedToggle() != null) {
+    				
+    				//Directions
+    	    		if(tbCondAllyRight.isSelected())
+        				s += "Right)";
+        			else if(tbCondAllyLeft.isSelected())
+        				s += "Left)";
+        			else if(tbCondAllyUp.isSelected())
+        				s += "Up)";
+        			else if(tbCondAllyDown.isSelected())
+        				s += "Down)";
+
+    	    		//String provisória, apagar depois
+    	    		s += ")";
+
+    			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbIsPlayerInPosition.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
+    		}
+    		
     		//Atualização das listas
     		if(validCommand == true) {
 				if(addPlusController != null) {
@@ -573,6 +652,34 @@ public class vsi_addCondScriptController {
     			txtAlertAllies.setOpacity(0.0);
     		} else {
     			if( rbHaveQtdUnitsAttacking.isSelected() )
+    				txtAlertAllies.setOpacity(1.0);
+    		}
+    		
+    		//IsPlayerInPosition
+    		if( rbIsPlayerInPosition.isSelected() && groupCondAllyDirections.getSelectedToggle() != null) {
+    			validCommand = true;
+    			s += "IsPlayerInPosition(";
+    			
+    			if(groupCondAllyDirections.getSelectedToggle() != null) {
+    				
+    				//Directions
+    	    		if(tbCondAllyRight.isSelected())
+        				s += "Right)";
+        			else if(tbCondAllyLeft.isSelected())
+        				s += "Left)";
+        			else if(tbCondAllyUp.isSelected())
+        				s += "Up)";
+        			else if(tbCondAllyDown.isSelected())
+        				s += "Down)";
+
+    	    		//String provisória, apagar depois
+    	    		s += ")";
+
+    			}
+    			
+    			txtAlertAllies.setOpacity(0.0);
+    		} else {
+    			if( rbIsPlayerInPosition.isSelected() )
     				txtAlertAllies.setOpacity(1.0);
     		}
     		

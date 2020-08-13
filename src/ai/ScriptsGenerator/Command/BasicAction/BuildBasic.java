@@ -59,7 +59,8 @@ public class BuildBasic extends AbstractBasicAction implements IUnitCommand {
             //verify if the limit of units are reached
             if (!limitReached(game, player, currentPlayerAction)) {
                 //check if we have resources
-                if (game.getPlayer(player).getResources() >= getResourceCost(unitToBeBuilded, a_utt)) {
+                int resourcesUsed = getResourcesInCurrentAction(currentPlayerAction) + game.getResourceUsage().getResourcesUsed(player);        
+                if ((game.getPlayer(player).getResources()- resourcesUsed) >= getResourceCost(unitToBeBuilded, a_utt)) {
                     //pick one work to build
                     Unit workToBuild = getWorkToBuild(player, game, currentPlayerAction, a_utt, pf);
                     if (workToBuild != null) {
@@ -366,7 +367,6 @@ public class BuildBasic extends AbstractBasicAction implements IUnitCommand {
         if (unitToBeBuilded.getParamTypes().get(0) == EnumTypeUnits.Base) {
             return a_utt.getUnitType("Base").cost;
         } else {
-            int c = a_utt.getUnitType("Barracks").cost;
             return a_utt.getUnitType("Barracks").cost;
         }
     }
@@ -496,6 +496,9 @@ public class BuildBasic extends AbstractBasicAction implements IUnitCommand {
     @Override
     public PlayerAction getAction(GameState game, int player, PlayerAction currentPlayerAction, PathFinding pf, UnitTypeTable a_utt, Unit workToBuild, HashSet<String> usedCommands, HashMap<Long, String> counterByFunction) {
         //usedCommands.add(getOriginalPieceGrammar()+")");
+        if (workToBuild.getPlayer() != player) {
+            return currentPlayerAction;
+        }
         //get the unit that it will be builded 
         ConstructionTypeParam unitToBeBuilded = getUnitToBuild();
         if (unitToBeBuilded != null) {

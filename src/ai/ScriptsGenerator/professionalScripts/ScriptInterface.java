@@ -12,6 +12,7 @@ import ai.abstraction.LightRush;
 import ai.abstraction.RangedRush;
 import ai.abstraction.WorkerRush;
 import ai.competition.capivara.CmabAssymetricMCTS;
+import ai.competition.newBotsEval.botEmptyBase;
 import ai.core.AI;
 import ai.evaluation.SimpleSqrtEvaluationFunction3;
 import ai.configurablescript.BasicExpandedConfigurableScript;
@@ -49,7 +50,10 @@ public class ScriptInterface {
         boolean gameover = false;
 
         AI ai1 = new PassiveAI(utt);
-        AI ai2 = new PassiveAI(utt);             
+        AI ai2 = new PassiveAI(utt);    
+        
+        //AI ai1 = new botEmptyBase(utt, "for(u) (if(HaveUnitsToDistantToEnemy(Worker,3,u)) (attack(Worker,closest,u))) for(u) (train(Worker,12,Down) harvest(1,u)) for(u) (harvest(8,u) attack(Worker,mostHealthy,u))", "");
+        //AI ai2 = new botEmptyBase(utt, "harvest(1) train(Worker,50,EnemyDir) if(HaveUnitsToDistantToEnemy(All,5)) (attack(All,closest))", "");
         
         //System.out.println("---------AI's---------");
         //System.out.println("AI 1 = "+ai1.toString());
@@ -216,7 +220,24 @@ public class ScriptInterface {
     
     //atualiza a IA de acordo com seu ID e nome pela interface
     public static AI attAI(UnitTypeTable utt, int id) {
-    	return new Script_Template(utt);
+    	//return new Script_Template(utt);
+    	String script = "";
+    	if(id == 2) {
+    		for(int i = 0; i < (Context.getInstance().getScritpsAi2()).size(); i++ ) {
+    			script = script + Context.getInstance().getScritpsAi2().get(i);
+    			script = script + " ";
+    		}
+    		//System.out.println("Script 2: " + script);
+    		return new botEmptyBase(utt, script, "IA2");
+    	}else {
+    		for(int i = 0; i < (Context.getInstance().getScritpsAi1()).size(); i++ ) {
+    			script = script + Context.getInstance().getScritpsAi1().get(i);
+    			script = script + " ";
+    		}
+    		//System.out.println("Script 1: " + script);
+    		return new botEmptyBase(utt, script, "IA1");
+    	}
+    	//return null;
     }
 
 

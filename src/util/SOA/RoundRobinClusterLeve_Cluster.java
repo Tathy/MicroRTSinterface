@@ -39,7 +39,6 @@ import ai.cluster.CIA_TDLearning;
 import ai.competition.IzanagiBot.Izanagi;
 import ai.competition.capivara.Capivara;
 import ai.competition.capivara.CmabAssymetricMCTS;
-import ai.competition.newBotsEval.botEmptyBase;
 import ai.competition.tiamat.Tiamat;
 import ai.configurablescript.BasicExpandedConfigurableScript;
 import ai.configurablescript.ScriptsCreator;
@@ -101,15 +100,15 @@ public class RoundRobinClusterLeve_Cluster {
         Duration duracao;
 
         List<String> maps = new ArrayList<>(Arrays.asList(
-                                "maps/8x8/basesWorkers8x8A.xml"
-        //                        "maps/8x8/FourBasesWorkers8x8.xml",
-        //                        "maps/16x16/basesWorkers16x16A.xml",
-        //                        "maps/16x16/TwoBasesBarracks16x16.xml",
+                                "maps/8x8/basesWorkers8x8A.xml",
+                                "maps/8x8/FourBasesWorkers8x8.xml",
+                                "maps/16x16/basesWorkers16x16A.xml",
+                                "maps/16x16/TwoBasesBarracks16x16.xml",
                 //"maps/24x24/basesWorkers24x24A.xml"
         //                "maps/24x24/basesWorkers24x24A_Barrack.xml",
-        //        "maps/DoubleGame24x24.xml",
-        //        "maps/BWDistantResources32x32.xml",
-        //        "maps/NoWhereToRun9x8.xml"
+                "maps/DoubleGame24x24.xml",
+                "maps/BWDistantResources32x32.xml",
+                "maps/NoWhereToRun9x8.xml"
                         //"maps/32x32/basesWorkers32x32A.xml"
         //                "maps/32x32/basesWorkersBarracks32x32.xml",
         //"maps/BroodWar/(4)BloodBath.scmB.xml"
@@ -129,15 +128,15 @@ public class RoundRobinClusterLeve_Cluster {
         boolean gameover = false;
 
         if (pgs.getHeight() == 8) {
-            MAXCYCLES = 8000; // 3000
+            MAXCYCLES = 8000;
         } else if (pgs.getHeight() == 16) {
-            MAXCYCLES = 10000; //4000
+            MAXCYCLES = 10000;
         } else if (pgs.getHeight() == 24) {
-            MAXCYCLES = 12000; //5000
+            MAXCYCLES = 12000;
         } else if (pgs.getHeight() == 32) {
-            MAXCYCLES = 12000;  //6000
+            MAXCYCLES = 12000;
         } else if (pgs.getHeight() == 64) {
-            MAXCYCLES = 15000; //8000
+            MAXCYCLES = 15000;
         }
 
         /**
@@ -179,9 +178,7 @@ public class RoundRobinClusterLeve_Cluster {
                         decodeScripts(utt, "272;"), "GA_SAB")
          */
         
-        // Colocar bot do jeito que usa no experimento
-        // Colocar a tabela no cluster tbm
-       /* 
+        
         List<AI> ais = new ArrayList(Arrays.asList(new AIWithComputationBudget[]{            
             new StrategyTactics(utt),
             new Tiamat(utt),
@@ -192,15 +189,6 @@ public class RoundRobinClusterLeve_Cluster {
             new POWorkerRush(utt),
             new NaiveMCTS(utt)
         }));
-        */
-        
-        //EXEMPLO MUDAR
-        List<AI> ais = new ArrayList(Arrays.asList(new AIWithComputationBudget[]{            
-        		new botEmptyBase(utt, "<texto do programa>", "<nome fantasia>")
-            }));
-        
-        
-        
 
 //    	AI ai1 = new LightPGSSCriptChoice(utt, decodeScripts(utt, iScriptsAi1),200, "PGSR");
 //    	AI ai2 = new LightPGSSCriptChoice(utt, decodeScripts(utt, iScriptsAi2),200, "PGSR");

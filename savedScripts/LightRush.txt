@@ -1,3 +1,4 @@
+train(Worker,1,EnemyDir)
 build(Barrack,1,Down,u)
 harvest(1)
 train(Light,100,EnemyDir)
