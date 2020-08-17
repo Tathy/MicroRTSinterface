@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package scriptInterface.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -17,6 +17,8 @@ import java.io.IOException;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
+import gui.MouseControllerPanel;
+import gui.PhysicalGameStatePanel;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.fxml.FXMLLoader;
@@ -37,30 +39,20 @@ public class PhysicalGameStateScriptInterfaceJFrame extends JFrame {
     PhysicalGameStatePanel panel = null;
     MouseControllerPanel mousePanel = null;
     
-    ///Tathy
     JFXPanel fxPanel = new JFXPanel();
         
     public PhysicalGameStateScriptInterfaceJFrame(String title, int dx, int dy, PhysicalGameStatePanel a_panel) {
         super(title);
         panel = a_panel;
-        //mousePanel = new MouseControllerPanel();
-        
-        
-        panel.setPreferredSize(new Dimension(dx-270, dy));
-        //mousePanel.setPreferredSize(new Dimension(dx, 64));
-        
 
+        panel.setPreferredSize(new Dimension(dx-270, dy));
         getContentPane().removeAll();
         getContentPane().setLayout(new BoxLayout(getContentPane(),BoxLayout.X_AXIS));
         getContentPane().add(panel);
-        //getContentPane().add(mousePanel);
-        ///Tathy
-        //fxPanel.setPreferredSize(new Dimension(270, 691));
+
         fxPanel.setPreferredSize(new Dimension(270, 691));
         getContentPane().add(fxPanel);
-        
-        //getContentPane().dispatchEvent(new WindowEvent(getContentPane(), WindowEvent.WINDOW_CLOSING));
-        
+
 
         pack();
         setSize(dx,dy);
@@ -83,7 +75,6 @@ public class PhysicalGameStateScriptInterfaceJFrame extends JFrame {
         
     }
     
-    /// Tathy
     public void recreate(int dx, int dy, PhysicalGameStatePanel a_panel) {
     	getContentPane().getPreferredSize();
     	getContentPane().remove(panel);
@@ -128,14 +119,11 @@ public class PhysicalGameStateScriptInterfaceJFrame extends JFrame {
         return null;
     }
     
-    ///Tathy
     private static void initFX(JFXPanel fxPanel) throws Exception {
-        // This method is invoked on the JavaFX thread
         Scene scene = createScene();
         fxPanel.setScene(scene);
     }
     
-    ///Tathy
     private static Scene createScene() throws Exception {
     	Parent root = FXMLLoader.load(PhysicalGameStateScriptInterfaceJFrame.class.getResource("VisualScriptInterface.fxml"));
         Scene  scene = new  Scene(root);

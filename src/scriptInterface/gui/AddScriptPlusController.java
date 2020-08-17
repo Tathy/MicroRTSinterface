@@ -1,4 +1,4 @@
-package gui;
+package scriptInterface.gui;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Context;
 
-public class vsi_addScriptPlusController {
+public class AddScriptPlusController {
 	
 	private VisualScriptInterfaceController principalController;
 	ArrayList<String> ScriptPreview = new ArrayList<>();
@@ -263,10 +263,10 @@ public class vsi_addScriptPlusController {
   	@FXML
   	void clickNewSimpleScript(ActionEvent event) throws IOException {
   		
-  		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addScript.fxml"));
+  		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddScript.fxml"));
   		Parent root1 = (Parent) fxmlLoader.load();
   		
-  		vsi_addScriptController addScriptController = fxmlLoader.getController();
+  		AddScriptController addScriptController = fxmlLoader.getController();
   		addScriptController.initp(this);
   		addScriptController.init(principalController);
   		
@@ -288,10 +288,10 @@ public class vsi_addScriptPlusController {
   	@FXML
   	void clickNewCondScript(ActionEvent event) throws IOException {
   		
-  		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addConditionalScript.fxml"));
+  		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddConditionalScript.fxml"));
   		Parent root1 = (Parent) fxmlLoader.load();
   		
-  		vsi_addCondScriptController addCondScriptController = fxmlLoader.getController();
+  		AddCondScriptController addCondScriptController = fxmlLoader.getController();
   		addCondScriptController.initp(this);
   		addCondScriptController.init(principalController);
   		

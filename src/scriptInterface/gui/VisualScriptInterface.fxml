@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="270.0" style="-fx-background-color: #202134;" stylesheets="@CSS/main-screen.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.VisualScriptInterfaceController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="270.0" style="-fx-background-color: #202134;" stylesheets="@CSS/main-screen.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scriptInterface.gui.VisualScriptInterfaceController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="270.0" style="-fx-background-color: #202134;">
          <children>
@@ -299,6 +299,25 @@
                                  </font>
                               </Button>
                               <TextField fx:id="txtSaveScripts" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" promptText=" " style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text=" " GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="171.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="59.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#clickBtnSend" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="SEND" textFill="#ffffffbf" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </GridPane>
                      </children>

@@ -1,4 +1,4 @@
-package gui;
+package scriptInterface.gui;
 
 import java.io.IOException;
 
@@ -15,11 +15,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Context;
 
-public class vsi_addScriptController {
+public class AddScriptController {
 	
 	private boolean fecharJanela = false;
 	private VisualScriptInterfaceController principalController;
-	private vsi_addScriptPlusController addPlusController;
+	private AddScriptPlusController addPlusController;
 	
 	// Build
 	
@@ -229,7 +229,7 @@ public class vsi_addScriptController {
     	principalController = m;
     }
     
-    public void initp(vsi_addScriptPlusController m) {
+    public void initp(AddScriptPlusController m) {
     	addPlusController = m;
     }
 

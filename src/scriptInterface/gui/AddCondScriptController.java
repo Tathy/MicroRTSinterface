@@ -1,4 +1,4 @@
-package gui;
+package scriptInterface.gui;
 
 import com.jfoenix.controls.JFXRadioButton;
 
@@ -11,11 +11,11 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 import model.Context;
 
-public class vsi_addCondScriptController {
+public class AddCondScriptController {
 	
 	//private boolean fecharJanela = false;
 	private VisualScriptInterfaceController principalController;
-	private vsi_addScriptPlusController addPlusController;
+	private AddScriptPlusController addPlusController;
 
     //Ally Conditional
     
@@ -116,7 +116,7 @@ public class vsi_addCondScriptController {
     	principalController = m;
     }
     
-    public void initp(vsi_addScriptPlusController m) {
+    public void initp(AddScriptPlusController m) {
     	addPlusController = m;
     }
 

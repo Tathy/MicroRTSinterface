@@ -1,4 +1,4 @@
-package gui;
+package scriptInterface.gui;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -51,10 +51,9 @@ public class VisualScriptInterfaceController implements Initializable {
     private ComboBox<MapPath> cbMaps;
     private List<MapPath> maps = new ArrayList<>();
     private ObservableList<MapPath> obsMaps;
-    //private List<IdScripts> scripts = new ArrayList<>();
     
     @FXML
-    private vsi_addScriptController  addScriptController = new vsi_addScriptController();
+    private AddScriptController  addScriptController = new AddScriptController();
     
     ICompiler compiler = new MainGPCompiler();
     
@@ -65,11 +64,6 @@ public class VisualScriptInterfaceController implements Initializable {
     
     private List<String> ais = new ArrayList<>();
     private ObservableList<String> obsAIs;
-    //private List<String> targets = new ArrayList<>();
-    //private ObservableList<String> obsTargets;
-    //private List<String> directions = new ArrayList<>();
-    //private ObservableList<String> obsDirections;
-
     
     @FXML
     private ListView<String> lvScriptsAI1 = new ListView<>();
@@ -311,10 +305,10 @@ public class VisualScriptInterfaceController implements Initializable {
 	void clickBtnAdd(ActionEvent event) throws IOException {
 		checkSelectedTab();
 
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addScript.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddScript.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
-		vsi_addScriptController addScriptController = fxmlLoader.getController();
+		AddScriptController addScriptController = fxmlLoader.getController();
 		addScriptController.init(this);
 		
 		Stage stage = new Stage();
@@ -337,7 +331,7 @@ public class VisualScriptInterfaceController implements Initializable {
 	void clickBtnLoad(ActionEvent event) throws IOException {
 		checkSelectedTab();
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_loadScript.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LoadScript.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
 		//vsi_loadScriptController loadScriptController = fxmlLoader.getController();
@@ -421,10 +415,10 @@ public class VisualScriptInterfaceController implements Initializable {
 	void clickBtnAddConditionals(ActionEvent event) throws IOException {
 		checkSelectedTab();
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("vsi_addScriptPlus.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddScriptPlus.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
-		vsi_addScriptPlusController addScriptPlusController = fxmlLoader.getController();
+		AddScriptPlusController addScriptPlusController = fxmlLoader.getController();
 		addScriptPlusController.init(this);
 		
 		Stage stage = new Stage();
@@ -452,6 +446,26 @@ public class VisualScriptInterfaceController implements Initializable {
 			System.out.println("clickBtnAdd com valor inválido");
 			Context.getInstance().setAbaAddScript(1);
 		}
+    }
+    
+    // Janela SEND (questionário)
+    @FXML
+    void clickBtnSend(ActionEvent event) throws IOException {
+    	System.out.println("clickBtnSend");
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire.fxml"));
+		Parent root1 = (Parent) fxmlLoader.load();
+		
+		AddScriptPlusController addScriptPlusController = fxmlLoader.getController();
+		addScriptPlusController.init(this);
+		
+		Stage stage = new Stage();
+		stage.setTitle("Questionnaire");
+		stage.setScene(new Scene(root1));
+		stage.setHeight(721);
+		stage.setWidth(545);
+		//stage.initModality(Modality.APPLICATION_MODAL);
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.setResizable(false);
     }
 
 }
