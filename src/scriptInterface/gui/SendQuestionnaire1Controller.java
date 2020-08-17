@@ -23,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class SendQuestionnaire1Controller {
 	
@@ -262,7 +263,7 @@ public class SendQuestionnaire1Controller {
     }
 
     @FXML
-    void clickBtnSubmit(ActionEvent event) {
+    void clickBtnSubmit(ActionEvent event) throws IOException {
     	// TESTE    -- Enviar esses scripts e respostas no WebService
     	String txtQ11 = null;
     	if(groupQ11.getSelectedToggle() != null) {
@@ -289,8 +290,26 @@ public class SendQuestionnaire1Controller {
     	System.out.println("Resposta Q11: " + txtQ11);
     	System.out.println("Resposta Q12: " + txtQ12.getText());
     	
-    	Stage stage = (Stage) btnSubmit.getScene().getWindow();
-    	stage.hide();
+    	//ConfirmQuestionnaireController
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ConfirmQuestionnaire.fxml"));
+		Parent root1 = (Parent) fxmlLoader.load();
+		
+		ConfirmQuestionnaireController confirmQuestionnaireController = fxmlLoader.getController();
+		//confirmQuestionnaireController.initialize(this,3);
+		
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root1));
+		stage.setHeight(200);
+		stage.setWidth(400);
+		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		//stage.initModality(Modality.WINDOW_MODAL);
+		stage.setResizable(false);
+		
+		stage.showAndWait();
+    	
+    	Stage st = (Stage) btnSubmit.getScene().getWindow();
+    	st.hide();
     }
     
     public String getMapName1() {
