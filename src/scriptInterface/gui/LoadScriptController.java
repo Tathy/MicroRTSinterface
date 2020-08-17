@@ -1,4 +1,4 @@
-package gui;
+package scriptInterface.gui;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Context;
 
-public class vsi_loadScriptController implements Initializable{
+public class LoadScriptController implements Initializable{
 
 	//private VisualScriptInterfaceController principalController;
     @FXML

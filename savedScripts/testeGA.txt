@@ -1,1 +1,0 @@
-for(u) (if(HaveUnitsinEnemyRange(Worker,u)) (moveToCoord(Ranged,10,2,u)) build(Barrack,30,Down,u))

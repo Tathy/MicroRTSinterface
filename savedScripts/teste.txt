@@ -1,6 +1,0 @@
-build(Barrack,1)
-train(Worker,4,Left)
-train(Ranged,2,Left)
-train(Heavy,10,Left)
-harvest(3)
-attack(Worker,Left)

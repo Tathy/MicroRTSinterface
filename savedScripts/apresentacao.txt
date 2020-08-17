@@ -1,6 +1,0 @@
-build(Barrack,1)
-harvest(1)
-train(Light,2,EnemyDir)
-train(Heavy,2,EnemyDir)
-train(Ranged,2,EnemyDir)
-attack(All,strongest,EnemyDir)
