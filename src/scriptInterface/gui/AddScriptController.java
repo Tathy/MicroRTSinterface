@@ -13,7 +13,7 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import model.Context;
+import scriptInterface.InterfaceSettings;
 
 public class AddScriptController {
 	
@@ -240,7 +240,7 @@ public class AddScriptController {
     	principalController.checkSelectedTab();
     	
     	String s = "";
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
     		if(groupAttackTypes.getSelectedToggle() != null && groupAttackEnemy.getSelectedToggle() != null) {
     			if(tbAttackWorker.isSelected())
     				s += "attack(Worker,";
@@ -271,7 +271,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -281,7 +281,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
     			
@@ -291,7 +291,7 @@ public class AddScriptController {
     			txtAlertAttack.setOpacity(1.0);
     		}
     		
-    	} else if(Context.getInstance().getAbaAddScript() == 2) {
+    	} else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
     		if(groupAttackTypes.getSelectedToggle() != null && groupAttackEnemy.getSelectedToggle() != null) {
     			if(tbAttackWorker.isSelected())
     				s += "attack(Worker,";
@@ -322,7 +322,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -332,7 +332,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			
@@ -355,7 +355,7 @@ public class AddScriptController {
     void clickBtnBuildAdd(ActionEvent event) {
     	principalController.checkSelectedTab();
     	
-    	if(Context.getInstance().getAbaAddScript() == 1){
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1){
     		
 			String s = "";
 			
@@ -381,7 +381,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -391,7 +391,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
     			
@@ -401,7 +401,7 @@ public class AddScriptController {
     			txtAlertBuild.setOpacity(1.0);
     		}
     		
-    	} else if(Context.getInstance().getAbaAddScript() == 2) {
+    	} else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
 			String s = "";
 			
 			if(groupBuildTypes.getSelectedToggle() != null && groupBuildDir.getSelectedToggle() != null && edtBuildQnt.getText() != null && !edtBuildQnt.getText().trim().isEmpty() && Integer.parseInt(edtBuildQnt.getText()) != 0) {
@@ -426,7 +426,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -436,7 +436,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			
@@ -459,7 +459,7 @@ public class AddScriptController {
     void clickBtnHarvestAdd(ActionEvent event) {
     	principalController.checkSelectedTab();
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
 	    	if(edtHarvestQnt.getText() != null && !edtHarvestQnt.getText().trim().isEmpty() && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
 	    		Integer q = Integer.parseInt(edtHarvestQnt.getText());
 	    		String s = "harvest(" + Integer.toString(q) + ")";
@@ -467,7 +467,7 @@ public class AddScriptController {
 	    		/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -477,7 +477,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
    
@@ -486,14 +486,14 @@ public class AddScriptController {
 	    		System.out.println("Faltam parâmetros!!");
 	    		txtAlertHarvest.setOpacity(1.0);
 	    	}
-    	} else if(Context.getInstance().getAbaAddScript() == 2) {
+    	} else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
 	    	if(edtHarvestQnt.getText() != null && !edtHarvestQnt.getText().trim().isEmpty() && Integer.parseInt(edtHarvestQnt.getText()) != 0) {
 	    		Integer q = Integer.parseInt(edtHarvestQnt.getText());
 	    		String s = "harvest(" + Integer.toString(q) + ")";
 	    		/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -503,7 +503,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			
@@ -528,7 +528,7 @@ public class AddScriptController {
     void clickBtnAddMoveAway(ActionEvent event) {
     	principalController.checkSelectedTab();
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
 	    	if(groupMoveAwayTypes.getSelectedToggle() != null) {
 	    		String s = "moveaway(";
 	    		
@@ -547,7 +547,7 @@ public class AddScriptController {
 	    		/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -557,7 +557,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
     			
@@ -566,7 +566,7 @@ public class AddScriptController {
 	    		System.out.println("Faltam parâmetros!!");
 	    		txtAlertMoveAway.setOpacity(1.0);
 	    	}
-    	} else if(Context.getInstance().getAbaAddScript() == 2) {
+    	} else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
 	    	if(groupMoveAwayTypes.getSelectedToggle() != null) {
 	    		String s = "moveaway(";
 	    		
@@ -585,7 +585,7 @@ public class AddScriptController {
 	    		/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -595,7 +595,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			
@@ -618,7 +618,7 @@ public class AddScriptController {
     void clickBtnAddMoveToUnit(ActionEvent event) {
     	principalController.checkSelectedTab();
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
 	    	if(groupMoveToUnitTypes.getSelectedToggle() != null && groupMoveToUnitTargets.getSelectedToggle() != null && groupMoveToUnitBehaviour.getSelectedToggle() != null) {
 	    		//moveToUnit(Worker,Ally,closest,u)
 	    		String s = "moveToUnit(";
@@ -661,7 +661,7 @@ public class AddScriptController {
 	    		/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -671,7 +671,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
     			
@@ -680,7 +680,7 @@ public class AddScriptController {
 	    		System.out.println("Faltam parâmetros!!");
 	    		txtAlertMoveToUnit.setOpacity(1.0);
 	    	}
-    	} else if(Context.getInstance().getAbaAddScript() == 2) {
+    	} else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
 	    	if(groupMoveToUnitTypes.getSelectedToggle() != null && groupMoveToUnitTargets.getSelectedToggle() != null && groupMoveToUnitBehaviour.getSelectedToggle() != null) {
 	    		String s = "moveToUnit(";
 	    		
@@ -722,7 +722,7 @@ public class AddScriptController {
 	    		/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -732,7 +732,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			
@@ -754,7 +754,7 @@ public class AddScriptController {
     void clickBtnTrainAdd(ActionEvent event) {
     	principalController.checkSelectedTab();
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
 			String s = "";
 			
     		if(groupTrainTypes.getSelectedToggle() != null && groupTrainDir.getSelectedToggle() != null && edtTrainQnt.getText() != null && !edtTrainQnt.getText().trim().isEmpty() && Integer.parseInt(edtTrainQnt.getText()) != 0) {
@@ -782,7 +782,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -792,7 +792,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
     			
@@ -802,7 +802,7 @@ public class AddScriptController {
     			System.out.println("Faltam parâmetros!!");
     		}
     		
-    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    	}else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
 			String s = "";
 			
     		if(groupTrainTypes.getSelectedToggle() != null && groupTrainDir.getSelectedToggle() != null && edtTrainQnt.getText() != null && !edtTrainQnt.getText().trim().isEmpty() && Integer.parseInt(edtTrainQnt.getText()) != 0) {
@@ -831,7 +831,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -841,7 +841,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			
@@ -864,7 +864,7 @@ public class AddScriptController {
     void clickBtnAddMoveToCoord(ActionEvent event) {
     	principalController.checkSelectedTab();
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
 			String s = "";
 			
     		if(groupMoveToCoordTypes.getSelectedToggle() != null  && edtMoveToCoordX.getText() != null && !edtMoveToCoordX.getText().trim().isEmpty() 
@@ -884,7 +884,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -895,7 +895,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
     			
@@ -907,7 +907,7 @@ public class AddScriptController {
     			System.out.println("Faltam parâmetros!!");
     		}
     		
-    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    	}else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
     		String s = "";
 			
     		if(groupMoveToCoordTypes.getSelectedToggle() != null  && edtMoveToCoordX.getText() != null && !edtMoveToCoordX.getText().trim().isEmpty() 
@@ -927,7 +927,7 @@ public class AddScriptController {
     			/*
     			//Atualização das listas
     			if(principalController != null) {
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}else if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
@@ -938,7 +938,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			
@@ -962,7 +962,7 @@ public class AddScriptController {
     void clickBtnAddMoveOnceToCoord(ActionEvent event) {
     	principalController.checkSelectedTab();
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
     		String s = "";
 			
     		if(groupMoveOnceToCoordTypes.getSelectedToggle() != null  && edtMoveOnceToCoordX.getText() != null && !edtMoveOnceToCoordX.getText().trim().isEmpty() 
@@ -985,7 +985,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI1(s);
+    				InterfaceSettings.getInstance().addScriptAI1(s);
     				principalController.attListViewAI1();
     			}
     			
@@ -997,7 +997,7 @@ public class AddScriptController {
     			System.out.println("Faltam parâmetros!!");
     		}
     		
-    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    	}else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
     		String s = "";
 			
     		if(groupMoveOnceToCoordTypes.getSelectedToggle() != null  && edtMoveOnceToCoordX.getText() != null && !edtMoveOnceToCoordX.getText().trim().isEmpty() 
@@ -1020,7 +1020,7 @@ public class AddScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     			

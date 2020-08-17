@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
-import model.Context;
+import scriptInterface.InterfaceSettings;
 
 public class AddCondScriptController {
 	
@@ -256,7 +256,7 @@ public class AddCondScriptController {
     	String s = "if(";
     	boolean validCommand = false;
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
     		
     		//HaveQtdUnitsbyType
     		if( rbHaveQtdUnitsbyType.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
@@ -471,12 +471,12 @@ public class AddCondScriptController {
 				if(addPlusController != null) {
 					addPlusController.addListViewFuncList(s);
 				} else if(principalController != null){
-					Context.getInstance().addScriptAI1(s);
+					InterfaceSettings.getInstance().addScriptAI1(s);
 					principalController.attListViewAI1();
 				}
     		}
     		
-    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    	}else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
     		//HaveQtdUnitsbyType
     		if( rbHaveQtdUnitsbyType.isSelected() && groupCondAllyTypes.getSelectedToggle() != null && edtCondAllyQnt.getText() != null && !edtCondAllyQnt.getText().trim().isEmpty() ) {
     			validCommand = true;
@@ -688,7 +688,7 @@ public class AddCondScriptController {
 				if(addPlusController != null) {
 					addPlusController.addListViewFuncList(s);
 				} else if(principalController != null){
-					Context.getInstance().addScriptAI2(s);
+					InterfaceSettings.getInstance().addScriptAI2(s);
 					principalController.attListViewAI2();
 				}
     		}
@@ -701,7 +701,7 @@ public class AddCondScriptController {
     	String s = "if(";
     	boolean validCommand = false;
     	
-    	if(Context.getInstance().getAbaAddScript() == 1) {
+    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
     		
     		//HaveQtdEnemiesbyType
     		if( rbHaveQtdEnemiesbyType.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null && edtCondEnemyQnt.getText() != null && !edtCondEnemyQnt.getText().trim().isEmpty() ) {
@@ -799,12 +799,12 @@ public class AddCondScriptController {
 				if(addPlusController != null) {
 					addPlusController.addListViewFuncList(s);
 				} else if(principalController != null){
-					Context.getInstance().addScriptAI1(s);
+					InterfaceSettings.getInstance().addScriptAI1(s);
 					principalController.attListViewAI1();
 				}
     		}
     		
-    	}else if(Context.getInstance().getAbaAddScript() == 2) {
+    	}else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
     		
     		//HaveQtdEnemiesbyType
     		if( rbHaveQtdEnemiesbyType.isSelected() && groupCondEnemyTypes.getSelectedToggle() != null && edtCondEnemyQnt.getText() != null && !edtCondEnemyQnt.getText().trim().isEmpty() ) {
@@ -902,7 +902,7 @@ public class AddCondScriptController {
     			if(addPlusController != null) {
     				addPlusController.addListViewFuncList(s);
     			} else if(principalController != null){
-    				Context.getInstance().addScriptAI2(s);
+    				InterfaceSettings.getInstance().addScriptAI2(s);
     				principalController.attListViewAI2();
     			}
     		}

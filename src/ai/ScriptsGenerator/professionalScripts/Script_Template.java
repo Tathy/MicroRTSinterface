@@ -14,7 +14,6 @@ import ai.abstraction.pathfinding.AStarPathFinding;
 import ai.abstraction.pathfinding.PathFinding;
 import ai.core.AI;
 import ai.core.ParameterSpecification;
-import model.Context;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +25,7 @@ import rts.Player;
 import rts.PlayerAction;
 import rts.units.Unit;
 import rts.units.UnitTypeTable;
+import scriptInterface.InterfaceSettings;
 
 /**
  *
@@ -86,15 +86,15 @@ public class Script_Template extends AbstractionLayerAI {
     	
     	if(player == 0) {
     		//commandsGP.addAll(compiler.CompilerCode("train(Worker,1,EnemyDir)", utt));
-    		for(int i = 0; i < (Context.getInstance().getScritpsAi1()).size(); i++ ) {
-    			commandsGP.addAll(compiler.CompilerCode( Context.getInstance().getScritpsAi1().get(i).toString(), utt));
-    			//System.out.println( "lista: " + Context.getInstance().getScritpsAi1().toString() );
+    		for(int i = 0; i < (InterfaceSettings.getInstance().getScritpsAi1()).size(); i++ ) {
+    			commandsGP.addAll(compiler.CompilerCode( InterfaceSettings.getInstance().getScritpsAi1().get(i).toString(), utt));
+    			//System.out.println( "lista: " + InterfaceSettings.getInstance().getScritpsAi1().toString() );
     		}
     	} else {
 	    	//commandsGP.addAll(compiler.CompilerCode("build(Base,1)", utt));
-    		for(int i = 0; i < (Context.getInstance().getScritpsAi2()).size(); i++ ) {
-    			commandsGP.addAll(compiler.CompilerCode( Context.getInstance().getScritpsAi2().get(i).toString(), utt));
-    			//System.out.println( Context.getInstance().getScritpsAi2().toString() );
+    		for(int i = 0; i < (InterfaceSettings.getInstance().getScritpsAi2()).size(); i++ ) {
+    			commandsGP.addAll(compiler.CompilerCode( InterfaceSettings.getInstance().getScritpsAi2().get(i).toString(), utt));
+    			//System.out.println( InterfaceSettings.getInstance().getScritpsAi2().toString() );
     		}
     	}
     	

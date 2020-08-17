@@ -39,9 +39,8 @@ import com.jfoenix.controls.JFXComboBox;
 
 import ai.ScriptsGenerator.GPCompiler.ICompiler;
 import ai.ScriptsGenerator.GPCompiler.MainGPCompiler;
-import model.Context;
-import model.MapPath;
 import rts.units.UnitTypeTable;
+import scriptInterface.InterfaceSettings;
 
 
 public class VisualScriptInterfaceController implements Initializable {
@@ -158,7 +157,7 @@ public class VisualScriptInterfaceController implements Initializable {
     
  
     
-    // Inicializa��o da interface
+    // Inicialização da interface
 	public void initialize(URL location, ResourceBundle resources) {
 		loadMaps();		
 		
@@ -228,13 +227,13 @@ public class VisualScriptInterfaceController implements Initializable {
     	if(tabScripts1.isSelected()) {
     		if(lvScriptsAI1.getSelectionModel().getSelectedItem() != null) {
     			Integer aux = lvScriptsAI1.getSelectionModel().getSelectedIndex();
-    			Context.getInstance().upScriptAi1(lvScriptsAI1.getSelectionModel().getSelectedItem());
+    			InterfaceSettings.getInstance().upScriptAi1(lvScriptsAI1.getSelectionModel().getSelectedItem());
     			System.out.println(lvScriptsAI1.getFocusModel().getFocusedItem());
     			attListViewAI1();
     		}
     	} else if(tabScripts2.isSelected()) {
     		if(lvScriptsAI2.getSelectionModel().getSelectedItem() != null) {
-    			Context.getInstance().upScriptAi2(lvScriptsAI2.getSelectionModel().getSelectedItem());
+    			InterfaceSettings.getInstance().upScriptAi2(lvScriptsAI2.getSelectionModel().getSelectedItem());
     			attListViewAI2();
     		}
     	}
@@ -244,12 +243,12 @@ public class VisualScriptInterfaceController implements Initializable {
     void clickBtnDown(ActionEvent event) {
     	if(tabScripts1.isSelected()) {
     		if(lvScriptsAI1.getSelectionModel().getSelectedItem() != null) {
-    			Context.getInstance().downScriptAi1(lvScriptsAI1.getSelectionModel().getSelectedItem());
+    			InterfaceSettings.getInstance().downScriptAi1(lvScriptsAI1.getSelectionModel().getSelectedItem());
     			attListViewAI1();
     		}
     	} else if(tabScripts2.isSelected()) {
     		if(lvScriptsAI2.getSelectionModel().getSelectedItem() != null) {
-    			Context.getInstance().downScriptAi2(lvScriptsAI2.getSelectionModel().getSelectedItem());
+    			InterfaceSettings.getInstance().downScriptAi2(lvScriptsAI2.getSelectionModel().getSelectedItem());
     			attListViewAI2();
     		}
     	}
@@ -257,33 +256,33 @@ public class VisualScriptInterfaceController implements Initializable {
         
     @FXML
     void clickBtnPause(ActionEvent event) {
-    	Context.getInstance().setPause(true);
+    	InterfaceSettings.getInstance().setPause(true);
     }
  
     @FXML
     void clickBtnPlay(ActionEvent event) {
-    	Context.getInstance().setPause(false);
-    	Context.getInstance().setPlay(true);
-    	Context.getInstance().setApply(true);
+    	InterfaceSettings.getInstance().setPause(false);
+    	InterfaceSettings.getInstance().setPlay(true);
+    	InterfaceSettings.getInstance().setApply(true);
     }
 
     @FXML
     void clickBtnRestart(ActionEvent event) {
-    	Context.getInstance().setMap(cbMaps.getValue());
-    	Context.getInstance().setPause(true);
-    	Context.getInstance().setRestart(true);
+    	InterfaceSettings.getInstance().setMap(cbMaps.getValue());
+    	InterfaceSettings.getInstance().setPause(true);
+    	InterfaceSettings.getInstance().setRestart(true);
     }
     
     @FXML
     void clickBtnDelete(ActionEvent event) {
     	if(tabScripts1.isSelected()) {
     		if(lvScriptsAI1.getSelectionModel().getSelectedItem() != null) {
-    			Context.getInstance().removeScriptAi1(lvScriptsAI1.getSelectionModel().getSelectedItem());
+    			InterfaceSettings.getInstance().removeScriptAi1(lvScriptsAI1.getSelectionModel().getSelectedItem());
     			attListViewAI1();
     		}
     	} else if(tabScripts2.isSelected()) {
     		if(lvScriptsAI2.getSelectionModel().getSelectedItem() != null) {
-    			Context.getInstance().removeScriptAi2(lvScriptsAI2.getSelectionModel().getSelectedItem());
+    			InterfaceSettings.getInstance().removeScriptAi2(lvScriptsAI2.getSelectionModel().getSelectedItem());
     			attListViewAI2();
     		}
     	}
@@ -292,12 +291,12 @@ public class VisualScriptInterfaceController implements Initializable {
     
 	public void attListViewAI1() {
 		lvScriptsAI1.getItems().clear();
-		lvScriptsAI1.getItems().addAll(Context.getInstance().getScritpsAi1());
+		lvScriptsAI1.getItems().addAll(InterfaceSettings.getInstance().getScritpsAi1());
 	}
 	
 	public void attListViewAI2() {
 		lvScriptsAI2.getItems().clear();
-		lvScriptsAI2.getItems().addAll(Context.getInstance().getScritpsAi2());
+		lvScriptsAI2.getItems().addAll(InterfaceSettings.getInstance().getScritpsAi2());
 	}
 
 	
@@ -371,7 +370,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		        try {
 		            File file = new File(fname);
 		            writer = new BufferedWriter(new FileWriter(file));
-		            for(String f: Context.getInstance().getScritpsAi1()) {
+		            for(String f: InterfaceSettings.getInstance().getScritpsAi1()) {
 		            	writer.write(f + "\n");
 		            }
  		        } catch (Exception e) {
@@ -388,7 +387,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		        try {
 		            File file = new File(fname);
 		            writer = new BufferedWriter(new FileWriter(file));
-		            for(String f: Context.getInstance().getScritpsAi2())
+		            for(String f: InterfaceSettings.getInstance().getScritpsAi2())
 		            	writer.write(f + "\n");
 		        } catch (Exception e) {
 		            e.printStackTrace();
@@ -401,7 +400,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		        }
 			} else {
 				System.out.println("clickBtnAdd com valor inválido");
-				//Context.getInstance().setAbaAddScript(1);
+				//InterfaceSettings.getInstance().setAbaAddScript(1);
 			}	
 		}
 		
@@ -439,33 +438,34 @@ public class VisualScriptInterfaceController implements Initializable {
 
     void checkSelectedTab() {
     	if(tabScripts1.isSelected()) {
-			Context.getInstance().setAbaAddScript(1);
+			InterfaceSettings.getInstance().setAbaAddScript(1);
 		} else if(tabScripts2.isSelected()) {
-			Context.getInstance().setAbaAddScript(2);
+			InterfaceSettings.getInstance().setAbaAddScript(2);
 		} else {
 			System.out.println("clickBtnAdd com valor inválido");
-			Context.getInstance().setAbaAddScript(1);
+			InterfaceSettings.getInstance().setAbaAddScript(1);
 		}
     }
     
     // Janela SEND (questionário)
     @FXML
     void clickBtnSend(ActionEvent event) throws IOException {
-    	System.out.println("clickBtnSend");
-    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire.fxml"));
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
-		AddScriptPlusController addScriptPlusController = fxmlLoader.getController();
-		addScriptPlusController.init(this);
+		SendQuestionnaire1Controller sendQuestionnaire1Controller = fxmlLoader.getController();
+		//sendQuestionnaire1Controller.initialize();
 		
 		Stage stage = new Stage();
-		stage.setTitle("Questionnaire");
+		stage.setTitle("Questionnaire 1");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
-		stage.setWidth(545);
-		//stage.initModality(Modality.APPLICATION_MODAL);
-		stage.initModality(Modality.WINDOW_MODAL);
+		stage.setWidth(987);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		//stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);
+		
+		stage.showAndWait();
     }
 
 }

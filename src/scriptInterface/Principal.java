@@ -15,7 +15,6 @@ import ai.evaluation.SimpleSqrtEvaluationFunction3;
 import ai.configurablescript.BasicExpandedConfigurableScript;
 import ai.configurablescript.ScriptsCreator;
 import gui.PhysicalGameStatePanel;
-import model.Context;
 import ai.ScriptsGenerator.professionalScripts.*;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class Principal {
 
     public static void main(String args[]) throws Exception {
         UnitTypeTable utt = new UnitTypeTable();
-        PhysicalGameState pgs = PhysicalGameState.load(Context.getInstance().getMap(), utt);
+        PhysicalGameState pgs = PhysicalGameState.load(InterfaceSettings.getInstance().getMap(), utt);
         
         GameState gs = new GameState(pgs, utt);
         int MAXCYCLES = 8000;
@@ -58,17 +57,17 @@ public class Principal {
 	            if (System.currentTimeMillis() >= nextTimeToUpdate) {
 	            	
 	            	// Pause
-	            	while(Context.getInstance().isPaused() && !Context.getInstance().isRestarted()) {
+	            	while(InterfaceSettings.getInstance().isPaused() && !InterfaceSettings.getInstance().isRestarted()) {
 	            		nextTimeToUpdate = System.currentTimeMillis() + PERIOD;
 	            		pauseGame();
 	        			ai1 = attAI(utt, 1);
 	        			ai2 = attAI(utt, 2);
 	            	}
 	            	// Apply durante a simulação
-	            	if(Context.getInstance().isApplied()) {
+	            	if(InterfaceSettings.getInstance().isApplied()) {
 	            		ai1 = attAI(utt, 1);
 	        			ai2 = attAI(utt, 2);
-	            		Context.getInstance().setApply(false);
+	            		InterfaceSettings.getInstance().setApply(false);
 	            	}
 
 	                startTime = System.currentTimeMillis();
@@ -92,23 +91,23 @@ public class Principal {
 	                }
 	            }
 
-	        } while (!gameover && gs.getTime() < MAXCYCLES && !Context.getInstance().isRestarted());
+	        } while (!gameover && gs.getTime() < MAXCYCLES && !InterfaceSettings.getInstance().isRestarted());
 	        
-	        if(!Context.getInstance().isRestarted()) {
+	        if(!InterfaceSettings.getInstance().isRestarted()) {
 	        	System.out.println("Winner " + Integer.toString(gs.winner()));
 	        	System.out.println("Game Over");
-	        	Context.getInstance().setPause(true);
-	        	while(Context.getInstance().isPaused() && !Context.getInstance().isRestarted() ) {
+	        	InterfaceSettings.getInstance().setPause(true);
+	        	while(InterfaceSettings.getInstance().isPaused() && !InterfaceSettings.getInstance().isRestarted() ) {
 	        		pauseGame();
 	        	}
 	        	
-	        	Context.getInstance().setRestart(true);
+	        	InterfaceSettings.getInstance().setRestart(true);
 	        }
 	        
-	        Context.getInstance().setPause(true);
+	        InterfaceSettings.getInstance().setPause(true);
 	        do {
 		        //Restart Game
-				pgs = PhysicalGameState.load(Context.getInstance().getMap(), utt);
+				pgs = PhysicalGameState.load(InterfaceSettings.getInstance().getMap(), utt);
 				gs = new GameState(pgs, utt);
 				gameover = gs.cycle();
 				pgsp = new PhysicalGameStatePanel(gs);
@@ -116,15 +115,15 @@ public class Principal {
 				ai1 = attAI(utt, 1);
 				ai2 = attAI(utt, 2);
 				
-				Context.getInstance().setPlay(false);
-				Context.getInstance().setRestart(false);
+				InterfaceSettings.getInstance().setPlay(false);
+				InterfaceSettings.getInstance().setRestart(false);
 				
 				startTime = System.currentTimeMillis();
 		        nextTimeToUpdate = System.currentTimeMillis() + PERIOD;
 		        
-		        Context.getInstance().setRestart(false);
+		        InterfaceSettings.getInstance().setRestart(false);
 
-	        } while(Context.getInstance().isRestarted());
+	        } while(InterfaceSettings.getInstance().isRestarted());
 	        
         } while(true);
     }
@@ -164,14 +163,14 @@ public class Principal {
     public static AI attAI(UnitTypeTable utt, int id) {
     	String script = "";
     	if(id == 2) {
-    		for(int i = 0; i < (Context.getInstance().getScritpsAi2()).size(); i++ ) {
-    			script = script + Context.getInstance().getScritpsAi2().get(i);
+    		for(int i = 0; i < (InterfaceSettings.getInstance().getScritpsAi2()).size(); i++ ) {
+    			script = script + InterfaceSettings.getInstance().getScritpsAi2().get(i);
     			script = script + " ";
     		}
     		return new botEmptyBase(utt, script, "IA2");
     	}else {
-    		for(int i = 0; i < (Context.getInstance().getScritpsAi1()).size(); i++ ) {
-    			script = script + Context.getInstance().getScritpsAi1().get(i);
+    		for(int i = 0; i < (InterfaceSettings.getInstance().getScritpsAi1()).size(); i++ ) {
+    			script = script + InterfaceSettings.getInstance().getScritpsAi1().get(i);
     			script = script + " ";
     		}
     		return new botEmptyBase(utt, script, "IA1");

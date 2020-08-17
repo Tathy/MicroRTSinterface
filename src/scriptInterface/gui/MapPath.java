@@ -1,4 +1,4 @@
-package model;
+package scriptInterface.gui;
 
 public class MapPath {
 	

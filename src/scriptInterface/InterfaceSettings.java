@@ -1,6 +1,6 @@
 // Classe Singleton com informa��es capturadas da tela
 
-package model;
+package scriptInterface;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,13 +8,14 @@ import java.util.LinkedHashSet;
 import java.util.ListIterator;
 
 import ai.ScriptsGenerator.CommandInterfaces.ICommand;
+import scriptInterface.gui.MapPath;
 
-public class Context {
+public class InterfaceSettings {
 	
 	//private static Context uniqueInstance = new Context();
-	private static Context uniqueInstance;
+	private static InterfaceSettings uniqueInstance;
 	
-	private Context() {}
+	private InterfaceSettings() {}
 	
 	//Abas à esquerda
 	private int abaAddScript = 1;
@@ -35,8 +36,8 @@ public class Context {
 	//    return uniqueInstance;
 	//}
 	
-	synchronized public static Context getInstance() {
-	    if (uniqueInstance == null) uniqueInstance = new Context();
+	synchronized public static InterfaceSettings getInstance() {
+	    if (uniqueInstance == null) uniqueInstance = new InterfaceSettings();
 	    return uniqueInstance;
 	}
 	

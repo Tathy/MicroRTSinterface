@@ -7,6 +7,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,7 +19,7 @@
 
 <!-- <?import gui.custom.NumberTextField?> -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="983.0" style="-fx-background-color: #202134;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="983.0" style="-fx-background-color: #202134;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scriptInterface.gui.SendQuestionnaire1Controller">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
@@ -39,7 +40,7 @@
                               <Insets top="10.0" />
                            </VBox.margin>
                         </Text>
-                        <TextField prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
+                        <TextField fx:id="txtQ1" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -57,7 +58,7 @@
                                     <Insets top="15.0" />
                                  </HBox.margin>
                               </Text>
-                              <TextField prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
+                              <TextField fx:id="txtQ2" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
                                  <HBox.margin>
                                     <Insets left="10.0" top="9.0" />
                                  </HBox.margin>
@@ -70,7 +71,7 @@
                                     <Insets left="25.0" top="15.0" />
                                  </HBox.margin>
                               </Text>
-                              <ComboBox opacity="0.35" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
+                              <ComboBox fx:id="cbQ3" opacity="0.35" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
                                  <HBox.margin>
                                     <Insets left="10.0" top="9.0" />
                                  </HBox.margin>
@@ -100,7 +101,7 @@
                                     <Insets top="10.0" />
                                  </HBox.margin>
                               </Text>
-                              <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
+                              <ComboBox fx:id="cbQ4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
                                  <HBox.margin>
                                     <Insets left="10.0" top="4.0" />
                                  </HBox.margin>
@@ -120,7 +121,7 @@
                                     <Insets top="10.0" />
                                  </HBox.margin>
                               </Text>
-                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
+                              <TextField fx:id="txtQ5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
                                  <HBox.margin>
                                     <Insets left="10.0" top="4.0" />
                                  </HBox.margin>
@@ -134,10 +135,10 @@
                                     <Font name="Ebrima Bold" size="14.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets top="10.0" />
+                                    <Insets top="11.0" />
                                  </HBox.margin>
                               </Text>
-                              <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
+                              <ComboBox fx:id="cbQ6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="111.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
                                  <HBox.margin>
                                     <Insets left="10.0" top="5.0" />
                                  </HBox.margin>
@@ -147,10 +148,10 @@
                                     <Font name="Ebrima Bold" size="14.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="15.0" top="10.0" />
+                                    <Insets left="15.0" top="11.0" />
                                  </HBox.margin>
                               </Text>
-                              <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
+                              <ComboBox fx:id="cbQ7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
                                  <HBox.margin>
                                     <Insets left="10.0" top="5.0" />
                                  </HBox.margin>
@@ -164,12 +165,12 @@
                                     <Font name="Ebrima Bold" size="14.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets top="10.0" />
+                                    <Insets top="12.0" />
                                  </HBox.margin>
                               </Text>
-                              <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
+                              <ComboBox fx:id="cbQ8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
                                  <HBox.margin>
-                                    <Insets left="10.0" top="4.0" />
+                                    <Insets left="5.0" top="5.0" />
                                  </HBox.margin>
                               </ComboBox>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="9) Have you ever played RTS games? ">
@@ -177,12 +178,12 @@
                                     <Font name="Ebrima Bold" size="14.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="25.0" top="10.0" />
+                                    <Insets left="20.0" top="12.0" />
                                  </HBox.margin>
                               </Text>
-                              <ComboBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
+                              <ComboBox fx:id="cbQ9" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.35" prefHeight="30.0" prefWidth="267.0" style="-fx-background-color: WHITE; -fx-background-radius: 10px;">
                                  <HBox.margin>
-                                    <Insets left="10.0" top="4.0" />
+                                    <Insets left="5.0" top="5.0" />
                                  </HBox.margin>
                               </ComboBox>
                            </children>
@@ -216,7 +217,7 @@
                                     <Insets top="10.0" />
                                  </HBox.margin>
                               </Text>
-                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
+                              <TextField fx:id="txtQ10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;">
                                  <HBox.margin>
                                     <Insets bottom="5.0" left="10.0" top="5.0" />
                                  </HBox.margin>
@@ -253,27 +254,30 @@
                                     <Font name="Ebrima Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="142.0" textAlignment="CENTER" GridPane.rowIndex="3">
+                              <RadioButton fx:id="rb11Scale1" mnemonicParsing="false" prefHeight="17.0" prefWidth="142.0" textAlignment="CENTER" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="88.0" />
+                                 </GridPane.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="groupQ11" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rb11Scale2" mnemonicParsing="false" toggleGroup="$groupQ11" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="88.0" />
                                  </GridPane.margin>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <RadioButton fx:id="rb11Scale3" mnemonicParsing="false" toggleGroup="$groupQ11" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="88.0" />
                                  </GridPane.margin>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                              <RadioButton fx:id="rb11Scale4" mnemonicParsing="false" toggleGroup="$groupQ11" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="88.0" />
                                  </GridPane.margin>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                 <GridPane.margin>
-                                    <Insets left="88.0" />
-                                 </GridPane.margin>
-                              </RadioButton>
-                              <RadioButton mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                              <RadioButton fx:id="rb11Scale5" mnemonicParsing="false" toggleGroup="$groupQ11" GridPane.columnIndex="4" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="88.0" />
                                  </GridPane.margin>
@@ -306,7 +310,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <JFXTextArea focusColor="#405aa800" prefHeight="108.0" prefWidth="963.0" style="-fx-background-color: #6e6e7b #6e6e7b; -fx-background-radius: 10px;" unFocusColor="#4d4d4d00">
+                        <JFXTextArea fx:id="txtQ12" focusColor="#405aa800" prefHeight="108.0" prefWidth="963.0" style="-fx-background-color: #6e6e7b #6e6e7b; -fx-background-radius: 10px;" unFocusColor="#4d4d4d00">
                            <VBox.margin>
                               <Insets top="5.0" />
                            </VBox.margin>
@@ -336,7 +340,7 @@
                               <Insets left="15.0" top="10.0" />
                            </HBox.margin>
                         </Text>
-                        <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 1" textFill="#ffffffbf">
+                        <ToggleButton mnemonicParsing="false" onAction="#clickBtnMap1" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 1" textFill="#ffffffbf">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -344,7 +348,7 @@
                               <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ToggleButton>
-                        <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 2" textFill="#ffffffbf">
+                        <ToggleButton mnemonicParsing="false" onAction="#clickBtnMap2" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 2" textFill="#ffffffbf">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -352,7 +356,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ToggleButton>
-                        <ToggleButton layoutX="316.0" layoutY="19.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 3" textFill="#ffffffbf">
+                        <ToggleButton layoutX="316.0" layoutY="19.0" mnemonicParsing="false" onAction="#clickBtnMap3" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 3" textFill="#ffffffbf">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -360,7 +364,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ToggleButton>
-                        <Button mnemonicParsing="false" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Clear" textFill="#ffffffbf">
+                        <Button mnemonicParsing="false" onAction="#clickBtnClear" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Clear" textFill="#ffffffbf">
                            <HBox.margin>
                               <Insets bottom="5.0" left="240.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -368,7 +372,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Cancel" textFill="#ffffffbf">
+                        <Button fx:id="btnCancel" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBtnCancel" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Cancel" textFill="#ffffffbf">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -376,7 +380,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button layoutX="79.0" layoutY="15.0" mnemonicParsing="false" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Submit" textFill="#ffffffbf">
+                        <Button fx:id="btnSubmit" layoutX="79.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBtnSubmit" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Submit" textFill="#ffffffbf">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>

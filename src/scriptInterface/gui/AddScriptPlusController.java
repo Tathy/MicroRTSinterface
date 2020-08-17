@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.Context;
+import scriptInterface.InterfaceSettings;
 
 public class AddScriptPlusController {
 	
@@ -183,11 +183,11 @@ public class AddScriptPlusController {
     	if(open == 0 && s.length() > 8) {
     		txtAlert.setOpacity(0.0);
     		
-    		if(Context.getInstance().getAbaAddScript() == 1) {
-    			Context.getInstance().addScriptAI1(s);
+    		if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
+    			InterfaceSettings.getInstance().addScriptAI1(s);
     			principalController.attListViewAI1();
-    		}else if(Context.getInstance().getAbaAddScript() == 2) {
-    			Context.getInstance().addScriptAI2(s);
+    		}else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
+    			InterfaceSettings.getInstance().addScriptAI2(s);
     			principalController.attListViewAI2();
     		}
     		

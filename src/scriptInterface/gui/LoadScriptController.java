@@ -15,7 +15,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Context;
+import scriptInterface.InterfaceSettings;
 
 public class LoadScriptController implements Initializable{
 
@@ -39,15 +39,15 @@ public class LoadScriptController implements Initializable{
 	    	BufferedReader br = new BufferedReader(new FileReader(file)); 
 	    	
 	    	String st; 
-	    	if(Context.getInstance().getAbaAddScript() == 1) {
-	    		Context.getInstance().clearScriptsAI1();
+	    	if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
+	    		InterfaceSettings.getInstance().clearScriptsAI1();
 		    	while ((st = br.readLine()) != null) {
-		    		Context.getInstance().addScriptAI1(st);
+		    		InterfaceSettings.getInstance().addScriptAI1(st);
 		    	}
-	    	} else if(Context.getInstance().getAbaAddScript() == 2) {
-	    		Context.getInstance().clearScriptsAI2();
+	    	} else if(InterfaceSettings.getInstance().getAbaAddScript() == 2) {
+	    		InterfaceSettings.getInstance().clearScriptsAI2();
 		    	while ((st = br.readLine()) != null) {
-		    		Context.getInstance().addScriptAI2(st);
+		    		InterfaceSettings.getInstance().addScriptAI2(st);
 		    	}
 	    	}
 	    	
