@@ -451,13 +451,16 @@ public class VisualScriptInterfaceController implements Initializable {
     @FXML
     void clickBtnSend(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
+    	//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire2.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
 		SendQuestionnaire1Controller sendQuestionnaire1Controller = fxmlLoader.getController();
+		//SendQuestionnaire2Controller sendQuestionnaire2Controller = fxmlLoader.getController();
 		//sendQuestionnaire1Controller.initialize();
 		
 		Stage stage = new Stage();
 		stage.setTitle("Questionnaire 1");
+		//stage.setTitle("Questionnaire 2");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
 		stage.setWidth(987);
