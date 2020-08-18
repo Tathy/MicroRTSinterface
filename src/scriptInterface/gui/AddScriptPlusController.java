@@ -83,6 +83,7 @@ public class AddScriptPlusController {
 
     @FXML
     void clickAddScript(ActionEvent event) {
+    	txtAlert.setText("Incorrect indentation!");
     	principalController.checkSelectedTab();
     	
     	String s = "";
@@ -94,7 +95,7 @@ public class AddScriptPlusController {
     	int nvFor = 0;
     	
     	//Contagem de tabs
-    	// e adi��o de par�nteses
+    	// e adição de parênteses
     	for(int i = 0; i < ScriptPreview.size(); i++) {   		
     		int mult = 0;
     		char l[] = ScriptPreview.get(i).toCharArray();
@@ -170,17 +171,28 @@ public class AddScriptPlusController {
     	//System.out.println("Script completo:");
     	//System.out.println(s);
     	//System.out.println();
+    	
+    	//Verificação de if na última linha
+    	boolean hasLastLineIF = false;
+    	hasLastLineIF = verifyLastLineIF();
+    	
+    	//Verificação dos ifs
+    	boolean hasNestedIF = false;
+    	hasNestedIF = verifyNestedIF(s);
 
-    	//Contagem de par�nteses
+    	//Contagem de parênteses
     	char sc[] = s.toCharArray();
     	for(int i = 0; i < s.length(); i++) {
     		if(sc[i] == '(') open++;
     		else if(sc[i] == ')') open--;
     	}
+    	if(open != 0) txtAlert.setText("Incorrect indentation!");
     	
-    	//Mensagem de falta de par�nteses caso o n�mero esteja errado
+    	
+    	
+    	//Mensagem de falta de parênteses caso o número esteja errado
     	// adiciona na lista principal se estiver correto
-    	if(open == 0 && s.length() > 8) {
+    	if(open == 0 && s.length() > 8 && !hasNestedIF && !hasLastLineIF) {
     		txtAlert.setOpacity(0.0);
     		
     		if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
@@ -310,18 +322,18 @@ public class AddScriptPlusController {
   	//Adições às listas
 
   	public void addListViewFuncList(String s) {
-  		if(!FuncList.contains(s) || !ScriptPreview.contains(s)) {
+  		//if(!FuncList.contains(s) || !ScriptPreview.contains(s)) {
   			FuncList.add(s);
   			attFuncList();
-  		}
+  		//}
   	}
   	
   	
   	public void addListViewScriptPreview(String s) {
-  		if(!ScriptPreview.contains(s) || !FuncList.contains(s)) {
+  		//if(!ScriptPreview.contains(s) || !FuncList.contains(s)) {
   			ScriptPreview.add(s);
   			attScriptPreview();
-  		}
+  		//}
   	}
   	
   	//Remoções das Listas
@@ -339,8 +351,6 @@ public class AddScriptPlusController {
   		attFuncList();
   	}
   	
-  	//Atualiza��es das listas
-  	
   	//Atualiza��es dos ListView
   	private void attFuncList() {
   		lvFuncList.getItems().clear();
@@ -356,8 +366,6 @@ public class AddScriptPlusController {
   	
   	
   	//Move script Functions List --> Script Preview
-  	
-  	//Move script Funcions List --> Script Preview
   	@FXML
     void clickMoveScriptLeft(ActionEvent event) {
   		if(lvFuncList.getSelectionModel().getSelectedItem() != null) {
@@ -370,8 +378,6 @@ public class AddScriptPlusController {
     }
 
     //Move script Script Preview --> Functions List
-    
-    //Move script Script Preview -->  Funcions List
   	@FXML
     void clickMoveScriptRight(ActionEvent event) {
   		if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
@@ -383,8 +389,6 @@ public class AddScriptPlusController {
     }
   	
     //Remove script selecionado no Script Preview
-    
-  	//Remove script selecionado o Script Preview
   	@FXML
     void clickDeleteScript(ActionEvent event) {
     	if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
@@ -416,4 +420,60 @@ public class AddScriptPlusController {
     		}
     	}
     }
+    
+    //Verifica existência de if aninhado
+    private boolean verifyNestedIF(String s) {
+    	//System.out.println("Verificação dos IFs");
+    	boolean insideIF = false;
+    	//boolean nestedIF = false;
+    	int open = 0, close = 0;
+    	char sc[] = s.toCharArray();
+    	
+    	for(int i = 0; i < s.length(); i++) {
+    		// encontra if
+    		if(i+1 < s.length() && !insideIF) {
+    			if(sc[i] == 'i' && sc[i+1] == 'f') {
+    				//System.out.println("Encontrou if");
+    				insideIF = true;
+    				//continue;
+    			}
+    		}
+    		
+    		if(insideIF) {
+    			if(sc[i] == '(') open++;
+    			else if(sc[i] == ')') close++;
+    			// IF aninhado
+    			if(i+1 < s.length() && open != close && open != 2) {
+    				if(sc[i] == 'i' && sc[i+1] == 'f') {
+    					txtAlert.setText("The language doesn't accept nested if.");
+    					//System.out.println("Encontrou if aninhado");
+        				return true;
+    				}
+    			}
+    			// FOR aninhado
+    			if(i+2 < s.length() && open != close && open != 2) {
+    				if(sc[i] == 'f' && sc[i+1] == 'o' && sc[i+2] == 'r') {
+    					txtAlert.setText("The language doesn't accept nested for.");
+    					//System.out.println("Encontrou for aninhado");
+        				return true;
+    				}
+    			}
+    			
+    			if(open == close && open != 2 && open != 0) insideIF = false;
+    		}
+    		
+    	}
+    	
+    	return false;
+    }
+    
+    //Verificação de IF ou FOR na última linha do List View
+    private boolean verifyLastLineIF() {
+    	String s = ScriptPreview.get(ScriptPreview.size()-1);
+    	if(s.contains("if")) return true;
+    	if(s.contains("for")) return true;
+    	return false;
+    }
+    
+    
 }

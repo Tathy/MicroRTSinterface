@@ -470,5 +470,19 @@ public class VisualScriptInterfaceController implements Initializable {
 		
 		stage.showAndWait();
     }
+    
+    // Botão switch scripts
+    @FXML
+    void clickBtnSwitchScripts(ActionEvent event) {
+    	//InterfaceSettings.getInstance().removeScriptAi1(lvScriptsAI1.getSelectionModel().getSelectedItem());
+    	ArrayList<String> s = new ArrayList<>();
+    	
+    	s = InterfaceSettings.getInstance().getScritpsAi1();
+    	InterfaceSettings.getInstance().setScritpsAi1(InterfaceSettings.getInstance().getScritpsAi2());
+    	InterfaceSettings.getInstance().setScritpsAi2(s);
+    	
+    	attListViewAI1();
+    	attListViewAI2();
+    }
 
 }

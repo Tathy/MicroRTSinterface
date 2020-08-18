@@ -124,6 +124,15 @@ public class InterfaceSettings {
 			ai2 = s_ai2;
 	}
 	*/
+	
+	public void setScritpsAi1 (ArrayList<String> s) {
+		this.scriptsAi1 = s;
+	}
+	
+	public void setScritpsAi2 (ArrayList<String> s) {
+		this.scriptsAi2 = s;
+	}
+	
 	public void addScriptAI1(String i) {
 		scriptsAi1.add(i);
 	}

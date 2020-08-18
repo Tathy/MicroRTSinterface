@@ -57,7 +57,7 @@
                <children>
                   <VBox prefHeight="165.0" prefWidth="963.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <children>
-                        <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Dependent questions">
+                        <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Follow-up questions">
                            <font>
                               <Font name="Ebrima Bold" size="14.0" />
                            </font>
