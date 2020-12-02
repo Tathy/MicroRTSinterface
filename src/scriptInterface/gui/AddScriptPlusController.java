@@ -34,30 +34,8 @@ public class AddScriptPlusController {
     	principalController = m;
     }
     
-    //Adiciona par�ntese ) -- N�o est� em uso
-    //@FXML
-    void clickAddBracket(ActionEvent event) {
-    	//if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
-    	//	String s = lvScriptPreview.getSelectionModel().getSelectedItem() + " )";
-    	//	ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), s);
-    	//	attScriptPreview();
-    	//}
-    }
-    
-    //Remove par�ntese ) -- N�o est� em uso
-    //@FXML
-    void clickRemoveBracket(ActionEvent event) {
-    	//if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
-    	//	if(lvScriptPreview.getSelectionModel().getSelectedItem().endsWith(" )")) {
-	    //		String s = lvScriptPreview.getSelectionModel().getSelectedItem();
-	    //		s = s.substring(0, s.length()-2);
-	    //		ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), s);
-	    //		attScriptPreview();
-    	//	}
-    	//}
-    }
 
-    //Adiciona for no come�o da lista
+    //Adiciona for no começo da lista
     @FXML
     void clickAddFor(ActionEvent event) {
     	boolean hasFor = false;
@@ -80,6 +58,30 @@ public class AddScriptPlusController {
 	    	}
  
     }
+    
+    //Adiciona else no final da lista
+    @FXML
+    void clickAddElse(ActionEvent event) {
+	    ArrayList<String> temp = new ArrayList<>();
+	    temp.addAll(ScriptPreview);
+	    temp.add("else");
+	    		
+	    ScriptPreview.clear();
+	    ScriptPreview.addAll(temp);
+	    attScriptPreview();
+    }
+    
+    //Adiciona else no final da lista
+    @FXML
+    void clickAddEpsilon(ActionEvent event) {
+	    ArrayList<String> temp = new ArrayList<>();
+	    temp.addAll(ScriptPreview);
+	    temp.add("ε");
+	    		
+	    ScriptPreview.clear();
+	    ScriptPreview.addAll(temp);
+	    attScriptPreview();
+    }
 
     @FXML
     void clickAddScript(ActionEvent event) {
@@ -92,16 +94,16 @@ public class AddScriptPlusController {
     	int new_tab = 0;
     	
     	boolean inFor = false;
+    	boolean inIf = false; //NOVO
+    	boolean inElse = false;
     	int nvFor = 0;
+    	boolean hasElseInsideIf = false;
     	
     	//Contagem de tabs
     	// e adição de parênteses
     	for(int i = 0; i < ScriptPreview.size(); i++) {   		
     		int mult = 0;
     		char l[] = ScriptPreview.get(i).toCharArray();
-    		
-    		//Impress�o de script em an�lise
-    		//System.out.println( Integer.toString(i) + " " + ScriptPreview.get(i));
     		
     		while(true) {
     			if(l[mult*8] == ' ')
@@ -112,23 +114,51 @@ public class AddScriptPlusController {
     		
     		new_tab = mult;
     		
-    		//Teste sde n�vel de identa��o para o for (acr�scimo do u no final dos comandos)
+    		//Teste de nível de identação para o for (acréscimo do u no final dos comandos)
     		if( inFor && nvFor > new_tab) inFor = false;
     		if(ScriptPreview.get(i).contains("for")) { inFor = true; nvFor = new_tab + 1; }
+    		
+    		//Teste de presença do if
+    		if(ScriptPreview.get(i).contains("if")) { inIf = true;}
+    		
+    		//Teste de presença do else
+    		if(ScriptPreview.get(i).contains("else")) { inElse = false;}
     		
     		if(i > 0) {
     			if(ScriptPreview.get(i-1).contains("for"))
     				s += "(";
     			else if(ScriptPreview.get(i-1).contains("if"))
+    				s += "then(";
+    			else if(ScriptPreview.get(i-1).contains("else")) {
+    				if(!inIf) {
+    					//System.out.println("Tem else sem if");
+    					hasElseInsideIf = true;
+    	    			txtAlert.setText("Incorrect indentation!");
+    				}
+    				s = s.trim();
     				s += "(";
+    				inIf = false;
+    				inElse = true;
+    			}
     		}
     		
+    		//Verifica identação do else com o if
+    		if(new_tab == tab && ScriptPreview.get(i).contains("else")) {
+    			//System.out.println("identação incorreta do else");
+    			hasElseInsideIf = true;
+    			txtAlert.setText("Incorrect indentation!");
+    		}
+    		
+    		//Verificações com nível de identação e adição de parênteses
     		if(new_tab < tab) {
-    			//adiciona ")" na string s antes de adicionar o script atual
-    			s = s.substring(0,s.length()-1);
-    			for(int k = 0; k < tab - new_tab; k++)
-    				s += ")";
-    			s += " ";
+    			if(inIf && !ScriptPreview.get(i).contains("else")) {
+    				inIf = false;
+    			}
+    			s = s.trim();
+	    		for(int k = 0; k < tab - new_tab; k++)
+	    			s += ")";
+	    		s += " ";
+
     		}
     		
     		//TESTE
@@ -138,9 +168,9 @@ public class AddScriptPlusController {
     		//adiciona linha atual no script
     		s += ScriptPreview.get(i).trim();
     		
-    		//adiciona u caso esteja dentro de um for e o comando o use
+    		//adiciona u caso esteja dentro de um for
     		if(inFor && s.toCharArray()[s.length()-1] == ')') {
-    			if(!ScriptPreview.get(i).contains("for") && !ScriptPreview.get(i).contains("if")){ //não coloca caso o comando não aceite o ,u)
+    			if(!ScriptPreview.get(i).contains("for") && !ScriptPreview.get(i).contains("if")){
 	    			s = s.substring(0,s.length()-1);
 	    			s += ",u)"; 
     			}
@@ -150,18 +180,28 @@ public class AddScriptPlusController {
     				s += ",u))";
     			}
     		}
-    		//System.out.println("�ltimo caracteres:");
+    		//System.out.println("último caracteres:");
     		//System.out.println(s.toCharArray()[s.length()-1]);
     		
-    		if( i != ScriptPreview.size() - 1)
+    		if( i != ScriptPreview.size() - 1) {
     			s += " ";
-    		else {
-    			char ll[] = ScriptPreview.get(i).toCharArray();
+    		} else {
+    			String script = ScriptPreview.get(i);
+    			/*
+    			if(inIf) {	//Coloca else no final caso o script termine com if
+    				System.out.println("A última linha está dentro de um IF");
+            		System.out.println("String s: " + s);
+            		s = s.trim();
+            		s += ") (ε)";
+            		new_tab--;
+            		inIf = false;
+    			}
+    			*/
+    			char ll[] = script.toCharArray();
     			if(ll[0] == ' ')
     				for(int k = 0; k < new_tab; k++)
     					s += ")";
     		}
-    		
     		
     		tab = new_tab;
     		mult = 0;
@@ -172,14 +212,23 @@ public class AddScriptPlusController {
     	//System.out.println(s);
     	//System.out.println();
     	
+    	//Verificação de epsilons excessivos
+    	boolean hasIllegalEpsilon = false;
+    	hasIllegalEpsilon = verifyEpsilons(s);
+    	if(hasIllegalEpsilon) txtAlert.setText("Please, check the ε(s).");
+    	
     	//Verificação de if na última linha
     	boolean hasLastLineIF = false;
     	hasLastLineIF = verifyLastLineIF();
     	
+    	//Verificação de else na última linha
+    	boolean hasLastLineElse = false;
+    	hasLastLineElse = verifyLastLineElse();
+    	
     	//Verificação dos ifs
     	boolean hasNestedIF = false;
     	hasNestedIF = verifyNestedIF(s);
-
+    	
     	//Contagem de parênteses
     	char sc[] = s.toCharArray();
     	for(int i = 0; i < s.length(); i++) {
@@ -192,8 +241,9 @@ public class AddScriptPlusController {
     	
     	//Mensagem de falta de parênteses caso o número esteja errado
     	// adiciona na lista principal se estiver correto
-    	if(open == 0 && s.length() > 8 && !hasNestedIF && !hasLastLineIF) {
+    	if(open == 0 && s.length() > 8 && !hasNestedIF && !hasLastLineIF && !hasElseInsideIf && !hasLastLineElse && !hasIllegalEpsilon) {
     		txtAlert.setOpacity(0.0);
+    		//s = addThenElse(s);
     		
     		if(InterfaceSettings.getInstance().getAbaAddScript() == 1) {
     			InterfaceSettings.getInstance().addScriptAI1(s);
@@ -208,7 +258,8 @@ public class AddScriptPlusController {
     	}
     }
 
-    @FXML
+
+	@FXML
     void clickIndUp(ActionEvent event) {
     	if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
     		ListIterator<String> itr1 = ScriptPreview.listIterator();
@@ -473,6 +524,33 @@ public class AddScriptPlusController {
     	if(s.contains("if")) return true;
     	if(s.contains("for")) return true;
     	return false;
+    }
+    
+    //Verificação de else na última linha do List View
+    private boolean verifyLastLineElse() {
+    	String s = ScriptPreview.get(ScriptPreview.size()-1);
+    	if(s.contains("else")) { return true; }
+    	return false;
+    }
+    
+  //Verificação de excesso ou mau uso de epsilon
+    private boolean verifyEpsilons(String script) {
+    	script = script.trim();
+    	boolean hasIllegalEpsilon = false;
+    	
+    	char sc[] = script.toCharArray();
+    	for(int i = 0; i < sc.length; i++) {
+    		if(sc[i] == 'ε') {
+    			if(i-1 > 0 && i+1 < sc.length) {
+    				if(sc[i-1] != '(' || sc[i+1] != ')') { hasIllegalEpsilon = true; }
+    			}
+    		}
+    		if(i == sc.length-1 && sc[i] == 'ε') {
+    			hasIllegalEpsilon = true;
+    		}
+    	}
+    	
+    	return hasIllegalEpsilon;
     }
     
     

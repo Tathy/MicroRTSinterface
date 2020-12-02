@@ -1,0 +1,2 @@
+attack(Worker,closest)
+train(Worker,5,EnemyDir)

@@ -10,12 +10,12 @@
    <children>
       <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#loadSelectedScript" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="LOAD" textAlignment="CENTER" textFill="#ffffffbf" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="641.0">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
       <Button contentDisplay="BOTTOM" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickBtnSearch" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="▼" textAlignment="CENTER" textFill="#ffffffbf" AnchorPane.bottomAnchor="641.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
       <TextField fx:id="txtSearch" layoutY="23.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="641.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="20.0" />

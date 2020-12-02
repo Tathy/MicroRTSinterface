@@ -27,7 +27,7 @@
                      <children>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Experiment results">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="5.0" />
@@ -35,7 +35,7 @@
                         </Text>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="1) Was the program written by our system able to defeat your program (please test it by having them play one another at both locations of the map, right and left)? " wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -59,7 +59,7 @@
                      <children>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Follow-up questions">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="5.0" />
@@ -67,7 +67,7 @@
                         </Text>
                         <Text fill="#ffffffd9" layoutX="10.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you answered yes to the first question, then please answer the following questions.">
                            <font>
-                              <Font name="Ebrima" size="14.0" />
+                              <Font name="Arial" size="14.0" />
                            </font>
                         </Text>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="2) Please describe in one or two sentences why you believe your program is being defeated by the program written by our system." wrappingWidth="963.0">
@@ -90,7 +90,7 @@
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="3) Had you anticipated that your program would have the weakness exploited by our program?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="7.0" />
@@ -108,7 +108,7 @@
                         </HBox>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="4) Please feel free to comment on your answer to question 3." wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="5.0" top="10.0" />
@@ -124,7 +124,7 @@
                         </JFXTextArea>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="5) Did the program provided as a fix to the weakness exploited by our program help you understand the initial weakness of your strategy?" wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -137,7 +137,7 @@
                         </ComboBox>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="6) Please feel free to comment on your answer to question 5." wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <VBox.margin>
                               <Insets bottom="5.0" top="10.0" />
@@ -150,7 +150,7 @@
                         </JFXTextArea>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="7) Would you prefer to be assisted by our system next time you have to write a program for playing MicroRTS?" wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -200,27 +200,27 @@
                               </RadioButton>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Absolutely Agree" textAlignment="CENTER" wrappingWidth="192.0" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Text>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Agree" textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Text>
                               <Text fill="#ffffffd9" layoutX="203.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indifferent" textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Text>
                               <Text fill="#ffffffd9" layoutX="203.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disagree" textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Text>
                               <Text fill="#ffffffd9" layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Absolutely Disagree " textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Text>
                            </children>
@@ -242,25 +242,25 @@
                <children>
                   <HBox layoutY="22.0" prefHeight="40.0" prefWidth="973.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#clickBtnClear" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Clear" textFill="#ffffffbf">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnClear" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Clear" textFill="#ffffffbf">
                            <HBox.margin>
-                              <Insets bottom="5.0" left="760.0" right="5.0" top="7.0" />
+                              <Insets bottom="5.0" left="730.0" right="5.0" top="7.0" />
                            </HBox.margin>
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnCancel" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBtnCancel" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Cancel" textFill="#ffffffbf">
+                        <Button fx:id="btnCancel" layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnCancel" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Cancel" textFill="#ffffffbf">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="7.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnSubmit" layoutX="79.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBtnSubmit" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Submit" textFill="#ffffffbf">
+                        <Button fx:id="btnSubmit" layoutX="79.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnSubmit" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Submit" textFill="#ffffffbf">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="7.0" />

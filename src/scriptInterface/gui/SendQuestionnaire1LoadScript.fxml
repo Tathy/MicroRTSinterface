@@ -24,7 +24,7 @@
                   </JFXTextArea>
                   <Text fx:id="txtMapName" fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Map" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
                      <font>
-                        <Font name="Ebrima Bold" size="16.0" />
+                        <Font name="Arial Bold" size="16.0" />
                      </font>
                   </Text>
                </children>
@@ -36,7 +36,7 @@
                         <TextField fx:id="txtSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="230.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0" />
                         <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#clickBtnSearch" prefHeight="30.0" prefWidth="50.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="▼" textAlignment="CENTER" textFill="#ffffffbf" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Button>
                      </children>
@@ -50,7 +50,7 @@
                      <children>
                         <Button fx:id="btnLoadScript" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#loadSelectedScript" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="LOAD" textAlignment="CENTER" textFill="#ffffffbf" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Button>
                      </children>

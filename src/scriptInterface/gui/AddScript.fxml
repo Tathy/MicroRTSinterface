@@ -50,7 +50,7 @@
                                  <children>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets top="10.0" />
@@ -69,7 +69,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbBase" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Base" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -80,7 +80,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbBarrack" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Barrack" textFill="#ffffffbf" toggleGroup="$groupBuildTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -101,7 +101,7 @@
                                        <children>
                                           <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <TextField fx:id="edtBuildQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
@@ -118,7 +118,7 @@
                                        <children>
                                           <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Direction">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <GridPane>
@@ -133,7 +133,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbBuildRight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Right" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -144,7 +144,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbBuildLeft" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Left" textFill="#ffffffbf" toggleGroup="$groupBuildDir" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -152,7 +152,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbBuildUp" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Up" textFill="#ffffffbf" toggleGroup="$groupBuildDir" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -160,7 +160,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbBuildDown" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Down" textFill="#ffffffbf" toggleGroup="$groupBuildDir" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -193,7 +193,7 @@
                                  <children>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets top="10.0" />
@@ -213,7 +213,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbTrainWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -224,7 +224,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbTrainLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupTrainTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -232,7 +232,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbTrainHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupTrainTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -240,7 +240,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbTrainRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupTrainTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -261,7 +261,7 @@
                                        <children>
                                           <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <TextField fx:id="edtTrainQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
@@ -276,7 +276,7 @@
                                     </GridPane>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Direction">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets top="10.0" />
@@ -297,7 +297,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbTrainRight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Right" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -308,7 +308,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbTrainLeft" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Left" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -316,7 +316,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbTrainUp" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Up" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -324,7 +324,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbTrainDown" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Down" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -332,7 +332,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbTrainEnemyDir" mnemonicParsing="false" prefHeight="30.0" prefWidth="118.0" style="-fx-background-radius: 10px;" text="EnemyDir" textFill="#ffffffbf" toggleGroup="$groupTrainDir" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="50.0" right="-50.0" />
@@ -385,7 +385,7 @@
                                        <children>
                                           <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <TextField fx:id="edtHarvestQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
@@ -429,7 +429,7 @@
                                  <children>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                     </Text>
                                     <Group>
@@ -447,7 +447,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbAttackWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -458,7 +458,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -466,7 +466,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -474,7 +474,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -482,7 +482,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupAttackTypes" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -494,7 +494,7 @@
                                     </Group>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets top="10.0" />
@@ -516,7 +516,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbAttackStrongest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Strongest" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -527,7 +527,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackWeakest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Weakest" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="5.0" />
@@ -535,7 +535,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackClosest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Closest" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -543,7 +543,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackFarthest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Farthest" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="5.0" right="5.0" />
@@ -551,7 +551,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackLessHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="lessHealthy" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -562,7 +562,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackMostHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="mostHealthy" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <padding>
                                                       <Insets left="5.0" right="5.0" />
@@ -573,7 +573,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbAttackRandom" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Random" textFill="#ffffffbf" toggleGroup="$groupAttackEnemy" GridPane.rowIndex="3">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -641,7 +641,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbMoveToUnitWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -652,7 +652,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -660,7 +660,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -668,7 +668,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -676,7 +676,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTypes" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -688,7 +688,7 @@
                                     </Group>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Target">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets bottom="5.0" top="10.0" />
@@ -705,23 +705,23 @@
                                                 <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="40.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <ToggleButton fx:id="tbMoveToUnitAlly" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-radius: 10px;" text="Ally" textFill="#ffffffbf">
+                                                <ToggleButton fx:id="tbMoveToUnitAlly" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Ally" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
-                                                      <Insets left="10.0" right="10.0" />
+                                                      <Insets left="5.0" right="5.0" />
                                                    </GridPane.margin>
                                                    <toggleGroup>
                                                       <ToggleGroup fx:id="groupMoveToUnitTargets" />
                                                    </toggleGroup>
                                                 </ToggleButton>
-                                                <ToggleButton fx:id="tbMoveToUnitEnemy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Enemy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTargets" GridPane.columnIndex="1">
+                                                <ToggleButton fx:id="tbMoveToUnitEnemy" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Enemy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitTargets" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
-                                                      <Insets left="10.0" right="10.0" />
+                                                      <Insets left="5.0" right="5.0" />
                                                    </GridPane.margin>
                                                 </ToggleButton>
                                              </children>
@@ -730,7 +730,7 @@
                                     </Group>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Behaviour">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets top="10.0" />
@@ -752,7 +752,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbMoveToUnitStrongest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Strongest" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -763,7 +763,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitWeakest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Weakest" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="5.0" />
@@ -771,7 +771,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitClosest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Closest" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -779,7 +779,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitFarthest" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Farthest" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="5.0" right="5.0" />
@@ -787,7 +787,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitLessHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="lessHealthy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -798,7 +798,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitMostHealthy" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="mostHealthy" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <padding>
                                                       <Insets left="5.0" right="5.0" />
@@ -809,7 +809,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToUnitRandom" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px;" text="Random" textFill="#ffffffbf" toggleGroup="$groupMoveToUnitBehaviour" GridPane.rowIndex="3">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="5.0" />
@@ -856,7 +856,7 @@
                                  <children>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                     </Text>
                                     <Group>
@@ -874,7 +874,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbMoveAwayWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -885,7 +885,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveAwayLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -893,7 +893,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveAwayHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -901,7 +901,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveAwayRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -909,7 +909,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveAwayAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupMoveAwayTypes" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -970,7 +970,7 @@
                                  <children>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets bottom="5.0" top="15.0" />
@@ -990,7 +990,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbMoveToCoordWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1001,7 +1001,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToCoordLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1009,7 +1009,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToCoordHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1017,7 +1017,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveToCoordRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveToCoordTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1029,7 +1029,7 @@
                                     </Group>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets bottom="5.0" top="10.0" />
@@ -1050,12 +1050,12 @@
                                              <children>
                                                 <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="x :">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                 </Text>
                                                 <Text fill="#ffffffd9" layoutX="10.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y :" GridPane.columnIndex="2">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                 </Text>
                                                 <TextField fx:id="edtMoveToCoordX" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
@@ -1106,7 +1106,7 @@
                                  <children>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets bottom="5.0" top="15.0" />
@@ -1126,7 +1126,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbMoveOnceToCoordWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1137,7 +1137,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveOnceToCoordLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupMoveOnceToCoordTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1145,7 +1145,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveOnceToCoordHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupMoveOnceToCoordTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1153,7 +1153,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbMoveOnceToCoordRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupMoveOnceToCoordTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -1165,7 +1165,7 @@
                                     </Group>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <VBox.margin>
                                           <Insets bottom="5.0" top="10.0" />
@@ -1186,12 +1186,12 @@
                                              <children>
                                                 <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="x :">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                 </Text>
                                                 <Text fill="#ffffffd9" layoutX="10.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="y :" GridPane.columnIndex="2">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                 </Text>
                                                 <TextField fx:id="edtMoveOnceToCoordX" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
@@ -1219,7 +1219,7 @@
                                        <children>
                                           <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <TextField fx:id="edtMoveOnceToCoordQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">

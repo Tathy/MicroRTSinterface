@@ -38,7 +38,7 @@
                                              <children>
                                                 <JFXRadioButton fx:id="rbHaveQtdUnitsbyType" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsbyType" textFill="WHITE">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -49,7 +49,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveQtdUnitsHarversting" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsHarversting" textFill="WHITE" toggleGroup="$groupConditionalAllies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -57,7 +57,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveUnitsStrongest" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveUnitsStrongest" textFill="WHITE" toggleGroup="$groupConditionalAllies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -65,7 +65,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveUnitsinEnemyRange" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveUnitsinEnemyRange" textFill="WHITE" toggleGroup="$groupConditionalAllies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -73,7 +73,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveUnitsToDistantToEnemy" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveUnitsToDistantToEnemy" textFill="WHITE" toggleGroup="$groupConditionalAllies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -81,7 +81,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveQtdUnitsAttacking" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdUnitsAttacking" textFill="WHITE" toggleGroup="$groupConditionalAllies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -89,7 +89,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbIsPlayerInPosition" layoutX="10.0" layoutY="130.0" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="IsPlayerInPosition" textFill="WHITE" toggleGroup="$groupConditionalAllies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                 </JFXRadioButton>
                                              </children>
@@ -98,7 +98,7 @@
                                     </Group>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                     </Text>
                                     <Group>
@@ -116,7 +116,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbCondAllyWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -127,7 +127,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondAllyLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupCondAllyTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -135,7 +135,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondAllyHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupCondAllyTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -143,7 +143,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondAllyRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupCondAllyTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -151,7 +151,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondAllyAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupCondAllyTypes" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -172,7 +172,7 @@
                                        <children>
                                           <Text fx:id="txtQntDistAlly" fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <TextField fx:id="edtCondAllyQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">
@@ -189,7 +189,7 @@
                                        <children>
                                           <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Direction">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <GridPane>
@@ -204,7 +204,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbCondAllyRight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Right" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -215,7 +215,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondAllyLeft" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Left" textFill="#ffffffbf" toggleGroup="$groupCondAllyDirections" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -223,7 +223,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondAllyUp" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Up" textFill="#ffffffbf" toggleGroup="$groupCondAllyDirections" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -231,7 +231,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondAllyDown" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Down" textFill="#ffffffbf" toggleGroup="$groupCondAllyDirections" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -285,7 +285,7 @@
                                              <children>
                                                 <JFXRadioButton fx:id="rbHaveQtdEnemiesbyType" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveQtdEnemiesbyType" textFill="WHITE">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -296,7 +296,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveEnemiesStrongest" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveEnemiesStrongest" textFill="WHITE" toggleGroup="$groupConditionalEnemies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -304,7 +304,7 @@
                                                 </JFXRadioButton>
                                                 <JFXRadioButton fx:id="rbHaveEnemiesinUnitsRange" onAction="#verifyParameters" style="-jfx-selected-color: WHITE;" text="HaveEnemiesinUnitsRange" textFill="WHITE" toggleGroup="$groupConditionalEnemies">
                                                    <font>
-                                                      <Font name="Ebrima Bold" size="13.0" />
+                                                      <Font name="Arial Bold" size="13.0" />
                                                    </font>
                                                    <VBox.margin>
                                                       <Insets bottom="7.0" />
@@ -316,7 +316,7 @@
                                     </Group>
                                     <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
                                        <font>
-                                          <Font name="Ebrima Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                     </Text>
                                     <Group>
@@ -334,7 +334,7 @@
                                              <children>
                                                 <ToggleButton fx:id="tbCondEnemyWorker" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Worker" textFill="#ffffffbf">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -345,7 +345,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondEnemyLight" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Light" textFill="#ffffffbf" toggleGroup="$groupCondEnemyTypes" GridPane.columnIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -353,7 +353,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondEnemyHeavy" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Heavy" textFill="#ffffffbf" toggleGroup="$groupCondEnemyTypes" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -361,7 +361,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondEnemyRanged" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="Ranged" textFill="#ffffffbf" toggleGroup="$groupCondEnemyTypes" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -369,7 +369,7 @@
                                                 </ToggleButton>
                                                 <ToggleButton fx:id="tbCondEnemyAll" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 10px;" text="All" textFill="#ffffffbf" toggleGroup="$groupCondEnemyTypes" GridPane.rowIndex="2">
                                                    <font>
-                                                      <Font name="System Bold" size="14.0" />
+                                                      <Font name="Arial Bold" size="14.0" />
                                                    </font>
                                                    <GridPane.margin>
                                                       <Insets left="10.0" right="10.0" />
@@ -390,7 +390,7 @@
                                        <children>
                                           <Text fx:id="txtQntDistEnemy" fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
                                              <font>
-                                                <Font name="Ebrima Bold" size="14.0" />
+                                                <Font name="Arial Bold" size="14.0" />
                                              </font>
                                           </Text>
                                           <TextField fx:id="edtCondEnemyQnt" prefHeight="30.0" promptText="0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="0" GridPane.columnIndex="1">

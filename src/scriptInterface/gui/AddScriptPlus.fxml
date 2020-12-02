@@ -41,7 +41,7 @@
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                        <font>
-                                          <Font name="System Bold" size="24.0" />
+                                          <Font name="Arial Bold" size="20.0" />
                                        </font>
                                        <padding>
                                           <Insets bottom="-5.0" top="-5.0" />
@@ -49,7 +49,7 @@
                                     </Button>
                                     <Button mnemonicParsing="false" onAction="#clickIndRight" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="▶" textFill="#ffffffbf" GridPane.columnIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="25.0" />
+                                          <Font name="Arial Bold" size="20.0" />
                                        </font>
                                        <GridPane.margin>
                                           <Insets />
@@ -60,7 +60,7 @@
                                     </Button>
                                     <Button mnemonicParsing="false" onAction="#clickIndUp" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="▲" textFill="#ffffffbf" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="Arial Bold" size="15.0" />
                                        </font>
                                        <GridPane.margin>
                                           <Insets left="5.0" />
@@ -71,7 +71,7 @@
                                     </Button>
                                     <Button mnemonicParsing="false" onAction="#clickIndDown" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="▼" textFill="#ffffffbf" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="15.0" />
+                                          <Font name="Arial Bold" size="15.0" />
                                        </font>
                                        <GridPane.margin>
                                           <Insets />
@@ -82,7 +82,7 @@
                                     </Button>
                                     <Button mnemonicParsing="false" onAction="#clickDeleteScript" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="DEL" textFill="#ffffffbf" GridPane.columnIndex="2">
                                        <font>
-                                          <Font name="System Bold" size="12.0" />
+                                          <Font name="Arial Bold" size="12.0" />
                                        </font>
                                        <GridPane.margin>
                                           <Insets left="35.0" right="5.0" />
@@ -90,7 +90,7 @@
                                     </Button>
                                     <Button mnemonicParsing="false" onAction="#clickMoveScriptRight" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="➞" textFill="#ffffffbf" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="24.0" />
+                                          <Font name="Arial Bold" size="24.0" />
                                        </font>
                                        <GridPane.margin>
                                           <Insets left="35.0" right="5.0" />
@@ -113,7 +113,7 @@
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#clickAddFor" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="+for" textFill="#ffffffbf">
                                        <font>
-                                          <Font name="System Bold" size="14.0" />
+                                          <Font name="Arial Bold" size="14.0" />
                                        </font>
                                        <padding>
                                           <Insets bottom="-5.0" top="-5.0" />
@@ -122,6 +122,22 @@
                                           <Insets left="5.0" right="5.0" />
                                        </GridPane.margin>
                                     </Button>
+                                    <Button layoutX="15.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickAddElse" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="+else" textFill="#ffffffbf" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="Arial Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="-5.0" top="-5.0" />
+                                       </padding>
+                                    </Button>
+                                    <Button layoutX="88.0" layoutY="10.0" mnemonicParsing="false" onAction="#clickAddEpsilon" prefHeight="30.0" prefWidth="60.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="+ε" textFill="#ffffffbf" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font name="Arial Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="-5.0" top="-5.0" />
+                                       </padding>
+                                    </Button>
                                  </children>
                                  <VBox.margin>
                                     <Insets left="10.0" right="25.0" top="10.0" />
@@ -129,7 +145,7 @@
                               </GridPane>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Script preview">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                                  <VBox.margin>
                                     <Insets left="15.0" top="10.0" />
@@ -164,7 +180,7 @@
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#clickNewCondScript" prefHeight="30.0" prefWidth="109.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="New conditional" textFill="#ffffffbf" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="12.0" />
+                                          <Font name="Arial Bold" size="12.0" />
                                        </font>
                                        <GridPane.margin>
                                           <Insets right="5.0" />
@@ -172,7 +188,7 @@
                                     </Button>
                                     <Button mnemonicParsing="false" onAction="#clickMoveScriptLeft" prefHeight="30.0" prefWidth="60.0" rotate="180.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="➞" textFill="#ffffffbf" GridPane.rowIndex="1">
                                        <font>
-                                          <Font name="System Bold" size="24.0" />
+                                          <Font name="Arial Bold" size="24.0" />
                                        </font>
                                        <GridPane.margin>
                                           <Insets left="5.0" />
@@ -183,14 +199,14 @@
                                     </Button>
                                     <Button mnemonicParsing="false" onAction="#clickNewSimpleScript" prefHeight="30.0" prefWidth="109.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="New simple" textFill="#ffffffbf" GridPane.columnIndex="2">
                                        <font>
-                                          <Font name="System Bold" size="12.0" />
+                                          <Font name="Arial Bold" size="12.0" />
                                        </font>
                                     </Button>
                                  </children>
                               </GridPane>
                               <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Functions list">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="14.0" />
                                  </font>
                                  <VBox.margin>
                                     <Insets left="15.0" top="10.0" />

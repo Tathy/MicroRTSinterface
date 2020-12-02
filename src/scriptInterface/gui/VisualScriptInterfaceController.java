@@ -19,6 +19,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
@@ -39,6 +40,7 @@ import com.jfoenix.controls.JFXComboBox;
 
 import ai.ScriptsGenerator.GPCompiler.ICompiler;
 import ai.ScriptsGenerator.GPCompiler.MainGPCompiler;
+//import ai.scriptInterface.scriptInterface.gui.MapPath;
 import rts.units.UnitTypeTable;
 import scriptInterface.InterfaceSettings;
 
@@ -155,17 +157,29 @@ public class VisualScriptInterfaceController implements Initializable {
     @FXML 
     private ToggleButton tbAttackRandom;
     
+    @FXML
+    private Button btnSendQ1;
+    @FXML
+    private Button btnSendQ2;
+    @FXML
+    private Button btnSwitch;
+    
  
     
     // Inicialização da interface
 	public void initialize(URL location, ResourceBundle resources) {
 		loadMaps();		
 		
+		btnSendQ1.setTooltip(new Tooltip("Send Questionnaire 1."));
+        btnSendQ2.setTooltip(new Tooltip("Send Questionnaire 2."));
+        btnSwitch.setTooltip(new Tooltip("Switch Side Scripts."));
+		
 		lvScriptsAI1.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 		lvScriptsAI2.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 	}
 	
 	public void loadMaps() {
+		
 		MapPath map1 = new MapPath("16x16 - Bases Workers","maps/16x16/basesWorkers16x16.xml");
         MapPath map2 = new MapPath("16x16 - Bases With Walls","maps/16x16/BasesWithWalls16x16.xml");     
         MapPath map4 = new MapPath("24x24 - Bases Workers A","maps/24x24/basesWorkers24x24A.xml");
@@ -173,13 +187,17 @@ public class VisualScriptInterfaceController implements Initializable {
         MapPath map6 = new MapPath("32x32 - Distant Resources","maps/BWDistantResources32x32.xml");
         MapPath map7 = new MapPath("63x63 - BloodBath","maps/BroodWar/(4)BloodBath.scmB.xml");
         MapPath map8 = new MapPath("8x8 - 4 Bases Workers","maps/8x8/FourBasesWorkers8x8.xml");
-        MapPath map9 = new MapPath("9x8 - Nowhere to Run","maps/NoWhereToRun9x8.xml");
         MapPath map10 = new MapPath("24x24 - Double Game","maps/DoubleGame24x24.xml");
         MapPath map11 = new MapPath("8x8 - Bases Workers Obstacle","maps/8x8/basesWorkers8x8Obstacle.xml");
-        MapPath map12 = new MapPath("8x8 - Bases Workers A","maps/8x8/basesWorkers8x8A.xml");
         MapPath map13 = new MapPath("18x8 - 1 Base", "maps/RangedHeavyMixed.xml");
         MapPath map14 = new MapPath("8x8 - Barreiras (teste)", "maps/8x8Barreiras.xml");
         MapPath map15 = new MapPath("16x16 - Barreiras (teste)", "maps/16x16Barreiras.xml");
+        
+      //Mapas do teste
+        MapPath map12 = new MapPath("9x8 - Nowhere to Run","maps/NoWhereToRun9x8.xml");
+        MapPath map9 = new MapPath("8x8 - Bases Workers A","maps/basesWorkers8x8A.xml");
+        MapPath map16 = new MapPath("24x24 - Double Game","maps/DoubleGame24x24.xml");
+        //MapPath map13 = new MapPath("18x8 - 1 Base", "maps/RangedHeavyMixed.xml");
         
         maps.add(map1);
         maps.add(map2);
@@ -188,13 +206,15 @@ public class VisualScriptInterfaceController implements Initializable {
         maps.add(map6);
         maps.add(map7);
         maps.add(map8);
-        maps.add(map9);
         maps.add(map10);
         maps.add(map11);
-        maps.add(map12);
         maps.add(map13);
         maps.add(map14);
         maps.add(map15);
+        
+        maps.add(map9);
+        maps.add(map12);
+        maps.add(map16);
 		
 		obsMaps = FXCollections.observableArrayList(maps);
 		cbMaps.setItems(obsMaps);
@@ -447,9 +467,33 @@ public class VisualScriptInterfaceController implements Initializable {
 		}
     }
     
-    // Janela SEND (questionário)
+    // Janela SEND (questionário1)
     @FXML
-    void clickBtnSend(ActionEvent event) throws IOException {
+    void clickBtnSendQ1(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
+    	//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire2.fxml"));
+		Parent root1 = (Parent) fxmlLoader.load();
+		
+		SendQuestionnaire1Controller sendQuestionnaire1Controller = fxmlLoader.getController();
+		//SendQuestionnaire2Controller sendQuestionnaire2Controller = fxmlLoader.getController();
+		//sendQuestionnaire1Controller.initialize();
+		
+		Stage stage = new Stage();
+		stage.setTitle("Questionnaire 1");
+		//stage.setTitle("Questionnaire 2");
+		stage.setScene(new Scene(root1));
+		stage.setHeight(721);
+		stage.setWidth(987);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		//stage.initModality(Modality.WINDOW_MODAL);
+		stage.setResizable(false);
+		
+		stage.showAndWait();
+    }
+    
+ // Janela SEND (questionário2)
+    @FXML
+    void clickBtnSendQ2(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
     	//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire2.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();

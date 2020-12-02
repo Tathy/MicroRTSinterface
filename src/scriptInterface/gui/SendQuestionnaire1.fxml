@@ -29,12 +29,12 @@
                      <children>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal information">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Text>
                         <Text fill="#ffffffd9" layoutX="10.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1) What is your email address? Your email will be used to send you the results of our computational experiments and will not be distributed, not even the researchers involved in this research will be able to directly access your email." wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -52,7 +52,7 @@
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="2) How old are you?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="15.0" />
@@ -65,7 +65,7 @@
                               </TextField>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="3) How do you identify yourself?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="25.0" top="15.0" />
@@ -88,14 +88,14 @@
                      <children>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Programming skills">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Text>
                         <HBox prefHeight="60.0" prefWidth="963.0">
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="4) Do you have a degree in computer science or related field (e.g., Information Systems and Electrical Engineering)?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="10.0" />
@@ -115,7 +115,7 @@
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="5) How many years of programming experience do you have?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="10.0" />
@@ -132,7 +132,7 @@
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="6) How many courses in Artificial Intelligence have you taken?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="11.0" />
@@ -145,7 +145,7 @@
                               </ComboBox>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="7) Have you done any form of game AI research?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="15.0" top="11.0" />
@@ -162,7 +162,7 @@
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="8) How often do you play computer games? ">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="12.0" />
@@ -175,7 +175,7 @@
                               </ComboBox>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="9) Have you ever played RTS games? ">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets left="20.0" top="12.0" />
@@ -204,14 +204,14 @@
                      <children>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Experiment information">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Text>
                         <HBox prefHeight="37.0" prefWidth="963.0">
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="10) How much time (in minutes) have you spent working on your program?">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets top="10.0" />
@@ -226,7 +226,7 @@
                         </HBox>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="11) The graphical user interface has helped you develop the program for playing the game." wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Text>
                         <GridPane>
@@ -246,12 +246,12 @@
                            <children>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Absolutely Disagree" textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                               </Text>
                               <Text fill="#ffffffd9" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Absolutely Agree" textAlignment="CENTER" wrappingWidth="192.0" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                               </Text>
                               <RadioButton fx:id="rb11Scale1" mnemonicParsing="false" prefHeight="17.0" prefWidth="142.0" textAlignment="CENTER" GridPane.rowIndex="3">
@@ -284,17 +284,17 @@
                               </RadioButton>
                               <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Agree" textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                               </Text>
                               <Text fill="#ffffffd9" layoutX="203.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indifferent " textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                               </Text>
                               <Text fill="#ffffffd9" layoutX="396.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disagree" textAlignment="CENTER" wrappingWidth="192.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <font>
-                                    <Font name="Ebrima Bold" size="14.0" />
+                                    <Font name="Arial Bold" size="13.0" />
                                  </font>
                               </Text>
                            </children>
@@ -304,7 +304,7 @@
                         </GridPane>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="12) Please tell us of commands you would like to see added to the language used in our system." wrappingWidth="963.0">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="5.0" />
@@ -334,55 +334,55 @@
                      <children>
                         <Text fill="#ffffffd9" strokeType="OUTSIDE" strokeWidth="0.0" text="Please, select your scripts.">
                            <font>
-                              <Font name="Ebrima Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="15.0" top="10.0" />
                            </HBox.margin>
                         </Text>
-                        <ToggleButton mnemonicParsing="false" onAction="#clickBtnMap1" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 1" textFill="#ffffffbf">
+                        <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnMap1" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 1" textFill="#ffffffbf">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ToggleButton>
-                        <ToggleButton mnemonicParsing="false" onAction="#clickBtnMap2" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 2" textFill="#ffffffbf">
+                        <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnMap2" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 2" textFill="#ffffffbf">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ToggleButton>
-                        <ToggleButton layoutX="316.0" layoutY="19.0" mnemonicParsing="false" onAction="#clickBtnMap3" prefHeight="25.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 3" textFill="#ffffffbf">
+                        <ToggleButton layoutX="316.0" layoutY="19.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnMap3" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="Map 3" textFill="#ffffffbf">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ToggleButton>
-                        <Button mnemonicParsing="false" onAction="#clickBtnClear" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Clear" textFill="#ffffffbf">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnClear" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Clear" textFill="#ffffffbf">
                            <HBox.margin>
                               <Insets bottom="5.0" left="240.0" right="5.0" top="5.0" />
                            </HBox.margin>
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnCancel" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBtnCancel" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Cancel" textFill="#ffffffbf">
+                        <Button fx:id="btnCancel" layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnCancel" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Cancel" textFill="#ffffffbf">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnSubmit" layoutX="79.0" layoutY="15.0" mnemonicParsing="false" onAction="#clickBtnSubmit" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Submit" textFill="#ffffffbf">
+                        <Button fx:id="btnSubmit" layoutX="79.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnSubmit" prefHeight="30.0" style="-fx-background-color: #6e6e7b; -fx-background-radius: 10px;" text="Submit" textFill="#ffffffbf">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="Arial Bold" size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

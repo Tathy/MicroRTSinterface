@@ -28,7 +28,7 @@ public class InterfaceSettings {
 	private boolean applyScripts = false;
 	
 	// Map
-	private String map = "maps/8x8/basesWorkers8x8A.xml";
+	private String map = "maps/basesWorkers8x8A.xml";
 	ArrayList<String> scriptsAi1 = new ArrayList<>();
 	ArrayList<String> scriptsAi2 = new ArrayList<>();
 	
