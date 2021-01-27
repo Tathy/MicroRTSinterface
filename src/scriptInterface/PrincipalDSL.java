@@ -67,6 +67,8 @@ public class PrincipalDSL {
 	            	
 	            	// Pause
 	            	while(InterfaceSettings.getInstance().isPaused() && !InterfaceSettings.getInstance().isRestarted()) {
+		            	pgsp.setColorPalet(InterfaceSettings.getInstance().getColorPalett());
+		            	tela.repaint();
 	            		nextTimeToUpdate = System.currentTimeMillis() + PERIOD;
 	            		pauseGame();
 	        			ai1 = attAI(utt, 1);
@@ -108,6 +110,8 @@ public class PrincipalDSL {
 	        	InterfaceSettings.getInstance().setPause(true);
 	        	while(InterfaceSettings.getInstance().isPaused() && !InterfaceSettings.getInstance().isRestarted() ) {
 	        		pauseGame();
+	        		pgsp.setColorPalet(InterfaceSettings.getInstance().getColorPalett());
+	        		tela.repaint();
 	        	}
 	        	
 	        	InterfaceSettings.getInstance().setRestart(true);

@@ -532,9 +532,7 @@ public class VisualScriptInterfaceController implements Initializable {
     //Botão color Paletts
     @FXML
     void clickBtnPaletts(ActionEvent event) throws IOException {
-    	
-    	// TROCAR TUDO PELA TELA NOVA
-    	
+
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ChangeColorPalett.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
@@ -544,10 +542,10 @@ public class VisualScriptInterfaceController implements Initializable {
 		Stage stage = new Stage();
 		stage.setTitle("Color Paletts");
 		stage.setScene(new Scene(root1));
-		stage.setHeight(721);
-		stage.setWidth(987);
-		stage.initModality(Modality.APPLICATION_MODAL);
-		//stage.initModality(Modality.WINDOW_MODAL);
+		stage.setHeight(330+20);
+		stage.setWidth(500+20);
+		//stage.initModality(Modality.APPLICATION_MODAL);
+		stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);
 		
 		stage.showAndWait();
