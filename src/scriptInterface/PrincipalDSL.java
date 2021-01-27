@@ -62,6 +62,8 @@ public class PrincipalDSL {
         do {
 	        do {
 	            if (System.currentTimeMillis() >= nextTimeToUpdate) {
+	            	//Atualização das cores
+	            	pgsp.setColorPalet(InterfaceSettings.getInstance().getColorPalett());
 	            	
 	            	// Pause
 	            	while(InterfaceSettings.getInstance().isPaused() && !InterfaceSettings.getInstance().isRestarted()) {

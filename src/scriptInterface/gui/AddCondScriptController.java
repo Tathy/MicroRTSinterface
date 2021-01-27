@@ -44,8 +44,8 @@ public class AddCondScriptController {
     private ToggleButton tbCondAllyHeavy;
     @FXML
     private ToggleButton tbCondAllyRanged;
-    @FXML
-    private ToggleButton tbCondAllyAll;
+    //@FXML
+    //private ToggleButton tbCondAllyAll;
     @FXML
     private ToggleGroup groupCondAllyTypes;
     
@@ -92,8 +92,8 @@ public class AddCondScriptController {
     private ToggleButton tbCondEnemyHeavy;
     @FXML
     private ToggleButton tbCondEnemyRanged;
-    @FXML
-    private ToggleButton tbCondEnemyAll;
+    //@FXML
+    //private ToggleButton tbCondEnemyAll;
     @FXML
     private ToggleGroup groupCondEnemyTypes;
 
@@ -132,7 +132,7 @@ public class AddCondScriptController {
 	       		tbCondAllyLight.setDisable(false);
 	       		tbCondAllyHeavy.setDisable(false);
 	       		tbCondAllyRanged.setDisable(false);
-	       		tbCondAllyAll.setDisable(false);
+	       		//tbCondAllyAll.setDisable(false);
 	       		txtQntDistAlly.setText("Quantity");
 	       		edtCondAllyQnt.setDisable(false);
 	       		tbCondAllyRight.setDisable(true);
@@ -145,7 +145,7 @@ public class AddCondScriptController {
 	       		tbCondAllyLight.setDisable(true);
 	      		tbCondAllyHeavy.setDisable(true);
 	       		tbCondAllyRanged.setDisable(true);
-	       		tbCondAllyAll.setDisable(true);
+	       		//tbCondAllyAll.setDisable(true);
 	       		txtQntDistAlly.setText("Quantity");
 	       		edtCondAllyQnt.setDisable(false);
 	       		tbCondAllyRight.setDisable(true);
@@ -158,7 +158,7 @@ public class AddCondScriptController {
 	       		tbCondAllyLight.setDisable(false);
 	       		tbCondAllyHeavy.setDisable(false);
 	       		tbCondAllyRanged.setDisable(false);
-	       		tbCondAllyAll.setDisable(false);
+	       		//tbCondAllyAll.setDisable(false);
 	       		edtCondAllyQnt.setDisable(true);
 	       		tbCondAllyRight.setDisable(true);
 	       	    tbCondAllyLeft.setDisable(true);
@@ -170,7 +170,7 @@ public class AddCondScriptController {
 	       		tbCondAllyLight.setDisable(false);
 	       		tbCondAllyHeavy.setDisable(false);
 	       		tbCondAllyRanged.setDisable(false);
-	       		tbCondAllyAll.setDisable(false);
+	       		//tbCondAllyAll.setDisable(false);
 	       		edtCondAllyQnt.setDisable(true);
 	       		tbCondAllyRight.setDisable(true);
 	       	    tbCondAllyLeft.setDisable(true);
@@ -182,7 +182,7 @@ public class AddCondScriptController {
 	       		tbCondAllyLight.setDisable(false);
 	       		tbCondAllyHeavy.setDisable(false);
 	       		tbCondAllyRanged.setDisable(false);
-	       		tbCondAllyAll.setDisable(false);
+	       		//tbCondAllyAll.setDisable(false);
 	       		txtQntDistAlly.setText("Distance");
 	       		edtCondAllyQnt.setDisable(false);
 	       		tbCondAllyRight.setDisable(true);
@@ -195,7 +195,7 @@ public class AddCondScriptController {
         		tbCondAllyLight.setDisable(false);
         		tbCondAllyHeavy.setDisable(false);
         		tbCondAllyRanged.setDisable(false);
-        		tbCondAllyAll.setDisable(false);
+        		//tbCondAllyAll.setDisable(false);
         		txtQntDistAlly.setText("Quantity");
 	       		edtCondAllyQnt.setDisable(false);
 	       		tbCondAllyRight.setDisable(true);
@@ -208,7 +208,7 @@ public class AddCondScriptController {
         		tbCondAllyLight.setDisable(true);
         		tbCondAllyHeavy.setDisable(true);
         		tbCondAllyRanged.setDisable(true);
-        		tbCondAllyAll.setDisable(true);
+        		//tbCondAllyAll.setDisable(true);
 	       		edtCondAllyQnt.setDisable(true);
 	       		tbCondAllyRight.setDisable(false);
 	       	    tbCondAllyLeft.setDisable(false);
@@ -225,7 +225,7 @@ public class AddCondScriptController {
 	        	tbCondEnemyLight.setDisable(false);
 	        	tbCondEnemyHeavy.setDisable(false);
 	        	tbCondEnemyRanged.setDisable(false);
-	        	tbCondEnemyAll.setDisable(false);
+	        	//tbCondEnemyAll.setDisable(false);
 	        	txtQntDistEnemy.setText("Quantity");
 	       		edtCondEnemyQnt.setDisable(false);
 	       		
@@ -234,7 +234,7 @@ public class AddCondScriptController {
         		tbCondEnemyLight.setDisable(false);
         		tbCondEnemyHeavy.setDisable(false);
         		tbCondEnemyRanged.setDisable(false);
-        		tbCondEnemyAll.setDisable(false);
+        		//tbCondEnemyAll.setDisable(false);
         		edtCondEnemyQnt.setDisable(true);
 	        		
 	       	}else if(rbHaveEnemiesinUnitsRange.isSelected()) {
@@ -242,7 +242,7 @@ public class AddCondScriptController {
 	       		tbCondEnemyLight.setDisable(false);
 	       		tbCondEnemyHeavy.setDisable(false);
 	       		tbCondEnemyRanged.setDisable(false);
-	       		tbCondEnemyAll.setDisable(false);
+	       		//tbCondEnemyAll.setDisable(false);
 	       		edtCondEnemyQnt.setDisable(true);
 	        		
 	       	}
@@ -275,8 +275,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
@@ -329,8 +329,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ")";
@@ -358,8 +358,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provisória, apagar depois
     	    		s += ")";
@@ -388,8 +388,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Distance
     	    		s += Integer.toString(q) + ")";
@@ -421,8 +421,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
@@ -494,8 +494,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
@@ -547,8 +547,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provis�ria, apagar depois
     	    		s += ")";
@@ -576,8 +576,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provis�ria, apagar depois
     	    		s += ")";
@@ -606,8 +606,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Distance
     	    		s += Integer.toString(q) + ")";
@@ -639,8 +639,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondAllyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondAllyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondAllyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
@@ -720,8 +720,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondEnemyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondEnemyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
@@ -752,8 +752,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondEnemyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provis�ria, apagar depois
     	    		s += ")";
@@ -781,8 +781,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondEnemyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provis�ria, apagar depois
     	    		s += ")";
@@ -823,8 +823,8 @@ public class AddCondScriptController {
         				s += "Heavy,";
         			else if(tbCondEnemyRanged.isSelected())
         				s += "Ranged,";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All,";
+        			//else if(tbCondEnemyAll.isSelected())
+        				//s += "All,";
     	    		
     	    		//Quantity or Distance
     	    		s += Integer.toString(q) + ")";
@@ -855,8 +855,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondEnemyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provis�ria, apagar depois
     	    		s += ")";
@@ -884,8 +884,8 @@ public class AddCondScriptController {
         				s += "Heavy)";
         			else if(tbCondEnemyRanged.isSelected())
         				s += "Ranged)";
-        			else if(tbCondEnemyAll.isSelected())
-        				s += "All)";
+        			//else if(tbCondEnemyAll.isSelected())
+        				//s += "All)";
     	    		
     	    		//String provis�ria, apagar depois
     	    		s += ")";

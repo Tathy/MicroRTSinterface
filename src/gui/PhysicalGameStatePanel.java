@@ -30,17 +30,22 @@ import util.Pair;
 public class PhysicalGameStatePanel extends JPanel {
     public static int COLORSCHEME_BLACK = 1;
     public static int COLORSCHEME_WHITE = 2;
+    
+    public static int COLORPALETT_INITIAL = 1;
+    public static int COLORPALETT_WONG = 2;
+    public static int COLORPALETT_TOL = 3;
+    public static int COLORPALETT_GRAY = 4;
 
     boolean fullObservability = true;
     int drawFromPerspectiveOfPlayer = -1;   // if fullObservability is false, and this is 0 or 1, it only draws what the specified player can see
-    GameState gs;
+    GameState gs = null;
 
     // Units to be highlighted (this is used, for example, by the MouseController,
     // to give feedback to the human, on which units are selectable.
-    List<Unit> toHighLight = new LinkedList<>();
-    EvaluationFunction evalFunction;
+    List<Unit> toHighLight = new LinkedList<Unit>();
+    EvaluationFunction evalFunction = null;
 
-    // area to highlight: this can be used to highlight a rectangle of the game:
+    // area to highlight: this can be used t o highlight a rectangle of the game:
     int m_mouse_selection_x0 = -1;
     int m_mouse_selection_x1 = -1;
     int m_mouse_selection_y0 = -1;
@@ -55,6 +60,7 @@ public class PhysicalGameStatePanel extends JPanel {
     int last_grid = 0;
 
     int colorScheme = COLORSCHEME_BLACK;
+    static int colorPalett = COLORPALETT_INITIAL;
 
     public PhysicalGameStatePanel(GameState a_gs) {
         this(a_gs, new SimpleEvaluationFunction());
@@ -139,6 +145,17 @@ public class PhysicalGameStatePanel extends JPanel {
         if (colorScheme==COLORSCHEME_BLACK) setBackground(Color.BLACK);
         if (colorScheme==COLORSCHEME_WHITE) setBackground(Color.WHITE);
     }
+    
+    public void setColorPalet(int cp) {
+    	//COLORPALETT_DEFAULT = 1;
+        //COLORPALETT_WONG = 2;
+        //COLORPALETT_TOL = 3;
+        //COLORPALETT_GRAY = 4;
+    	colorPalett = COLORPALETT_INITIAL; //escala de cores incial do microRTS
+    	if(cp == COLORPALETT_WONG) colorPalett = COLORPALETT_WONG; //escala de cores Wong
+    	if(cp == COLORPALETT_TOL) colorPalett = COLORPALETT_TOL; //escala de cores Tol
+    	if(cp == COLORPALETT_GRAY) colorPalett = COLORPALETT_GRAY; //paleta com escalas de cinza
+    }
 
     public int getColorScheme() {
         return colorScheme;
@@ -194,7 +211,7 @@ public class PhysicalGameStatePanel extends JPanel {
         if (cellx>=gs.getPhysicalGameState().getWidth()) return null;
         if (celly>=gs.getPhysicalGameState().getHeight()) return null;
 
-        return new Pair<>(cellx, celly);
+        return new Pair<Integer,Integer>(cellx,celly);
     }
 
 
@@ -210,7 +227,7 @@ public class PhysicalGameStatePanel extends JPanel {
         if (cellx>=gs.getPhysicalGameState().getWidth()) cellx = gs.getPhysicalGameState().getWidth()-1;
         if (celly>=gs.getPhysicalGameState().getHeight()) celly = gs.getPhysicalGameState().getHeight()-1;
 
-        return new Pair<>(cellx, celly);
+        return new Pair<Integer,Integer>(cellx,celly);
     }
 
 
@@ -297,11 +314,22 @@ public class PhysicalGameStatePanel extends JPanel {
             g2d.translate(last_start_x, last_start_y);
         }
 
+        //Cores
         Color playerColor = null;
-        Color wallColor = new Color(0, 0.33f, 0);
+        Color wallColor = new Color(0, 0.33f, 0);	//Cor das paredes / obstáculos
         Color po0color = new Color(0, 0, 0.25f);
         Color po1color = new Color(0.25f, 0, 0);
         Color pobothcolor = new Color(0.25f, 0, 0.25f);
+        
+        //Cores das paredes
+        if(colorPalett == COLORPALETT_INITIAL)
+        	wallColor = new Color(0, 0.33f, 0);
+    	if(colorPalett == COLORPALETT_WONG)
+    		wallColor = new Color(86, 180, 233);
+    	if(colorPalett == COLORPALETT_TOL)
+    		wallColor = new Color(68, 170, 153);
+    	if(colorPalett == COLORPALETT_GRAY)
+    		wallColor = new Color(0, 0.33f, 0);
 
         for(int j = 0;j<pgs.getWidth();j++) {
             for(int i = 0;i<pgs.getHeight();i++) {
@@ -352,7 +380,8 @@ public class PhysicalGameStatePanel extends JPanel {
 
         // draw the units:
         // this list copy is to prevent a concurrent modification exception
-        List<Unit> l = new LinkedList<>(pgs.getUnits());
+        List<Unit> l = new LinkedList<Unit>();
+        l.addAll(pgs.getUnits());
         for(Unit u:l) {
             int reduction = 0;
 
@@ -407,6 +436,7 @@ public class PhysicalGameStatePanel extends JPanel {
                 }
             }
 
+            // Cores dos jogadores (2)
             if (u.getPlayer()==0) {
                 playerColor = Color.blue;
             } else if (u.getPlayer()==1) {
@@ -415,29 +445,108 @@ public class PhysicalGameStatePanel extends JPanel {
                 playerColor = null;
             }
 
-            if (u.getType().name.equals("Resource")) {
-                g2d.setColor(Color.green);
+            if (u.getType().name.equals("Resource")) {	//Cor do Recurso
+            	g2d.setColor(Color.green);
+            	if(colorPalett == COLORPALETT_INITIAL)
+            		g2d.setColor(Color.green);
+            	if(colorPalett == COLORPALETT_WONG)
+            		g2d.setColor(new Color(230, 159, 0));
+            	if(colorPalett == COLORPALETT_TOL)
+            		g2d.setColor(new Color(17, 119, 51));
+            	if(colorPalett == COLORPALETT_GRAY)
+            		g2d.setColor(Color.white);
             }
-            if (u.getType().name.equals("Base")) {
-                if (colorScheme==COLORSCHEME_BLACK) g2d.setColor(Color.white);
+            
+            if (u.getType().name.equals("Base")) {	//Cor da Base
+                if (colorScheme==COLORSCHEME_BLACK) { 
+                	g2d.setColor(Color.white); 
+                	/*
+                	if(colorPalett == COLORPALETT_INITIAL)
+                		g2d.setColor(Color.white);
+                	if(colorPalett == COLORPALETT_WONG)
+                		g2d.setColor(Color.white);
+                	if(colorPalett == COLORPALETT_TOL)
+                		g2d.setColor(Color.white);
+                	if(colorPalett == COLORPALETT_GRAY)
+                		g2d.setColor(Color.white);
+                	*/
+                }
                 if (colorScheme==COLORSCHEME_WHITE) g2d.setColor(Color.lightGray);
             }
-            if (u.getType().name.equals("Barracks")) {
-                if (colorScheme==COLORSCHEME_BLACK) g2d.setColor(Color.lightGray);
+            
+            if (u.getType().name.equals("Barracks")) {	//Cor das Barracks
+                if (colorScheme==COLORSCHEME_BLACK) { 
+                	g2d.setColor(Color.lightGray); 
+                	/*
+                	if(colorPalett == COLORPALETT_INITIAL)
+                		g2d.setColor(Color.lightGray);
+                	if(colorPalett == COLORPALETT_WONG)
+                		g2d.setColor(Color.white);
+                	if(colorPalett == COLORPALETT_TOL)
+                		g2d.setColor(Color.white);
+                	if(colorPalett == COLORPALETT_GRAY)
+                		g2d.setColor(Color.white);
+                	*/
+                }
                 if (colorScheme==COLORSCHEME_WHITE) g2d.setColor(Color.gray);
             }
-            if (u.getType().name.equals("Worker")) {
+            
+            if (u.getType().name.equals("Worker")) {	//Cor de unidade Worker
                 g2d.setColor(Color.gray);
                 reduction = grid/4;
+                /*
+                if(colorPalett == COLORPALETT_INITIAL)
+            		g2d.setColor(Color.gray);
+            	if(colorPalett == COLORPALETT_WONG)
+            		g2d.setColor(Color.white);
+            	if(colorPalett == COLORPALETT_TOL)
+            		g2d.setColor(Color.white);
+            	if(colorPalett == COLORPALETT_GRAY)
+            		g2d.setColor(Color.white);
+            	*/
             }
-            if (u.getType().name.equals("Light")) {
+            
+            if (u.getType().name.equals("Light")) {	//Cor de unidade Light
                 g2d.setColor(Color.orange);
                 reduction = grid/8;
+                
+                if(colorPalett == COLORPALETT_INITIAL)
+            		g2d.setColor(Color.orange);
+            	if(colorPalett == COLORPALETT_WONG)
+            		g2d.setColor(new Color(240, 228, 66));
+            	if(colorPalett == COLORPALETT_TOL)
+            		g2d.setColor(new Color(221, 204, 119));
+            	if(colorPalett == COLORPALETT_GRAY)
+            		g2d.setColor(Color.white);
+            	
             }
-            if (u.getType().name.equals("Heavy")) g2d.setColor(Color.yellow);
-            if (u.getType().name.equals("Ranged")) {
+            if (u.getType().name.equals("Heavy")) {	//Cor de unidade Heavy
+            	g2d.setColor(Color.yellow);
+            	
+            	if(colorPalett == COLORPALETT_INITIAL)
+            		g2d.setColor(Color.yellow);
+            	if(colorPalett == COLORPALETT_WONG)
+            		g2d.setColor(new Color(0, 158, 115));
+            	if(colorPalett == COLORPALETT_TOL)
+            		g2d.setColor(new Color(136, 204, 238));
+            	if(colorPalett == COLORPALETT_GRAY)
+            		g2d.setColor(Color.white);
+            	
+            }
+            
+            if (u.getType().name.equals("Ranged")) {	//Cor de unidade Ranged
                 g2d.setColor(Color.cyan);
                 reduction = grid/8;
+                
+                if(colorPalett == COLORPALETT_INITIAL)
+            		g2d.setColor(Color.cyan);
+            	if(colorPalett == COLORPALETT_WONG)
+            		g2d.setColor(new Color(0, 114, 178));
+            	if(colorPalett == COLORPALETT_TOL)
+            		g2d.setColor(new Color(204, 102, 119));
+            	if(colorPalett == COLORPALETT_GRAY)
+            		g2d.setColor(Color.white);
+                
             }
 
             if (!u.getType().canMove) {

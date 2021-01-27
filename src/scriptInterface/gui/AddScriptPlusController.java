@@ -73,14 +73,45 @@ public class AddScriptPlusController {
     
     //Adiciona else no final da lista
     @FXML
-    void clickAddEpsilon(ActionEvent event) {
-	    ArrayList<String> temp = new ArrayList<>();
-	    temp.addAll(ScriptPreview);
-	    temp.add("ε");
-	    		
-	    ScriptPreview.clear();
-	    ScriptPreview.addAll(temp);
-	    attScriptPreview();
+    void clickAddNot(ActionEvent event) {
+    	if(lvScriptPreview.getSelectionModel().getSelectedItem() != null) {
+    		String command = lvScriptPreview.getSelectionModel().getSelectedItem();
+    		String indentation = "";
+    		
+    		//Mede indentação
+    		char[] com = command.toCharArray();
+    		for(int i = 0; i < command.length(); i++) {
+    			if(com[i] == ' ') {
+    				indentation = indentation + " ";
+    				System.out.println("achou espaço");
+    			} else
+    				break;
+    		}
+    		
+    		if(command.contains("if")) {
+    			txtAlert.setOpacity(0.0);
+    			
+    			if(command.contains("!")) {
+    				command = command.trim();
+    				command = command.substring(0, 3) + command.substring(4, command.length());
+    				System.out.println("Comando: " + command);
+    				ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), indentation + command);
+    				attScriptPreview();
+    				System.out.println("Retirando negação: " + indentation + command);
+    			} else {
+    				command = command.trim();
+    				command = command.substring(0, 3) + "!" + command.substring(3, command.length());
+    				System.out.println("Comando: " + command);
+    				ScriptPreview.set((ScriptPreview.indexOf(lvScriptPreview.getSelectionModel().getSelectedItem())), indentation + command);
+    				attScriptPreview();
+    				System.out.println("Acrescentando negação: " + indentation + command);
+    			}
+    			
+    		} else {
+    			txtAlert.setText("Please, select a conditional.");
+    			txtAlert.setOpacity(1.0);
+    		}
+    	}
     }
 
     @FXML

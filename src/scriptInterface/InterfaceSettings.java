@@ -17,6 +17,9 @@ public class InterfaceSettings {
 	
 	private InterfaceSettings() {}
 	
+	//Escala de cores (initial = 1; wong = 2; tol = 3; gray = 4)
+	private int colorPalett = 1;
+	
 	//Abas à esquerda
 	private int abaAddScript = 1;
 	
@@ -263,6 +266,14 @@ public class InterfaceSettings {
 			itr1.set(a2);
 
 		}
+	}
+	
+	public void setColorPalett(int cp) {
+		this.colorPalett = cp;
+	}
+	
+	public int getColorPalett() {
+		return this.colorPalett;
 	}
 
 	

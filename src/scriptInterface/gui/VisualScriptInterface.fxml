@@ -347,6 +347,11 @@
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Button>
+                              <Button fx:id="btnPaletts" mnemonicParsing="false" onAction="#clickBtnPaletts" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="PALETTS" textFill="#ffffffbf" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Bold" size="14.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </GridPane>
                      </children>

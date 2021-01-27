@@ -90,8 +90,8 @@ public class AddScriptController {
     private ToggleButton tbAttackHeavy;
     @FXML
     private ToggleButton tbAttackRanged;
-    @FXML
-    private ToggleButton tbAttackAll;
+    //@FXML
+    //private ToggleButton tbAttackAll;
     @FXML
     private ToggleButton tbAttackStrongest;
     @FXML
@@ -250,8 +250,8 @@ public class AddScriptController {
     				s += "attack(Heavy,";
     			else if(tbAttackRanged.isSelected())
     				s += "attack(Ranged,";
-    			else if(tbAttackAll.isSelected())
-    				s += "attack(All,";
+    			//else if(tbAttackAll.isSelected())
+    				//s += "attack(All,";
 
     			if(tbAttackStrongest.isSelected())
     				s += "strongest)"; 
@@ -301,8 +301,8 @@ public class AddScriptController {
     				s += "attack(Heavy,";
     			else if(tbAttackRanged.isSelected())
     				s += "attack(Ranged,";
-    			else if(tbAttackAll.isSelected())
-    				s += "attack(All,";
+    			//else if(tbAttackAll.isSelected())
+    				//s += "attack(All,";
     			
     			if(tbAttackStrongest.isSelected())
     				s += "strongest)"; 

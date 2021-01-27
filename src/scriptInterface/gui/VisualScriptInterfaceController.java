@@ -219,7 +219,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		obsMaps = FXCollections.observableArrayList(maps);
 		cbMaps.setItems(obsMaps);
 	}
-	
+	/*
 	public void loadAIs() {
 		String ai1 = "Passive";
 		String ai2 = "Worker Rush";
@@ -239,7 +239,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		cbAI1.setItems(obsAIs);
 		cbAI2.setItems(obsAIs);
 	}
-	
+	*/
 	//Reposicionamento de Scripts
 	
 	@FXML
@@ -494,17 +494,17 @@ public class VisualScriptInterfaceController implements Initializable {
  // Janela SEND (questionário2)
     @FXML
     void clickBtnSendQ2(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
-    	//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire2.fxml"));
+    	//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire2.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
-		SendQuestionnaire1Controller sendQuestionnaire1Controller = fxmlLoader.getController();
-		//SendQuestionnaire2Controller sendQuestionnaire2Controller = fxmlLoader.getController();
+		//SendQuestionnaire1Controller sendQuestionnaire1Controller = fxmlLoader.getController();
+		SendQuestionnaire2Controller sendQuestionnaire2Controller = fxmlLoader.getController();
 		//sendQuestionnaire1Controller.initialize();
 		
 		Stage stage = new Stage();
-		stage.setTitle("Questionnaire 1");
-		//stage.setTitle("Questionnaire 2");
+		//stage.setTitle("Questionnaire 1");
+		stage.setTitle("Questionnaire 2");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
 		stage.setWidth(987);
@@ -527,6 +527,30 @@ public class VisualScriptInterfaceController implements Initializable {
     	
     	attListViewAI1();
     	attListViewAI2();
+    }
+    
+    //Botão color Paletts
+    @FXML
+    void clickBtnPaletts(ActionEvent event) throws IOException {
+    	
+    	// TROCAR TUDO PELA TELA NOVA
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ChangeColorPalett.fxml"));
+		Parent root1 = (Parent) fxmlLoader.load();
+		
+		ChangeColorPalettController changeColorPalettController = fxmlLoader.getController();
+		//changeColorPalettController.initialize();
+		
+		Stage stage = new Stage();
+		stage.setTitle("Color Paletts");
+		stage.setScene(new Scene(root1));
+		stage.setHeight(721);
+		stage.setWidth(987);
+		stage.initModality(Modality.APPLICATION_MODAL);
+		//stage.initModality(Modality.WINDOW_MODAL);
+		stage.setResizable(false);
+		
+		stage.showAndWait();
     }
 
 }
