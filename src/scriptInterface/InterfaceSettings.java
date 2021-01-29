@@ -19,6 +19,8 @@ public class InterfaceSettings {
 	
 	//Escala de cores (initial = 1; wong = 2; tol = 3; gray = 4)
 	private int colorPalett = 1;
+	//Cor do fundo do grid (preto = 1; branco = 2)
+	private int colorScheme = 1;
 	
 	//Abas à esquerda
 	private int abaAddScript = 1;
@@ -274,6 +276,14 @@ public class InterfaceSettings {
 	
 	public int getColorPalett() {
 		return this.colorPalett;
+	}
+	
+	public void setColorScheme(int cp) {
+		this.colorScheme = cp;
+	}
+	
+	public int getColorScheme() {
+		return this.colorScheme;
 	}
 
 	

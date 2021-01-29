@@ -329,7 +329,7 @@ public class PhysicalGameStatePanel extends JPanel {
     	if(colorPalett == COLORPALETT_TOL)
     		wallColor = new Color(68, 170, 153);
     	if(colorPalett == COLORPALETT_GRAY)
-    		wallColor = new Color(0, 0.33f, 0);
+    		wallColor = new Color(153, 153, 153);
 
         for(int j = 0;j<pgs.getWidth();j++) {
             for(int i = 0;i<pgs.getHeight();i++) {
@@ -410,27 +410,35 @@ public class PhysicalGameStatePanel extends JPanel {
                         break;
                     case UnitAction.TYPE_ATTACK_LOCATION:
                         g2d.setColor(Color.RED);
+                        if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.WHITE);
                         g2d.drawLine(u.getX()*grid+grid/2, u.getY()*grid+grid/2, u.getX()*grid+grid/2 + offsx, u.getY()*grid+grid/2 + offsy);
                         break;
                     case UnitAction.TYPE_PRODUCE:
                         g2d.setColor(Color.BLUE);
+                        if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.WHITE);
+                        if(colorPalett == COLORPALETT_GRAY && colorScheme == COLORSCHEME_WHITE) g2d.setColor(Color.black);
                         g2d.drawLine(u.getX() * grid + grid / 2, u.getY() * grid + grid / 2, u.getX() * grid + grid / 2 + offsx, u.getY() * grid + grid / 2 + offsy);
                         // draw building progress bar
                         int ETA = uaa.time + uaa.action.ETA(uaa.unit) - gs.getTime();
                         g2d.setColor(Color.BLUE);
+                        if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.WHITE);
+                        if(colorPalett == COLORPALETT_GRAY && colorScheme == COLORSCHEME_WHITE) g2d.setColor(Color.BLACK);
                         g2d.fillRect(u.getX() * grid + offsx, u.getY() * grid + offsy,
                                 grid - (int) (grid * (((float) ETA) / uaa.action.ETA(uaa.unit))), (int) (grid / 5.0));
 
                         String txt = uaa.action.getUnitType().name;
                         g2d.setColor(Color.BLUE);
+                        if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.WHITE);
+                        if(colorPalett == COLORPALETT_GRAY && colorScheme == COLORSCHEME_WHITE) g2d.setColor(Color.BLACK);
                         FontMetrics fm = g2d.getFontMetrics(g2d.getFont());
                         int width = fm.stringWidth(txt);
                         g2d.drawString(txt, u.getX() * grid + grid / 2 - width / 2 + offsx, u.getY() * grid + grid / 2 + offsy);
                         break;
                     case UnitAction.TYPE_HARVEST:
                     case UnitAction.TYPE_RETURN:
-                        if (colorScheme==COLORSCHEME_BLACK) g2d.setColor(Color.WHITE);
+                        if (colorScheme==COLORSCHEME_BLACK) g2d.setColor(Color.WHITE);	//Worker coletando recurso
                         if (colorScheme==COLORSCHEME_WHITE) g2d.setColor(Color.GREEN);
+                        if(colorPalett == COLORPALETT_GRAY && colorScheme == COLORSCHEME_WHITE) g2d.setColor(new Color(200, 200, 200));
                         g2d.drawLine(u.getX()*grid+grid/2, u.getY()*grid+grid/2, u.getX()*grid+grid/2 + offsx, u.getY()*grid+grid/2 + offsy);
                         break;
                 }
@@ -439,8 +447,10 @@ public class PhysicalGameStatePanel extends JPanel {
             // Cores dos jogadores (2)
             if (u.getPlayer()==0) {
                 playerColor = Color.blue;
+                if(colorPalett == COLORPALETT_GRAY) playerColor = new Color(25, 25, 25);
             } else if (u.getPlayer()==1) {
                 playerColor = Color.red;
+                if(colorPalett == COLORPALETT_GRAY) playerColor = new Color(194, 194, 194);
             } else if (u.getPlayer()==-1) {
                 playerColor = null;
             }
@@ -454,7 +464,7 @@ public class PhysicalGameStatePanel extends JPanel {
             	if(colorPalett == COLORPALETT_TOL)
             		g2d.setColor(new Color(17, 119, 51));
             	if(colorPalett == COLORPALETT_GRAY)
-            		g2d.setColor(Color.white);
+            		g2d.setColor(new Color(76, 76, 76));
             }
             
             if (u.getType().name.equals("Base")) {	//Cor da Base
@@ -517,7 +527,7 @@ public class PhysicalGameStatePanel extends JPanel {
             	if(colorPalett == COLORPALETT_TOL)
             		g2d.setColor(new Color(221, 204, 119));
             	if(colorPalett == COLORPALETT_GRAY)
-            		g2d.setColor(Color.white);
+            		g2d.setColor(new Color(119, 119, 119));
             	
             }
             if (u.getType().name.equals("Heavy")) {	//Cor de unidade Heavy
@@ -530,7 +540,7 @@ public class PhysicalGameStatePanel extends JPanel {
             	if(colorPalett == COLORPALETT_TOL)
             		g2d.setColor(new Color(136, 204, 238));
             	if(colorPalett == COLORPALETT_GRAY)
-            		g2d.setColor(Color.white);
+            		g2d.setColor(new Color(45, 45, 45));
             	
             }
             
@@ -545,19 +555,27 @@ public class PhysicalGameStatePanel extends JPanel {
             	if(colorPalett == COLORPALETT_TOL)
             		g2d.setColor(new Color(204, 102, 119));
             	if(colorPalett == COLORPALETT_GRAY)
-            		g2d.setColor(Color.white);
+            		g2d.setColor(new Color(133, 133, 133));
                 
             }
 
             if (!u.getType().canMove) {
                 g2d.fillRect(u.getX()*grid+reduction, u.getY()*grid+reduction, grid-reduction*2, grid-reduction*2);
                 g2d.setColor(playerColor);
-                if (panel!=null && panel.toHighLight.contains(u)) g2d.setColor(Color.green);
+                if (panel!=null && panel.toHighLight.contains(u)) { 
+                	g2d.setColor(Color.green);
+                	//if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.WHITE);
+                	//if(colorPalett == COLORPALETT_GRAY && colorScheme == COLORSCHEME_WHITE) g2d.setColor(Color.RED);
+                }
                 g2d.drawRect(u.getX()*grid+reduction, u.getY()*grid+reduction, grid-reduction*2, grid-reduction*2);
             } else {
                 g2d.fillOval(u.getX()*grid+reduction, u.getY()*grid+reduction, grid-reduction*2, grid-reduction*2);
                 g2d.setColor(playerColor);
-                if (panel!=null && panel.toHighLight.contains(u)) g2d.setColor(Color.green);
+                if (panel!=null && panel.toHighLight.contains(u)) {
+                	g2d.setColor(Color.green);
+                	//if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.WHITE);
+                	//if(colorPalett == COLORPALETT_GRAY && colorScheme == COLORSCHEME_WHITE) g2d.setColor(Color.RED);
+                }
                 g2d.drawOval(u.getX()*grid+reduction, u.getY()*grid+reduction, grid-reduction*2, grid-reduction*2);
             }
 
@@ -581,8 +599,11 @@ public class PhysicalGameStatePanel extends JPanel {
 
             if (u.getHitPoints()<u.getMaxHitPoints()) {
                 g2d.setColor(Color.RED);
+            	if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.gray);
                 g2d.fillRect(u.getX() * grid, u.getY() * grid, grid, (int) (grid / 5.0));
                 g2d.setColor(Color.GREEN);
+                if(colorPalett == COLORPALETT_GRAY) g2d.setColor(Color.white);
+                if(colorPalett == COLORPALETT_GRAY && colorScheme == COLORSCHEME_WHITE) g2d.setColor(new Color(15, 15, 15));
                 g2d.fillRect(u.getX() * grid, u.getY() * grid, (int) (grid * (((float) u.getHitPoints()) / u.getMaxHitPoints())), (int) (grid / 5.0));
             }
         }

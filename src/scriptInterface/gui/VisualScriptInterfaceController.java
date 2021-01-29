@@ -542,7 +542,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		Stage stage = new Stage();
 		stage.setTitle("Color Paletts");
 		stage.setScene(new Scene(root1));
-		stage.setHeight(330+20);
+		stage.setHeight(370+25);
 		stage.setWidth(500+20);
 		//stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initModality(Modality.WINDOW_MODAL);

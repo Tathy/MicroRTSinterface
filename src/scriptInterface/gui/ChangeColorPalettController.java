@@ -10,6 +10,8 @@ public class ChangeColorPalettController {
 
 	@FXML
     private ToggleGroup groupPalett;
+	@FXML
+	private ToggleGroup groupBackground;
 	
     @FXML
     private ToggleButton tbPalett1;
@@ -19,6 +21,11 @@ public class ChangeColorPalettController {
     private ToggleButton tbPalett3;
     @FXML
     private ToggleButton tbPalett4;
+    
+    @FXML
+    private ToggleButton tbBackgroundWhite;
+    @FXML
+    private ToggleButton tbBackgroundBlack;
 
     @FXML
     void clickBtnApplyPalett(ActionEvent event) {
@@ -31,6 +38,13 @@ public class ChangeColorPalettController {
     			InterfaceSettings.getInstance().setColorPalett(3);
     		if(tbPalett4.isSelected()) 
     			InterfaceSettings.getInstance().setColorPalett(4);
+    	}
+    	
+    	if(groupBackground.getSelectedToggle() != null) {
+    		if(tbBackgroundWhite.isSelected()) 
+    			InterfaceSettings.getInstance().setColorScheme(2);
+    		if(tbBackgroundBlack.isSelected()) 
+    			InterfaceSettings.getInstance().setColorScheme(1);
     	}
     		
     }

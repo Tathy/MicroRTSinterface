@@ -64,10 +64,12 @@ public class PrincipalDSL {
 	            if (System.currentTimeMillis() >= nextTimeToUpdate) {
 	            	//Atualização das cores
 	            	pgsp.setColorPalet(InterfaceSettings.getInstance().getColorPalett());
+	            	pgsp.setColorScheme(InterfaceSettings.getInstance().getColorScheme());
 	            	
 	            	// Pause
 	            	while(InterfaceSettings.getInstance().isPaused() && !InterfaceSettings.getInstance().isRestarted()) {
 		            	pgsp.setColorPalet(InterfaceSettings.getInstance().getColorPalett());
+		            	pgsp.setColorScheme(InterfaceSettings.getInstance().getColorScheme());
 		            	tela.repaint();
 	            		nextTimeToUpdate = System.currentTimeMillis() + PERIOD;
 	            		pauseGame();
@@ -111,6 +113,7 @@ public class PrincipalDSL {
 	        	while(InterfaceSettings.getInstance().isPaused() && !InterfaceSettings.getInstance().isRestarted() ) {
 	        		pauseGame();
 	        		pgsp.setColorPalet(InterfaceSettings.getInstance().getColorPalett());
+	        		pgsp.setColorScheme(InterfaceSettings.getInstance().getColorScheme());
 	        		tela.repaint();
 	        	}
 	        	
