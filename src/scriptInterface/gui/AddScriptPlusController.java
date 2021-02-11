@@ -368,7 +368,7 @@ public class AddScriptPlusController {
   		stage.setTitle("Add Scripts");
   		stage.setScene(new Scene(root1));
   		stage.setHeight(721);
-  		stage.setWidth(275);
+  		stage.setWidth(285);
   		//stage.initModality(Modality.APPLICATION_MODAL);
   		stage.initModality(Modality.WINDOW_MODAL);
   		stage.setResizable(false);
@@ -393,7 +393,7 @@ public class AddScriptPlusController {
   		stage.setTitle("Add Scripts");
   		stage.setScene(new Scene(root1));
   		stage.setHeight(721);
-  		stage.setWidth(275);
+  		stage.setWidth(285);
   		//stage.initModality(Modality.APPLICATION_MODAL);
   		stage.initModality(Modality.WINDOW_MODAL);
   		stage.setResizable(false);

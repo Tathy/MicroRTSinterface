@@ -45,7 +45,7 @@ public class PhysicalGameStateScriptInterfaceJFrame extends JFrame {
         super(title);
         panel = a_panel;
 
-        panel.setPreferredSize(new Dimension(dx-270, dy));
+        panel.setPreferredSize(new Dimension(dx-345, dy));
         getContentPane().removeAll();
         getContentPane().setLayout(new BoxLayout(getContentPane(),BoxLayout.X_AXIS));
         getContentPane().add(panel);
@@ -79,7 +79,7 @@ public class PhysicalGameStateScriptInterfaceJFrame extends JFrame {
     	getContentPane().getPreferredSize();
     	getContentPane().remove(panel);
     	panel = a_panel;
-    	panel.setPreferredSize(new Dimension(dx-270, dy));
+    	panel.setPreferredSize(new Dimension(dx-345, dy));
     	getContentPane().add(panel, BoxLayout.X_AXIS);
     	setVisible(true);
     }

@@ -20,8 +20,10 @@ import ai.synthesis.twophasessa.TradutorDSL;
 import ai.configurablescript.BasicExpandedConfigurableScript;
 import ai.configurablescript.ScriptsCreator;
 import gui.PhysicalGameStatePanel;
+import javafx.embed.swing.JFXPanel;
 import ai.ScriptsGenerator.professionalScripts.*;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,8 +53,10 @@ public class PrincipalDSL {
         AI ai2 = new PassiveAI(utt);    
         
         /// Criação da tela
-        int larguraTela = 983;
-        int alturaTela = 725;
+        int larguraTela = 1050;
+        int alturaTela = 750+40;
+        //int larguraTela = 983;
+        //int alturaTela = 725;
         PhysicalGameStatePanel pgsp = new PhysicalGameStatePanel(gs);
         PhysicalGameStateScriptInterfaceJFrame tela = new PhysicalGameStateScriptInterfaceJFrame("Script Interface", larguraTela, alturaTela, pgsp);
         

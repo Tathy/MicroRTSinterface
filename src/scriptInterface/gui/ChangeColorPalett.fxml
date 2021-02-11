@@ -178,7 +178,7 @@
                   <Insets bottom="5.0" />
                </VBox.margin>
             </GridPane>
-            <GridPane>
+            <GridPane prefHeight="35.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -195,7 +195,7 @@
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Text>
-                  <ToggleButton fx:id="tbBackgroundBlack" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" style="-fx-background-radius: 10px;" stylesheets="@CSS/main-screen.css" text="Black" textFill="#ffffffbf" GridPane.columnIndex="1">
+                  <ToggleButton fx:id="tbBackgroundBlack" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-radius: 10px;" stylesheets="@CSS/main-screen.css" text="Black" textFill="#ffffffbf" GridPane.columnIndex="1">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -206,7 +206,7 @@
                         <ToggleGroup fx:id="groupBackground" />
                      </toggleGroup>
                   </ToggleButton>
-                  <ToggleButton fx:id="tbBackgroundWhite" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" style="-fx-background-radius: 10px;" stylesheets="@CSS/main-screen.css" text="White" textFill="#ffffffbf" toggleGroup="$groupBackground" GridPane.columnIndex="2">
+                  <ToggleButton fx:id="tbBackgroundWhite" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-radius: 10px;" stylesheets="@CSS/main-screen.css" text="White" textFill="#ffffffbf" toggleGroup="$groupBackground" GridPane.columnIndex="2">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -231,7 +231,7 @@
                 <RowConstraints />
               </rowConstraints>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets top="5.0" />
                </VBox.margin>
                <children>
                   <Button mnemonicParsing="false" onAction="#clickBtnApplyPalett" prefHeight="32.0" prefWidth="100.0" style="-fx-background-radius: 10px; -fx-background-color: #6e6e7b;" text="APPLY" textFill="#ffffffbf" GridPane.columnIndex="4">

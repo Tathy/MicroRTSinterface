@@ -25,10 +25,12 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.Desktop;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -164,11 +166,12 @@ public class VisualScriptInterfaceController implements Initializable {
     @FXML
     private Button btnSwitch;
     
+    
  
     
     // Inicialização da interface
 	public void initialize(URL location, ResourceBundle resources) {
-		loadMaps();		
+		loadMaps();
 		
 		btnSendQ1.setTooltip(new Tooltip("Send Questionnaire 1."));
         btnSendQ2.setTooltip(new Tooltip("Send Questionnaire 2."));
@@ -176,6 +179,8 @@ public class VisualScriptInterfaceController implements Initializable {
 		
 		lvScriptsAI1.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 		lvScriptsAI2.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+		
+		System.out.println("Iniciou o Controller do VisualScriptInterface");
 	}
 	
 	public void loadMaps() {
@@ -334,7 +339,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		stage.setTitle("Add Scripts");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
-		stage.setWidth(275);
+		stage.setWidth(285);
 		//stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);
@@ -361,7 +366,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		stage.setScene(new Scene(root1));
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setHeight(721);
-		stage.setWidth(275);
+		stage.setWidth(285);
 		stage.setResizable(false);
 		
 		stage.showAndWait();
@@ -431,7 +436,7 @@ public class VisualScriptInterfaceController implements Initializable {
 	
 	//Janela ADD+
 	@FXML
-	void clickBtnAddConditionals(ActionEvent event) throws IOException {
+	void clickBtnAddPlus(ActionEvent event) throws IOException {
 		checkSelectedTab();
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddScriptPlus.fxml"));
@@ -444,7 +449,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		stage.setTitle("Add Scripts");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
-		stage.setWidth(545);
+		stage.setWidth(556);
 		//stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);
@@ -542,13 +547,48 @@ public class VisualScriptInterfaceController implements Initializable {
 		Stage stage = new Stage();
 		stage.setTitle("Color Paletts");
 		stage.setScene(new Scene(root1));
-		stage.setHeight(370+25);
-		stage.setWidth(500+20);
+		stage.setHeight(415);
+		stage.setWidth(520);
 		//stage.initModality(Modality.APPLICATION_MODAL);
 		stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);
 		
 		stage.showAndWait();
+    }
+    
+    //Botão CHAT
+    @FXML
+    void clickBtnChat(ActionEvent event) throws IOException {
+
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ChatWindow.fxml"));
+		Parent root1 = (Parent) fxmlLoader.load();
+		
+		ChatWindowController chatWindowController = fxmlLoader.getController();
+		//chatWindowController.initialize();
+		
+		Stage stage = new Stage();
+		stage.setTitle("CHAT");
+		stage.setScene(new Scene(root1));
+		stage.setHeight(721);
+		stage.setWidth(415);
+		//stage.initModality(Modality.APPLICATION_MODAL);
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.setResizable(false);
+		
+		stage.showAndWait();
+    }
+    
+  //Botão CHAT
+    @FXML
+    void clickBtnWiki(ActionEvent event) throws IOException {
+    	try {
+    		
+    		URI link = new URI("https://github.com/Tathy/Interface_microRTS/wiki");
+    		Desktop.getDesktop().browse(link);
+    		
+    	} catch(Exception e) {
+    		System.out.println(e);
+    	}
     }
 
 }
