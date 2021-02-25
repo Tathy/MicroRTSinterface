@@ -264,7 +264,6 @@ public class SendQuestionnaire1Controller {
 
     @FXML
     void clickBtnSubmit(ActionEvent event) throws IOException {
-    	// TESTE    -- Enviar esses scripts e respostas no WebService
     	String txtQ11 = null;
     	if(groupQ11.getSelectedToggle() != null) {
     		if(rb11Scale1.isSelected()) txtQ11 = "Absolutely Agree";

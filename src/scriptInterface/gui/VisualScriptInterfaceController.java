@@ -472,7 +472,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		}
     }
     
-    // Janela SEND (questionário1)
+    // Janela SEND (questionário 1)
     @FXML
     void clickBtnSendQ1(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
@@ -488,7 +488,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		//stage.setTitle("Questionnaire 2");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
-		stage.setWidth(987);
+		stage.setWidth(1000);
 		stage.initModality(Modality.APPLICATION_MODAL);
 		//stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);
@@ -496,11 +496,11 @@ public class VisualScriptInterfaceController implements Initializable {
 		stage.showAndWait();
     }
     
- // Janela SEND (questionário2)
+ // Janela SEND (questionário 2)
     @FXML
     void clickBtnSendQ2(ActionEvent event) throws IOException {
     	//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire1.fxml"));
-    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire2.fxml"));
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SendQuestionnaire2v2.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
 		
 		//SendQuestionnaire1Controller sendQuestionnaire1Controller = fxmlLoader.getController();
@@ -512,7 +512,7 @@ public class VisualScriptInterfaceController implements Initializable {
 		stage.setTitle("Questionnaire 2");
 		stage.setScene(new Scene(root1));
 		stage.setHeight(721);
-		stage.setWidth(987);
+		stage.setWidth(1000);
 		stage.initModality(Modality.APPLICATION_MODAL);
 		//stage.initModality(Modality.WINDOW_MODAL);
 		stage.setResizable(false);
