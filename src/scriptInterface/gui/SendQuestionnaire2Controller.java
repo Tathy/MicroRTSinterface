@@ -191,6 +191,8 @@ public class SendQuestionnaire2Controller {
     	System.out.println("----- Geral -----");
     	System.out.println("Resposta: " + txtQGeral);
     	
+    	System.out.println("yaaay");
+    	
     	//ConfirmQuestionnaireController
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ConfirmQuestionnaire.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
